@@ -272,3 +272,24 @@
     height: auto;
   }
 }
+
+@mixin text-14(){ 
+  font-size: rem(12);
+	@include media-breakpoint-up(lg) {
+    font-size: rem(14);
+	}
+}
+
+@mixin text-12(){ 
+  font-size: rem(10);
+	@include media-breakpoint-up(lg) {
+		font-size: rem(12);
+	}
+}
+
+@mixin text-10(){ 
+  font-size: rem(8);
+	@include media-breakpoint-up(lg) {
+		font-size: rem(10);
+	}
+}

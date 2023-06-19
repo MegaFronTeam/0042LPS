@@ -11,24 +11,21 @@ include ../blocks/sCatalog/_sCatalog.pug
 
 block variables
 	- let  mainPage= 'main-page' 
-	- let  bg= null
+	- let  bg= 'main.jpg'
 
 block title
-	- let  title= index.head.title
+	- let  title= 'Главная'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 	
-	
-	+parts('header')
 	main
 		.ratiod
+		button(type='button' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Объекты") divdiv
 		+headerBlock 
-		+sCatalog
+		//- +sCatalog
 		+sForm()
 		+sContact()
-		
-	+parts('footer')
       
 
 

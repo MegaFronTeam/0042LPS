@@ -436,10 +436,8 @@ function eventHandler() {
 	});
 
 	// modal window
-
 	
-    
- 
+	$('[data-bs-toggle="tooltip"]').tooltip();
 
 };
 if (document.readyState !== 'loading') {
