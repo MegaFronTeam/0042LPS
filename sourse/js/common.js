@@ -361,6 +361,7 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
 	JSCCommon.disabledBtn();
+	JSCCommon.imgToSVG();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	
@@ -420,7 +421,13 @@ function eventHandler() {
 	const swiperbreadcrumb = new Swiper('.breadcrumb-slider--js', {
 		slidesPerView: 'auto',
 		freeMode: true,
-		watchOverflow: true
+		watchOverflow: true,
+		centeredSlides: true,
+		breakpoints: {
+			768: {
+				centeredSlides: false,
+			}
+		}
 	});
 	
 	const swiper4 = new Swiper('.sBanners__slider--js', {

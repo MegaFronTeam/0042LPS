@@ -526,7 +526,7 @@ $grid-row-columns:            6 !default;
 
 // Container padding
 
-$container-padding-x: $grid-gutter-width !default;
+$container-padding-x: rem(96) !default;
 
 
 // Components
@@ -1369,18 +1369,18 @@ $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w
 // Tooltips
 
 // scss-docs-start tooltip-variables
-$tooltip-font-size:                 $font-size-sm !default;
+$tooltip-font-size:                 rem(12) !default;
 $tooltip-max-width:                 200px !default;
-$tooltip-color:                     var(--#{$prefix}body-bg) !default;
-$tooltip-bg:                        var(--#{$prefix}emphasis-color) !default;
-$tooltip-border-radius:             var(--#{$prefix}border-radius) !default;
-$tooltip-opacity:                   .9 !default;
-$tooltip-padding-y:                 $spacer * .25 !default;
-$tooltip-padding-x:                 $spacer * .5 !default;
+$tooltip-color:                     #fff !default;
+$tooltip-bg:                        rgba(0, 0, 0, 0.48) !default;
+$tooltip-border-radius:             rem(4) !default;
+$tooltip-opacity:                   1 !default;
+$tooltip-padding-y:                 rem(6.5) !default;
+$tooltip-padding-x:                 rem(12.1) !default;
 $tooltip-margin:                    null !default; // TODO: remove this in v6
 
-$tooltip-arrow-width:               .8rem !default;
-$tooltip-arrow-height:              .4rem !default;
+$tooltip-arrow-width:               0 !default;
+$tooltip-arrow-height:              0 !default;
 // fusv-disable
 $tooltip-arrow-color:               null !default; // Deprecated in Bootstrap 5.2.0 for CSS variables
 // fusv-enable
@@ -1454,12 +1454,12 @@ $toast-header-border-color:         $toast-border-color !default;
 // Badges
 
 // scss-docs-start badge-variables
-$badge-font-size:                   .75em !default;
-$badge-font-weight:                 $font-weight-bold !default;
+$badge-font-size:                   #{rem(16)} !default;
+$badge-font-weight:                 500 !default;
 $badge-color:                       $white !default;
-$badge-padding-y:                   .35em !default;
-$badge-padding-x:                   .65em !default;
-$badge-border-radius:               $border-radius !default;
+$badge-padding-y:                   #{rem(8)} !default;
+$badge-padding-x:                   #{rem(12)} !default;
+$badge-border-radius:               #{rem(4)} !default;
 // scss-docs-end badge-variables
 
 
@@ -1602,15 +1602,15 @@ $figure-caption-color:              var(--#{$prefix}secondary-color) !default;
 // Breadcrumbs
 
 // scss-docs-start breadcrumb-variables
-$breadcrumb-font-size:              null !default;
-$breadcrumb-padding-y:              0 !default;
+$breadcrumb-font-size:              rem(16) !default;
+$breadcrumb-padding-y:              rem(26) !default;
 $breadcrumb-padding-x:              0 !default;
-$breadcrumb-item-padding-x:         .5rem !default;
+$breadcrumb-item-padding-x:         0 !default;
 $breadcrumb-margin-bottom:          1rem !default;
 $breadcrumb-bg:                     null !default;
-$breadcrumb-divider-color:          var(--#{$prefix}secondary-color) !default;
-$breadcrumb-active-color:           var(--#{$prefix}secondary-color) !default;
-$breadcrumb-divider:                quote("/") !default;
+$breadcrumb-divider-color:          $primary !default;
+$breadcrumb-active-color:           $gray-600 !default;
+$breadcrumb-divider:                url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.29685 3.55875C7.24534 3.57729 7.19887 3.59265 7.19358 3.59284C7.16024 3.59406 6.59371 4.18315 6.55651 4.25531C6.4608 4.44085 6.45905 4.70566 6.55228 4.89209C6.57171 4.93098 7.61097 5.98738 8.86174 7.23962L11.1359 9.51645L8.85045 11.805C6.31724 14.3417 6.47565 14.163 6.47909 14.4806C6.48152 14.7046 6.54251 14.8064 6.86813 15.1297C7.25646 15.5153 7.52308 15.6056 7.82362 15.4532C7.97524 15.3763 13.4094 9.923 13.4703 9.78658C13.538 9.63506 13.5418 9.38466 13.4786 9.24721C13.4099 9.09768 7.96644 3.65308 7.81192 3.57931C7.67449 3.51368 7.44711 3.50462 7.29685 3.55875Z' fill='%23F4B13E'/%3E%3C/svg%3E%0A") !default;
 $breadcrumb-divider-flipped:        $breadcrumb-divider !default;
 $breadcrumb-border-radius:          null !default;
 // scss-docs-end breadcrumb-variables

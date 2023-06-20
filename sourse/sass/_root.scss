@@ -4,13 +4,13 @@
 	--bs-body-font-size: #{$em-base};
 	@include media-breakpoint-up(md) {
 
-		--sPT: #{rem(80)};
-		--sPB: #{rem(90)};
+		// --sPT: #{rem(80)};
+		--sPB: #{rem(36)};
 		--sTPB: #{rem(40)};
 	}
 
-	--sPT: #{rem(80 * .5)};
-	--sPB: #{rem(90 * .5)};
+	--sPT: 0;
+	--sPB: #{18};
 	--sTPB: #{rem(40 * .5)};
 
 
