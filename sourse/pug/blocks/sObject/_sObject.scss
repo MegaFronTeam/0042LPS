@@ -15,7 +15,11 @@
 		
 	}
 	&__col{
-
+		@include media-breakpoint-up(xxl) {
+			width: calc(100% / 4 );
+			max-width: rem(400);
+			min-width: rem(310);
+		}
 	}
 	&__item{
 

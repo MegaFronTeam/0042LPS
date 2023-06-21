@@ -653,6 +653,7 @@ h1 {
 	display: inline-flex;
 	align-items: center;
 	line-height: 1.25;
+	white-space: normal;
 	&-purple {
 		background-color: $purple;
 	}

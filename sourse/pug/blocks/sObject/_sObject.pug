@@ -1,42 +1,48 @@
-mixin sObjectCard(title, text, bgDefColor, width)
-	+b.sObject-card
-		a(href='#').h3!= title
-		p!= text
-		+e.row.row
-			.col
-				block
-			.col-auto
-				+e.link(href='#'): +icon('edit')
-		+e.line(style=`--bgDefColor: ${bgDefColor}; --width: ${width}`)
+mixin sObjectCard(title, text, bgDefColor, width, addNew=false)
+	+b.sObject-card(class=(addNew ? '--addNew' : ''))
+		if addNew
+			+e.icon: +icon('plus')
+			+e.add(href='#') Добавить объект
+		else
+			a(href='#').h4!= title
+			p!= text
+			+e.row.row
+				.col
+					block
+				.col-auto
+					+e.link(href='#'): +icon('edit')
+			+e.line(style=`--bgDefColor: ${bgDefColor}; --width: ${width}`)
 
 mixin sObject(data)
 	// start sObject
 	+b.SECTION.sObject.section#sObject&attributes(attributes)
 		.container-fluid
 			+e.row.row
-				.col-lg-3
+				+e.col.col-sm-6.col-lg-4.col-xxl-auto
 					+sObjectCard('ЖК Ново-садовое', '12 ноя - 23 дек 2023', '#9A52DF')
 						.badge.badge-purple 
 							+img(`img/svg/time.svg`).img-svg-js
 							| Планирование
-				.col-lg-3
+				+e.col.col-sm-6.col-lg-4.col-xxl-auto
 					+sObjectCard('КП Волжские усадьбы', '12 ноя - 23 дек 2023', '#467CF4', '34%')
 						.badge.badge-warning 
 							+img(`img/svg/play.svg`).img-svg-js
 							| В работе 
-				.col-lg-3
+				+e.col.col-sm-6.col-lg-4.col-xxl-auto
 					+sObjectCard('ЖК Династия Парк', '12 ноя - 23 дек 2023', '#1DBA6F', '100%')
 						.badge.badge-success 
 							+img(`img/svg/done.svg`).img-svg-js
 							| Завершен
-				.col-lg-3
+				+e.col.col-sm-6.col-lg-4.col-xxl-auto
 					+sObjectCard('ЖК Орбита', '12 ноя - 23 дек 2023', '#8B9298', '100%')
 						.badge.badge-secondary 
 							+img(`img/svg/archive.svg`).img-svg-js
 							| Архив
-				.col-lg-3
+				+e.col.col-sm-6.col-lg-4.col-xxl-auto
 					+sObjectCard('ЖК Видный', '12 ноя - 23 дек 2023', '#8B9298', '100%')
 						.badge.badge-secondary 
 							+img(`img/svg/archive.svg`).img-svg-js
 							| Архив
+				+e.col.col-sm-6.col-lg-4.col-xxl-auto
+					+sObjectCard('', '', '', '', true)
 	// end sObject
