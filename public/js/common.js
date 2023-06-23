@@ -446,6 +446,16 @@ function eventHandler() {
 	
 	$('[data-bs-toggle="tooltip"]').tooltip();
 
+	let select2Wrappers = document.querySelectorAll('.custom-select-wrap');
+	if(select2Wrappers.length > 0) {
+		for (const select2Wrapp of select2Wrappers) {
+			$(select2Wrapp.querySelector('.basic-select--js')).select2({
+				minimumResultsForSearch: Infinity,
+				dropdownParent: $(select2Wrapp)
+			});
+		}
+	}
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

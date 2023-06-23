@@ -15,8 +15,24 @@ mixin sObjectCard(title, text, bgDefColor, width, addNew=false)
 
 mixin sObject(data)
 	// start sObject
-	+b.SECTION.sObject.section#sObject&attributes(attributes)
+	+b.sObject.section#sObject&attributes(attributes)
 		.container-fluid
+			+e.head-row.row
+				.col-auto.ms-auto.ms-md-0.me-auto.me-md-0
+					+b.custom-select-wrap--first-type
+						select(class="basic-select basic-select--js")
+							-for(let i = 1; i <= 10; i++)
+								option!= i
+						+e.label Все статусы
+							span
+				.col-auto.ms-auto.me-auto.me-md-0
+					+b.custom-select-wrap--second-type
+						+e.label.text-secondary Сортировать по
+						select(class="basic-select basic-select--js")
+							option Все статусы
+							option Планирование
+							option В работе
+							option Все статусы
 			+e.row.row
 				+e.col.col-sm-6.col-lg-4.col-xxl-auto
 					+sObjectCard('ЖК Ново-садовое', '12 ноя - 23 дек 2023', '#9A52DF')

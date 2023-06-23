@@ -11,8 +11,12 @@
 			--bs-gutter-y: #{rem(24)};
 		}
 	}
-	.section-title{
-		
+	&__head-row {
+		margin-bottom: rem(24);
+		flex-direction: column;
+		@include media-breakpoint-up(md) {
+			flex-direction: row;
+		}
 	}
 	&__col{
 		@include media-breakpoint-up(xxl) {
@@ -21,10 +25,6 @@
 			min-width: rem(310);
 		}
 	}
-	&__item{
-
-	}
-
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

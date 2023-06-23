@@ -5,12 +5,12 @@
 	@include media-breakpoint-up(md) {
 
 		// --sPT: #{rem(80)};
-		--sPB: #{rem(36)};
+		// --sPB: #{rem(36)};
 		--sTPB: #{rem(40)};
 	}
 
 	--sPT: 0;
-	--sPB: #{rem(18)};
+	--sPB: 0;
 	--sTPB: #{rem(40 * .5)};
 
 
