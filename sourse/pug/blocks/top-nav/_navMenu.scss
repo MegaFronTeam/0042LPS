@@ -27,7 +27,7 @@
 
 .toggle-menu-mobile {
 	--h: #{em(2)};
-	--color: #{$primary};
+	--color: #{$accent};
 	--position: calc(var(--h) * 2);
 	&.on span {
 		--color: transparent;

@@ -1,5 +1,5 @@
 mixin sObjectCard(title, text, bgDefColor, width, addNew=false)
-	+b.sObject-card(class=(addNew ? '--addNew' : ''))
+	+b.sObject-card(class=(addNew ? '--addNew' : '') style=`--bgDefColor: ${bgDefColor}`)
 		if addNew
 			+e.icon: +icon('plus')
 			+e.add(href='#') Добавить объект
@@ -11,7 +11,7 @@ mixin sObjectCard(title, text, bgDefColor, width, addNew=false)
 					block
 				.col-auto
 					+e.link(href='#'): +icon('edit')
-			+e.line(style=`--bgDefColor: ${bgDefColor}; --width: ${width}`)
+			+e.line(style=`--width: ${width}`)
 
 mixin sObject(data)
 	// start sObject

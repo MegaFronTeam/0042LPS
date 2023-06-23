@@ -388,7 +388,7 @@ ul {
 
 		&-active,
 		&:hover {
-			background-color: var(--bs-primary) ;
+			background-color: var(--bs-accent) ;
 		}
 	}
 }
@@ -620,7 +620,7 @@ p {
 			line-height: 1.25;
 			color: $gray-600;
 			&:hover {
-				color: $primary;
+				color: $accent;
 			}
 		}
 		&.active {
@@ -659,7 +659,7 @@ h1 {
 		background-color: $purple;
 	}
 	&-warning {
-		background-color: $warning
+		background-color: $blue
 	}
 	&-success {
 		background-color: $success;
