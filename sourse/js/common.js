@@ -422,12 +422,6 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		freeMode: true,
 		watchOverflow: true,
-		centeredSlides: true,
-		breakpoints: {
-			768: {
-				centeredSlides: false,
-			}
-		}
 	});
 	
 	const swiper4 = new Swiper('.sBanners__slider--js', {

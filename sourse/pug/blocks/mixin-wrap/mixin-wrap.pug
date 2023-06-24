@@ -39,11 +39,19 @@ mixin search()
 				+icon("search")
 
 mixin page-head(data)
-	+b.page-head
+	+b.page-head&attributes(attributes)
 		//- - let l = data.items.length
 		.container-fluid
-			if data.items
-				+breadcrumb(...data.items)
+			.row.align-items-center
+				.col
+					if data.items
+						+breadcrumb(...data.items)
+				.col-auto.d-none.d-md-block
+					if data.edit
+						+e.edit(href='#')
+							| Редактировать
+							+icon('edit')
+
 			if data.t
 				h1!= data.t
 

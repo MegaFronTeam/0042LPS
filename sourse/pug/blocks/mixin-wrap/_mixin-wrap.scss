@@ -296,6 +296,21 @@
 		text-transform: uppercase;
 		font-family: 'AkzidenzGroteskProExtended';
 	}
+	&__edit {
+		display: flex;
+		align-items: center;
+		line-height: 1.25;
+		font-style: italic;
+		color: $gray-600;
+		&:hover {
+			color: $primary;
+		}
+		.icon {
+			font-size: rem(24);
+			flex: 0 0 auto;
+			margin-left: rem(12);
+		}
+	}
 }
 
 .page-bg {

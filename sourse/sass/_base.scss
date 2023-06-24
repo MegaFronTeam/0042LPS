@@ -602,6 +602,9 @@ p {
 
 .breadcrumb-slider--js {
 	overflow: visible;
+	@include media-breakpoint-down(md) {
+		max-width: max-content;
+	}
 }
 .breadcrumb {
 	padding-left: 0;

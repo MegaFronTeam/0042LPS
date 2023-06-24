@@ -1,0 +1,18 @@
+mixin sPageInfo(data)
+	// start sPageInfo
+	+b.sPageInfo.section#sPageInfo&attributes(attributes)
+		+e.continer.container-fluid
+			+e.wrap.bg-wrap
+				+img('img/service-1.jpg', 'bg').picture-bg
+				+e.row.row
+					.col-md
+						h1 ЖК видный
+					.col-md-auto
+						+e.inner-wrap
+							+e.task-stat
+								+icon('fist')
+								| 321/433
+							+e.date
+								+icon('calendar')
+								| 11 ноя 23 – 11 фев 24
+	// end sPageInfo
