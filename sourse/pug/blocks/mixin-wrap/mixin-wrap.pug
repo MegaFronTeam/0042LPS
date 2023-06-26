@@ -46,19 +46,23 @@ mixin page-head(data)
 				.col
 					if data.items
 						+breadcrumb(...data.items)
-				if data.edit
-					.col-md-auto(class=data.edit.class)
-						+e.edit(href='#')
-							| Редактировать
-							+icon('edit')
-				.col-12.d-none.d-md-block.m-0.p-0
 				if data.t
-					.col
+					.col-lg.order-md-4
 						h1!= data.t
 							if data.badge
 								.badge.badge-primary!= data.badge
-						
-					
+				.col-12.d-none.d-md-block.m-0.p-0.order-md-3
+				if data.edit
+					.col-md-auto.order-md-2(class=data.edit.class)
+						+e.edit(href='#')
+							| Редактировать
+							+icon('edit')
+				if data.date
+					.col-md-auto.order-md-last
+						+startDate()
+				if data.stat
+					.col-md-auto.order-md-5
+						+taskStat()
 
 mixin parts(elem)
 	script.
