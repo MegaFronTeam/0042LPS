@@ -42,18 +42,23 @@ mixin page-head(data)
 	+b.page-head&attributes(attributes)
 		//- - let l = data.items.length
 		.container-fluid
-			.row.align-items-center
+			+e.row.row.align-items-center
 				.col
 					if data.items
 						+breadcrumb(...data.items)
 				if data.edit
-					.col-auto(class=data.edit.class)
+					.col-md-auto(class=data.edit.class)
 						+e.edit(href='#')
 							| Редактировать
 							+icon('edit')
-
-			if data.t
-				h1!= data.t
+				.col-12.d-none.d-md-block.m-0.p-0
+				if data.t
+					.col
+						h1!= data.t
+							if data.badge
+								.badge.badge-primary!= data.badge
+						
+					
 
 mixin parts(elem)
 	script.

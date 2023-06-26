@@ -1,0 +1,33 @@
+extends ../layout/main.pug
+
+include ../blocks/sObject/_sObject.pug
+ 
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sPageInfo/_sPageInfo.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= '01-3-house.jpg'
+
+block title
+	- let  title= 'Дом №1'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	main
+		+page-head({
+			t: 'Подъезд №2',
+			badge: '33%',
+			items: ['Объекты', 'ЖК видный', 'Дом №1'],
+			edit: {},
+		}).mb-0
+		//- +sPageInfo
+
+      
+
+
+
