@@ -658,11 +658,14 @@ h1 {
 	align-items: center;
 	line-height: 1.25;
 	white-space: normal;
+	&-primary {
+		background-color: $primary;
+	}
 	&-purple {
 		background-color: $purple;
 	}
 	&-warning {
-		background-color: $blue
+		background-color: $warning;
 	}
 	&-success {
 		background-color: $success;
