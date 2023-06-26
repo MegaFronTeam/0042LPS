@@ -11,6 +11,18 @@
 	&__row{
 		--bs-gutter-x: #{rem(18)};
 		--bs-gutter-y: #{rem(18)};
+
+		margin-bottom: rem(18);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(24);
+		}
+	}
+	&__body-row {
+		justify-content: center;
+		@include media-breakpoint-up(md) {
+			align-items: flex-end;
+			justify-content: flex-start;
+		}
 	}
 	&__wrap {
 		padding: rem(24) rem(12);
@@ -58,45 +70,12 @@
 			flex-direction: row;
 		}
 	}
-	&__task-stat {
-		font-size: rem(14);
-		line-height: 1.25;
-		color: #fff;
-		font-weight: 500;
-		// font-family: 'AkzidenzGroteskProExtended';
-		display: flex;
-		align-items: center;
-		text-align: center;
-		@include media-breakpoint-up(md) {
-			font-size: rem(16);
-			text-align: left;
-		}
-		.icon {
-			flex: 0 0 auto;
-			margin-right: rem(6);
-			font-size: rem(20);
-			color: $success;
-		}
+	&__col {
+		width: 100%;
+		max-width: calc(rem(456) + var(--bs-gutter-x));
 	}
-	&__date {
-		padding: rem(12) rem(18);
-		border-radius: 60px;
-		background: rgba(0, 0, 0, 0.48);
-		display: flex;
-		align-items: center;
-		color: #fff;
-		line-height: 1.25;
-		font-size: rem(14);
-		text-align: center;
-		@include media-breakpoint-up(md) {
-			font-size: rem(16);
-			text-align: left;
-		}
-		.icon {
-			font-size: rem(20);
-			margin-right: rem(10);
-			flex: 0 0 auto;
-		}
+	&__inner-row {
+		--bs-gutter-y: #{rem(12)};
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

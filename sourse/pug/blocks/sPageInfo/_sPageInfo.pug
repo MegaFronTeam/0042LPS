@@ -9,10 +9,22 @@ mixin sPageInfo(data)
 						h1 ЖК видный
 					.col-md-auto
 						+e.inner-wrap
-							+e.task-stat
-								+icon('fist')
-								| 321/433
-							+e.date
-								+icon('calendar')
-								| 11 ноя 23 – 11 фев 24
+							+taskStat
+							+startDate
+				+e.body-row.row
+					.col-md 1
+					+e.col.col-md-auto
+						+e.inner-row.row
+							.col-12
+								+workStatus('Стяжка пола', '22%', '#467CF4')
+							.col-12
+								+workStatus('Натяжка потолка', '63%', '#1DBA6F').disabled
+							.col-12
+								+workStatus('Штукатурка стен', '90%', '#F4B13E').disabled
+							.col-12
+								+workStatus('Шпаклевание стен', '33%', '#9A52DF').disabled
+							.col-12
+								+workStatus('Затирка', '100%', '#E94410').disabled
+							.col-12
+								+workStatus('Плинтус', '3%', '#8B9298').disabled
 	// end sPageInfo

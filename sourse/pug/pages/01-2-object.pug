@@ -20,7 +20,9 @@ block pagecontent
 	
 	main
 		+page-head({
-			edit: true,
+			edit: {
+				class: 'd-none d-md-block',
+			},
 			items: ['Объекты', 'ЖК видный']
 		}).mb-0
 		+sPageInfo

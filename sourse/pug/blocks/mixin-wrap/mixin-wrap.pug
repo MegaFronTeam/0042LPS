@@ -46,8 +46,8 @@ mixin page-head(data)
 				.col
 					if data.items
 						+breadcrumb(...data.items)
-				.col-auto.d-none.d-md-block
-					if data.edit
+				if data.edit
+					.col-auto(class=data.edit.class)
 						+e.edit(href='#')
 							| Редактировать
 							+icon('edit')
@@ -95,3 +95,21 @@ mixin logo()
 			</clipPath>
 		</defs>
 	</svg>
+
+
+mixin taskStat()
+	+b.task-stat
+		+icon('fist')
+		| 321/433
+
+mixin startDate()
+	+b.start-date
+		+icon('calendar')
+		| 11 ноя 23 – 11 фев 24
+
+mixin workStatus(name, precent, color)
+	+b.work-status&attributes(attributes)
+		.row
+			.col!= name
+			.col-auto.fw-500!= precent
+		.line(style=`--w: ${precent}; --bgColor: ${color}`)
