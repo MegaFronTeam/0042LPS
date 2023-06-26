@@ -6,7 +6,7 @@ include ../blocks/sObject/_sObject.pug
 //- include ../blocks/sForm/_sForm.pug
 //- include ../blocks/sForm/_sForm.pug
 include ../blocks/sCatalog/_sCatalog.pug
-include ../blocks/sPageInfo/_sPageInfo.pug
+include ../blocks/sObjectDetails/_sObjectDetails.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -26,11 +26,22 @@ block pagecontent
 			badge: '33%',
 			stat: ' ',
 			date: ' ',
-
 		})
-		//- +sPageInfo
-
-
-
+		+sObjectDetails()
+			+e.header
+				+detailsHead(`12 под`, `728 кв`, `1350 пом`, `S 3440 м²`)
+				+e.row.row
+					.col-sm-6.col-lg-4.col-xl-3
+						+workStatus('Стяжка пола', '22%', '#467CF4')
+					.col-sm-6.col-lg-4.col-xl-3
+						+workStatus('Натяжка потолка', '63%', '#1DBA6F')
+					.col-sm-6.col-lg-4.col-xl-3
+						+workStatus('Штукатурка стен', '90%', '#F4B13E')
+					.col-sm-6.col-lg-4.col-xl-3
+						+workStatus('Шпаклевка стен', '33%', '#9A52DF')
+					.col-sm-6.col-lg-4.col-xl-3
+						+workStatus('Затирка', '100%', '#E94410')
+					.col-sm-6.col-lg-4.col-xl-3
+						+workStatus('Плинтус', '3%', '#8B9298')
 
 

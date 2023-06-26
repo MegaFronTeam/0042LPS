@@ -122,3 +122,10 @@ mixin workStatus(name, precent, color)
 			.col!= name
 			.col-auto.fw-500!= precent
 		.line(style=`--w: ${precent}; --bgColor: ${color}`)
+
+mixin detailsHead(...items)
+	+b.detailsHead
+		+e.row.row 
+			each item in items
+				+e.col.col-sm-auto!= item
+
