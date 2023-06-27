@@ -686,6 +686,7 @@
 	@include media-breakpoint-up(sm) {
 		border-top: 1px solid $gray-200;
 	}
+	
 	&__row {
 		--bs-gutter-y: calc(var(--bs-gutter-x) / 2);
 	}
@@ -695,4 +696,33 @@
 		font-weight: 500;
 		line-height: 125%;
 	}
+}
+
+.btn-more {
+	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
+	@include media-breakpoint-up(sm) {
+		display: none;
+	}
+	&__hide {
+		display: none;
+	}
+	&.active {
+		.btn-more__show {
+			display: none;
+		}
+		.btn-more__hide {
+			display: block;
+		}
+		.icon {
+			transform: rotateX(180deg);
+		}
+	}
+	.icon {
+		@include mt(0.25s);
+	}
+
+}
+
+.toggle-wrap-js {
+
 }
