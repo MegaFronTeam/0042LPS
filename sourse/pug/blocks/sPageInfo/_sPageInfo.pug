@@ -12,7 +12,8 @@ mixin sPageInfo(data)
 							+taskStat
 							+startDate
 				+e.body-row.row
-					.col-md 1
+					.col-md
+						+circularProgressBar(34)
 					+e.col.col-md-auto
 						+e.inner-row.row
 							.col-12
