@@ -138,16 +138,50 @@ mixin detailsHead(...items)
 	+btnMore()
 
 
-mixin circularProgressBar(precent)
-	.circular-progress-bar
+//- mixin circularProgressBar(precent, status)
+//- 	.circular-progress-bar
+//- 		.percent
+//- 			svg
+//- 				circle
+//- 				circle(style=`--percent: ${precent}`)
+//- 			.number
+//- 				h2!= precent
+//- 					| %
+//- 				p Прогресс
+
+mixin bottomControlBar()
+	+b.bottom-control-bar
+		.row
+			.col.me-auto
+				p Выбрано: 1&nbsp;элемент(-ов)
+			.col-auto
+				+e.btn.btn.btn-dark(href='#')
+					+icon('edit')
+					span Изменить
+			.col-auto
+				+e.btn.btn.btn-dark(href='#')
+					+icon('copy')
+					span Дублировать
+			.col-auto
+				+e.btn--delete.btn.btn-dark(href='#')
+					+icon('delete')
+					span Удалить
+
+
+mixin circularProgressBar(precent, status='Прогресс')
+	.circular-progress-bar(style=`--percent: ${status == 'Прогресс' ? '34' : status == 'Планирование' ? '0' : '100' }; --bgColor: ${status == 'Прогресс' ? '#467CF4' : status == 'Планирование' ? '#9A52DF' : status == 'Архив' ? '#8B9298' : '#1DBA6F'};`)
 		.percent
 			svg
 				circle
-				circle(style=`--percent: ${precent}`)
+				circle
 			.number
-				h2!= precent
-					| %
-				p Прогресс
-
-mixin bottomInfoBar()
-	+b.bottom-info-bar
+				if status == 'Прогресс' 
+					h2!= precent + '%'
+				else 
+					if status == 'Планирование' 
+						+icon('time')
+					else if status == 'Архив'
+						+icon('archive')
+					else 
+						+icon('done')
+				p!= status

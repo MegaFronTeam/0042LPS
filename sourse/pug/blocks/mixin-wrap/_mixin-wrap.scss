@@ -720,8 +720,9 @@
 			width: 100%;
 			height: 100%;
 			fill: none;
-			stroke: rgba($color: $primary, $alpha: .36);
+			stroke: var(--bgColor);
 			stroke-width: rem(12);
+			opacity: .36;
 			cx: 64;
 			cy: 64;
 			r: 52;
@@ -735,7 +736,8 @@
 				--dasharray: #{rem(327)};
 				stroke-dasharray: var(--dasharray);
 				stroke-dashoffset: calc(var(--dasharray) - (var(--dasharray) * var(--percent)) / 100);
-				stroke: $primary; 
+				stroke: var(--bgColor); 
+				opacity: 1;
 				@include media-breakpoint-up(md) {
 					--dasharray: #{rem(527)};
 				}
@@ -757,6 +759,17 @@
 			font-size: rem(20);
 			@include media-breakpoint-up(md) {
 				font-size: rem(32);
+			}
+		}
+		.icon {
+			color: var(--bgColor);
+			font-size: rem(24);
+			width: 1em;
+			height: 1em;
+			margin-bottom: rem(6);
+			transform: none;
+			@include media-breakpoint-up(md) {
+				font-size: rem(48);
 			}
 		}
 		p {
@@ -793,4 +806,85 @@
 
 .toggle-wrap-js {
 
+}
+
+.bottom-control-bar {
+	position: fixed;
+	left: 0;
+	bottom: rem(48);
+	width: calc(100% - var(--asideW));
+	background-color: $gray-700;
+	padding: rem(8) rem(12);
+	z-index: 100;
+	@include media-breakpoint-up(md) {
+		margin-left: var(--asideW);
+		padding: rem(9) rem(24);
+		bottom: 0;
+	}
+	@include media-breakpoint-up(lg) {
+		margin-left: var(--asideW);
+		padding: rem(14) rem(48);
+	}
+	.row {
+		--bs-gutter-x: #{rem(12)};
+
+		align-items: center;
+	}
+	p {
+		margin-bottom: 0;
+		line-height: 1.25;
+		color: $gray-600;
+	}
+	&__btn {
+		--bs-btn-padding-x: #{rem(6)};
+		--bs-btn-padding-y: #{rem(6)};
+		--bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #{$accent};
+		--bs-btn-active-color: #000;
+    --bs-btn-active-bg: #{$accent};
+
+		display: flex;
+		align-items: center;
+		border: none;
+		&:hover {
+			.icon {
+				color: #000;
+			}
+		}
+		@include media-breakpoint-up(md) {
+			--bs-btn-padding-x: #{rem(18)};
+			--bs-btn-padding-y: #{rem(12)};
+		}
+		.icon {
+			@include mt;
+			font-size: rem(20);
+			flex: 0 0 auto;
+			color: $accent;
+			@include media-breakpoint-up(md) {
+				margin-right: rem(12);
+			}
+		}
+		span {
+			display: none;
+			line-height: 1.25;
+			font-weight: 500;
+			@include media-breakpoint-up(md) {
+				display: inline;
+			}
+		}
+		&--delete {
+			--bs-btn-hover-color: #fff;
+			--bs-btn-hover-bg: #{$danger};
+			--bs-btn-active-color: #fff;
+			--bs-btn-active-bg: #{$danger};
+			&:hover {
+				.icon {
+					color: #fff;
+				}
+			}
+			.icon {
+				color: $danger;
+			}
+		}
+	}
 }

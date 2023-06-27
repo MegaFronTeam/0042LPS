@@ -9,7 +9,7 @@ include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sPageInfo/_sPageInfo.pug
 
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= 'main-page page-with-control-bar' 
 	- let  bg= '01-2-object.jpg'
 
 block title
@@ -26,3 +26,4 @@ block pagecontent
 			items: ['Объекты', 'ЖК видный']
 		}).mb-0
 		+sPageInfo
+	+bottomControlBar()

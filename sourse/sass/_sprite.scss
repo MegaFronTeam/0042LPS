@@ -7,6 +7,10 @@
 	fill: currentColor;
 }
 
+.icon-archive {
+	font-size:math.div(48,10)*1rem;
+	width: math.div(48,48)*1em;
+}
 .icon-basket {
 	font-size:math.div(24,10)*1rem;
 	width: math.div(22,24)*1em;
@@ -22,6 +26,18 @@
 .icon-chevron-down {
 	font-size:math.div(20,10)*1rem;
 	width: math.div(20,20)*1em;
+}
+.icon-copy {
+	font-size:math.div(20,10)*1rem;
+	width: math.div(20,20)*1em;
+}
+.icon-delete {
+	font-size:math.div(20,10)*1rem;
+	width: math.div(20,20)*1em;
+}
+.icon-done {
+	font-size:math.div(48,10)*1rem;
+	width: math.div(48,48)*1em;
 }
 .icon-edit {
 	font-size:math.div(24,10)*1rem;
@@ -62,6 +78,10 @@
 .icon-telegram {
 	font-size:math.div(13,10)*1rem;
 	width: math.div(15,13)*1em;
+}
+.icon-time {
+	font-size:math.div(48,10)*1rem;
+	width: math.div(48,48)*1em;
 }
 .icon-viber {
 	font-size:math.div(16,10)*1rem;

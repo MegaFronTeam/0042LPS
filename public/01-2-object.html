@@ -24,7 +24,7 @@
 			}
 		</script>
 	</head>
-	<body class="main-page" data-bg="01-2-object.jpg">
+	<body class="main-page page-with-control-bar" data-bg="01-2-object.jpg">
 		<div class="main-wrapper">
 			<aside> 
 				<div class="aside-wrap">
@@ -120,11 +120,11 @@
 								</div>
 								<div class="sPageInfo__body-row row">
 									<div class="col-md">
-										<div class="circular-progress-bar">
+										<div class="circular-progress-bar" style="--percent: 34; --bgColor: #467CF4;">
 											<div class="percent">
 												<svg>
 													<circle></circle>
-													<circle style="--percent: 34"></circle>
+													<circle></circle>
 												</svg>
 												<div class="number">
 													<h2>34%</h2>
@@ -196,7 +196,35 @@
 						</div>
 					</div>
 					<!-- end sPageInfo-->
-				</main><img class="page-bg" src="img/svg/page-bg.svg" alt="" loading="lazy"/>
+				</main>
+				<div class="bottom-control-bar">
+					<div class="row">
+						<div class="col me-auto">
+							<p>Выбрано: 1&nbsp;элемент(-ов)</p>
+						</div>
+						<div class="col-auto">
+							<a class="bottom-control-bar__btn btn btn-dark" href="#">
+								<svg class="icon icon-edit ">
+									<use xlink:href="img/svg/sprite.svg#edit"></use>
+								</svg><span>Изменить</span>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a class="bottom-control-bar__btn btn btn-dark" href="#">
+								<svg class="icon icon-copy ">
+									<use xlink:href="img/svg/sprite.svg#copy"></use>
+								</svg><span>Дублировать</span>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a class="bottom-control-bar__btn bottom-control-bar__btn--delete btn btn-dark" href="#">
+								<svg class="icon icon-delete ">
+									<use xlink:href="img/svg/sprite.svg#delete"></use>
+								</svg><span>Удалить</span>
+							</a>
+						</div>
+					</div>
+				</div><img class="page-bg" src="img/svg/page-bg.svg" alt="" loading="lazy"/>
 			</div>
 		</div>
 		<script src="libs/jquery/jquery.min.js"></script>
