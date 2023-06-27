@@ -47,21 +47,21 @@ mixin page-head(data)
 					if data.items
 						+breadcrumb(...data.items)
 				if data.t
-					.col-lg.order-md-4
+					+e.col.col-lg.order-md-4
 						h1!= data.t
 							if data.badge
 								.badge.badge-primary!= data.badge
 				.col-12.d-none.d-md-block.m-0.p-0.order-md-3
 				if data.edit
-					.col-md-auto.order-md-2(class=data.edit.class)
+					+e.col.col-md-auto.order-md-2(class=data.edit.class)
 						+e.edit(href='#')
 							| Редактировать
 							+icon('edit')
 				if data.date
-					.col-md-auto.order-md-last
+					+e.col.col-md-auto.order-md-last
 						+startDate()
 				if data.stat
-					.col-md-auto.order-md-5
+					+e.col.col-md-auto.order-md-5
 						+taskStat()
 
 mixin parts(elem)
