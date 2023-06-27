@@ -18,6 +18,8 @@
 		}
 	}
 	&__body-row {
+		--bs-gutter-y: #{rem(18)};
+		
 		justify-content: center;
 		@include media-breakpoint-up(md) {
 			align-items: flex-end;

@@ -161,3 +161,17 @@ mixin toggleBtn(icon, text)
 		+icon(icon)
 		span!= text
 	
+
+mixin circularProgressBar(precent)
+	.circular-progress-bar
+		.percent
+			svg
+				circle
+				circle(style=`--percent: ${precent}`)
+			.number
+				h2!= precent
+					| %
+				p Прогресс
+
+mixin bottomInfoBar()
+	+b.bottom-info-bar
