@@ -123,11 +123,19 @@ mixin workStatus(name, precent, color)
 			.col-auto.fw-500!= precent
 		.line(style=`--w: ${precent}; --bgColor: ${color}`)
 
+mixin btnMore()
+	+b.BUTTON.btn-more--js.btn
+		+e.SPAN.show Подробнее
+		+e.SPAN.hide Свернуть
+		+icon('chevron-down')
+
 mixin detailsHead(...items)
-	+b.detailsHead
-		+e.row.row 
-			each item in items
-				+e.col.col-sm-auto!= item
+	.toggle-wrap-js
+		+b.detailsHead
+			+e.row.row
+				each item in items
+					+e.col.col-sm-auto!= item
+	+btnMore()
 
 
 mixin circularProgressBar(precent)
