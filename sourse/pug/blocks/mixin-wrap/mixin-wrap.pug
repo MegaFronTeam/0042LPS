@@ -137,3 +137,27 @@ mixin detailsHead(...items)
 					+e.col.col-sm-auto!= item
 	+btnMore()
 
+mixin toggleBlock()
+	+b.toggle-block
+		+e.row.row
+			if block
+				block
+			else
+				.col-auto
+					+toggleBtn('list', `Список`).active
+				.col-auto
+					+toggleBtn('tile', `Шахматка`)
+				.col-auto
+					+toggleBtn('tasks', `Задачи`)
+				.col-auto
+					+toggleBtn('gantt', `График работ`)
+				.col-auto
+					+toggleBtn('info', `Информация`)
+				.col-auto
+					+toggleBtn('pen', `Заметки`)
+
+mixin toggleBtn(icon, text)
+	+b.toggleBtn.btn.btn-outline-light(href="#")&attributes(attributes)
+		+icon(icon)
+		span!= text
+	
