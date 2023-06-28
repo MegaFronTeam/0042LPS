@@ -44,9 +44,14 @@ block pagecontent
 					.col-sm-6.col-lg-4.col-xl-3
 						+workStatus('Плинтус', '3%', '#8B9298')
 
-						
+
 		.container-fluid.mt-4
 			+toggleBlock()
 
-			input(type='text')#demo
+			.row
+				.col-12.mb-5
+					input(type='text').dateRange-js
+				.col-12
+					input(type='text').dateSingle-js
+
 
