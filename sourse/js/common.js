@@ -455,6 +455,13 @@ function eventHandler() {
 		$(this).toggleClass('active');
 	});
 
+	$('#demo').daterangepicker({
+		"startDate": "06/22/2023",
+		"endDate": "06/28/2023"
+	}, function (start, end, label) {
+		console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+	});
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
