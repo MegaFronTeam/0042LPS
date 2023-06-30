@@ -450,8 +450,8 @@ function eventHandler() {
 		}
 	};
 
-	$('.btn-more--js').on('click', function () {
-		$(this).siblings('.toggle-wrap-js').slideToggle("fast");
+	$('.details-with-toggle--js .details-with-toggle__btn-more').on('click', function () {
+		$('.details-with-toggle__wrap').slideToggle("fast");
 		$(this).toggleClass('active');
 	});
 

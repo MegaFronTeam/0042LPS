@@ -111,10 +111,22 @@ main{
 	flex-grow: 1;
 	justify-content: flex-start;
 	min-height: 100vh;
-	padding-bottom: rem(24);
+	padding-bottom: calc(rem(24) + rem(48));
+	padding-top: rem(48);
+	@include media-breakpoint-up(md) {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
 }
 aside {
 	background-color: #fff;
+	@include media-breakpoint-down(md) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+	} 
 	@include media-breakpoint-up(md) {
 		height: 100vh;
 		position: sticky;
@@ -128,17 +140,13 @@ aside {
 	flex-grow: 1;
 	overflow: hidden;
 	position: relative;
-	padding-bottom: rem(48);
-	@include media-breakpoint-up(md) {
-		padding-bottom: 0;
-	}
 }
 
 .page-with-control-bar {
-	.main-center-wrap  {
-		padding-bottom: calc(rem(48) + rem(48));
+	main  {
+		padding-bottom: calc(rem(96) + rem(24));
 		@include media-breakpoint-up(md) {
-			padding-bottom: calc(rem(72));
+			padding-bottom: calc(rem(72) + rem(24));
 		}
 	}
 }

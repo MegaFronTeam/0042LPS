@@ -129,13 +129,14 @@ mixin btnMore()
 		+e.SPAN.hide Свернуть
 		+icon('chevron-down')
 
-mixin detailsHead(...items)
-	.toggle-wrap-js
-		+b.detailsHead
-			+e.row.row
-				each item in items
-					+e.col.col-sm-auto!= item
-	+btnMore()
+mixin detailsWithToggle()
+	+b.details-with-toggle--js
+		+e.wrap
+			block
+		+e.BUTTON.btn-more.btn.d-md-none
+			.show Подробнее
+			.hide Свернуть
+			+icon('chevron-down')
 
 mixin toggleBlock()
 	+b.toggle-block
@@ -161,18 +162,6 @@ mixin toggleBtn(icon, text)
 		+icon(icon)
 		span!= text
 	
-
-//- mixin circularProgressBar(precent, status)
-//- 	.circular-progress-bar
-//- 		.percent
-//- 			svg
-//- 				circle
-//- 				circle(style=`--percent: ${precent}`)
-//- 			.number
-//- 				h2!= precent
-//- 					| %
-//- 				p Прогресс
-
 mixin bottomControlBar()
 	+b.bottom-control-bar
 		.row

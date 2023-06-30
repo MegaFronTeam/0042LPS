@@ -75,6 +75,19 @@
 	&__inner-row {
 		--bs-gutter-y: #{rem(12)};
 	}
+	.circular-progress-bar {
+		margin-bottom: rem(18);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(24);
+		}
+	}
+	.details-with-toggle {
+		&__item {
+			@include media-breakpoint-up(md) {
+				color: #fff;
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

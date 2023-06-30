@@ -29,7 +29,20 @@ block pagecontent
 		})
 		+sObjectDetails()
 			+e.header
-				+detailsHead(`12 под`, `728 кв`, `1350 пом`, `S 3440 м²`)
+				+detailsWithToggle()
+					mixin item(key, val, warning)
+						+e.col.col-md-auto
+							+e.item
+								span!= key
+								p(class=(warning ? 'text-danger' : ''))
+									if warning
+										+icon("warning")
+									!= val
+					+e.stats-row--without-span.row
+						+item('Этаж', '7 эт')
+						+item('Квартиры', '728 кв')
+						+item('Помещения', '1350 пом')
+						+item('Площадь', 'S 3440 м²')
 				+e.row.row
 					.col-sm-6.col-lg-4.col-xl-3
 						+workStatus('Стяжка пола', '22%', '#467CF4')
