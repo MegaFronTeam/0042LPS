@@ -340,7 +340,7 @@
 		// 	display: inline-flex;
 		// }
 	}
-	.start-date {
+	.startDate {
 		@include media-breakpoint-up(md) {
 			background-color: $light;
 			color: $body-color;
@@ -641,7 +641,7 @@
 		color: $success;
 	}
 }
-.start-date {
+.startDate {
 	padding: rem(11) rem(17);
 	border-radius: 60px;
 	background: rgba(0, 0, 0, 0.48);

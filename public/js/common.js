@@ -455,6 +455,90 @@ function eventHandler() {
 		$(this).toggleClass('active');
 	});
 
+
+	$('.dateRange-js').daterangepicker({
+		buttonClasses: 'btn',
+		applyButtonClasses: 'btn-warning',
+		cancelButtonClasses: 'btn-light',
+		locale: {
+			"format": "DD.MM.YYYY",
+			"separator": " - ",
+			"applyLabel": "Применить",
+			"cancelLabel": "Сбросить",
+			"fromLabel": "с",
+			"toLabel": "по",
+			// "customRangeLabel": "Custom",
+			// "weekLabel": "W",
+			"daysOfWeek": [
+				"Вс",
+				"Пн",
+				"Вт",
+				"Ср",
+				"Чт",
+				"Пт",
+				"Сб"
+			],
+			"monthNames": [
+				"Январь",
+				"Февраль",
+				"Март",
+				"Апрель",
+				"Май",
+				"Июнь",
+				"Июль",
+				"Август",
+				"Сентябрь",
+				"Октябрь",
+				"Ноябрь",
+				"Декабрь"
+			],
+			"firstDay": 1
+		},
+	},
+	);
+
+	$('.dateRange-js').on('cancel.daterangepicker', function (ev, picker) {
+		//do something, like clearing an input
+		$('.dateRange-js').val('');
+	});
+
+	$('.dateSingle-js').daterangepicker({
+		singleDatePicker: true,
+		locale: {
+			"format": "DD.MM.YYYY",
+			"separator": " - ",
+			"applyLabel": "Применить",
+			"cancelLabel": "Сбросить",
+			"fromLabel": "с",
+			"toLabel": "по",
+			// "customRangeLabel": "Custom",
+			// "weekLabel": "W",
+			"daysOfWeek": [
+				"Вс",
+				"Пн",
+				"Вт",
+				"Ср",
+				"Чт",
+				"Пт",
+				"Сб"
+			],
+			"monthNames": [
+				"Январь",
+				"Февраль",
+				"Март",
+				"Апрель",
+				"Май",
+				"Июнь",
+				"Июль",
+				"Август",
+				"Сентябрь",
+				"Октябрь",
+				"Ноябрь",
+				"Декабрь"
+			],
+			"firstDay": 1
+		},
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
