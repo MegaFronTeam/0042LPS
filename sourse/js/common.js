@@ -418,7 +418,7 @@ function eventHandler() {
 		},
 	}
 
-	const swiperbreadcrumb = new Swiper('.breadcrumb-slider--js', {
+	const swiperbreadcrumb = new Swiper('.freeMode-slider--js', {
 		slidesPerView: 'auto',
 		freeMode: true,
 		watchOverflow: true,

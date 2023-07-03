@@ -802,38 +802,50 @@
 	}
 }
 
-.toggleBtn {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	--bs-btn-padding-x: #{rem(23)};
-	--bs-btn-padding-y: #{rem(5)};
-	--bs-btn-font-size: #{rem(16)};
-	--bs-btn-font-weight: 400;
-	--bs-btn-line-height: calc(20 / 16);
-	--bs-btn-border-radius: #{rem(60)};
-
-	--bs-btn-color: #{$body-color};
-	--bs-btn-bg: transparent;
-	--bs-btn-border-color: #{$gray-200};
-	--bs-btn-hover-color: #{$body-color};
-	--bs-btn-hover-bg: transparent;
-	--bs-btn-hover-border-color: #{$warning};
-	--bs-btn-active-color: #{$body-color};
-	--bs-btn-active-bg: #{$warning};
-	--bs-btn-active-border-color: #{$warning};
+.toggle-block {
+	margin-right: rem(-6);
 	@include media-breakpoint-up(md) {
-		--bs-btn-padding-y: #{rem(11)};
-		--bs-btn-font-size: #{rem(20)};
-		--bs-btn-line-height: calc(24 / 20);
+		margin-right: rem(-13);
 	}
-	&.active {
-		background-color: var(--bs-btn-active-bg);
-		border-color: var(--bs-btn-active-border-color);
+	.swiper-slide {
+		width: auto;
 	}
-	.icon {
-		font-size: rem(24);
-		margin-right: rem(12);
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		--bs-btn-padding-x: #{rem(23)};
+		--bs-btn-padding-y: #{rem(5)};
+		--bs-btn-font-size: #{rem(16)};
+		--bs-btn-font-weight: 400;
+		--bs-btn-line-height: calc(20 / 16);
+		--bs-btn-border-radius: #{rem(60)};
+	
+		--bs-btn-color: #{$body-color};
+		--bs-btn-bg: transparent;
+		--bs-btn-border-color: #{$gray-200};
+		--bs-btn-hover-color: #{$body-color};
+		--bs-btn-hover-bg: transparent;
+		--bs-btn-hover-border-color: #{$warning};
+		--bs-btn-active-color: #{$body-color};
+		--bs-btn-active-bg: #{$warning};
+		--bs-btn-active-border-color: #{$warning};
+		margin-right: rem(6);
+		@include media-breakpoint-up(md) {
+			--bs-btn-padding-y: #{rem(11)};
+			--bs-btn-font-size: #{rem(20)};
+			--bs-btn-line-height: calc(24 / 20);
+
+			margin-right: rem(13);
+		}
+		&.active {
+			background-color: var(--bs-btn-active-bg);
+			border-color: var(--bs-btn-active-border-color);
+		}
+		.icon {
+			font-size: rem(24);
+			margin-right: rem(12);
+		}
 	}
 }
 
@@ -920,9 +932,9 @@
 
 .details-with-toggle {
 	position: relative;
-	@include media-breakpoint-down(md) {
-		margin-bottom: rem(42);
-	}
+	// @include media-breakpoint-down(md) {
+	// 	margin-bottom: rem(42);
+	// }
 	&__wrap {
 		display: none;
 		flex-direction: column;
@@ -1021,7 +1033,7 @@
 		--bs-btn-active-border-color: transparent;
 		--bs-btn-active-bg: #fff;
 		--bs-btn-active-color: #{$body-color};
-		box-shadow: var(--bs-btn-box-shadow);
+		box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
 		display: flex;
 		align-items: center;
 		.icon {
@@ -1098,5 +1110,82 @@
 	}
 	.select2-container--open .select2-dropdown {
     left: 15px;
+	}
+}
+
+.main-table {
+	overflow-x: auto;
+	overflow-y: hidden;
+	background-color: #fff;
+	table {
+		width: 100%;
+		th {
+			@include text-14;
+			padding: rem(12);
+			background-color: $gray-100;
+			font-weight: 500;
+			line-height: 1.4;
+			@include media-breakpoint-up(md) {
+				padding: rem(20) rem(3);
+			}
+			&:first-child {
+				@include media-breakpoint-up(md) {
+					padding-left: rem(48);
+				}
+			}
+			&:last-child {
+				@include media-breakpoint-up(md) {
+					padding-right: rem(48);
+				}
+			}
+			&:nth-child(1) {
+				width: rem(480);
+			}
+			&:nth-child(2) {
+				width: rem(86);
+			}
+			&:nth-child(3) {
+				width: rem(86);
+			}
+			&:nth-child(4) {
+				width: rem(86);
+			}
+			&:nth-child(5) {
+				width: rem(86);
+			}
+			&:nth-child(6) {
+				width: rem(136);
+			}
+			&:nth-child(7) {
+				width: rem(144);
+			}
+			&:nth-child(8) {
+				width: rem(96);
+			}
+		}
+		td {
+			&.add-more {
+				padding: rem(12);
+				@include media-breakpoint-up(md) {
+					padding: rem(20) rem(48) rem(12);
+				}
+			}
+		}
+	}
+	&__add-new {
+		font-size: rem(14);
+		font-weight: 500;
+		line-height: 1.25;
+		color: $gray-600;
+		.icon {
+			font-size: rem(20);
+			margin-right: rem(12);
+		}
+		&:hover {
+			color: $primary;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
 	}
 }

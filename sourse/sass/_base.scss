@@ -512,7 +512,6 @@ iframe {
 // 	--bs-btn-color: #{$body-color};
 // }
 
-.btn,
 .form-control,
 .form-select {
 	box-shadow: none !important;
@@ -577,7 +576,7 @@ p {
 	}
 }
 
-.breadcrumb-slider--js {
+.freeMode-slider--js{
 	overflow: visible;
 	@include media-breakpoint-down(md) {
 		max-width: max-content;

@@ -76,7 +76,7 @@
 						<div class="container-fluid">
 							<div class="page-head__row row align-items-center">
 								<div class="col">
-									<nav class="swiper breadcrumb-slider--js" aria-label="breadcrumb">
+									<nav class="swiper freeMode-slider--js" aria-label="breadcrumb">
 										<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
 											<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Объекты</span>
 													<meta itemprop="position" content="1"/></a></li>
@@ -370,15 +370,75 @@
 					</div>
 					<!-- end sPageInfo-->
 					<!-- start sMainInfo-->
-					<section class="sMainInfo section" id="sMainInfo">
-						<div class="container">
-							<div class="section-title text-center">
-								<h2>sMainInfo</h2>
+					<div class="sMainInfo section" id="sMainInfo">
+						<div class="container-fluid">
+							<div class="sMainInfo__wrap">
+								<div class="toggle-block swiper freeMode-slider freeMode-slider--js">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light active" href="#">
+												<svg class="icon icon-list ">
+													<use xlink:href="img/svg/sprite.svg#list"></use>
+												</svg><span>Список</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-tasks ">
+													<use xlink:href="img/svg/sprite.svg#tasks"></use>
+												</svg><span>Задачи</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-gantt ">
+													<use xlink:href="img/svg/sprite.svg#gantt"></use>
+												</svg><span>График работ</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-info ">
+													<use xlink:href="img/svg/sprite.svg#info"></use>
+												</svg><span>Информация</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-pen ">
+													<use xlink:href="img/svg/sprite.svg#pen"></use>
+												</svg><span>Заметки</span>
+											</a>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="sMainInfo__row row">
+							<div class="main-table">
+								<table>
+									<tr>
+										<th>Объект</th>
+										<th>Под</th>
+										<th>Эт</th>
+										<th>Кв</th>
+										<th>Пом</th>
+										<th>Площ</th>
+										<th>Задачи</th>
+										<th>Прогресс</th>
+										<th>Сроки</th>
+									</tr>
+									<tr>
+										<td class="add-more" colspan="9">
+											<a class="main-table__add-new" href="#">
+												<svg class="icon icon-add ">
+													<use xlink:href="img/svg/sprite.svg#add"></use>
+												</svg>Добавить дом
+											</a>
+										</td>
+									</tr>
+								</table>
 							</div>
 						</div>
-					</section>
+					</div>
 					<!-- end sMainInfo-->
 				</main>
 				<div class="bottom-control-bar">

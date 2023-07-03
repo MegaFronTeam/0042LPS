@@ -96,7 +96,7 @@
 		}
 	}
 	.details-with-toggle {
-		z-index: 1;
+		z-index: 6;
 		&__item {
 			@include media-breakpoint-up(md) {
 				color: #fff;

@@ -1,9 +1,18 @@
 mixin sMainInfo(data)
 	// start sMainInfo
-	+b.SECTION.sMainInfo.section#sMainInfo&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sMainInfo
-				
-			+e.row.row
+	+b.sMainInfo.section#sMainInfo&attributes(attributes)
+		.container-fluid
+			+e.wrap
+				+toggleBlock()
+					.swiper-slide
+						+toggleBtn('list', `Список`).active
+					.swiper-slide
+						+toggleBtn('tasks', `Задачи`)
+					.swiper-slide
+						+toggleBtn('gantt', `График работ`)
+					.swiper-slide
+						+toggleBtn('info', `Информация`)
+					.swiper-slide
+						+toggleBtn('pen', `Заметки`)
+			+mainTable()
 	// end sMainInfo

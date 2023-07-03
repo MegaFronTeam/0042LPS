@@ -139,28 +139,28 @@ mixin detailsWithToggle()
 			+icon('chevron-down')
 
 mixin toggleBlock()
-	+b.toggle-block
-		+e.row.row
+	mixin toggleBtn(icon, text)
+		+e.btn.btn.btn-outline-light(href="#")&attributes(attributes)
+			+icon(icon)
+			span!= text
+	+b.toggle-block.swiper.freeMode-slider--js
+		.swiper-wrapper
 			if block
 				block
 			else
-				.col-auto
+				.swiper-slide
 					+toggleBtn('list', `Список`).active
-				.col-auto
+				.swiper-slide
 					+toggleBtn('tile', `Шахматка`)
-				.col-auto
+				.swiper-slide
 					+toggleBtn('tasks', `Задачи`)
-				.col-auto
+				.swiper-slide
 					+toggleBtn('gantt', `График работ`)
-				.col-auto
+				.swiper-slide
 					+toggleBtn('info', `Информация`)
-				.col-auto
+				.swiper-slide
 					+toggleBtn('pen', `Заметки`)
 
-mixin toggleBtn(icon, text)
-	+b.toggleBtn.btn.btn-outline-light(href="#")&attributes(attributes)
-		+icon(icon)
-		span!= text
 	
 mixin bottomControlBar()
 	+b.bottom-control-bar
@@ -180,6 +180,34 @@ mixin bottomControlBar()
 					+icon('delete')
 					span Удалить
 
+mixin selectStatus()
+	+b.select-status
+		select(class="custom-select--js")
+			option(data-img='img/svg/play.svg') В работе
+			option(data-img='img/svg/done.svg') Планирование
+			option(data-img='img/svg/time.svg') Завершен
+			option(data-img='img/svg/archive.svg') Архив
+
+mixin mainTable()
+	+b.main-table
+		table
+			tr
+				th Объект
+				th Под
+				th Эт
+				th Кв
+				th Пом
+				th Площ
+				th Задачи
+				th Прогресс
+				th Сроки
+			tr
+				td(colspan='9').add-more
+					+e.add-new(href='#')
+						+icon('add')
+						| Добавить дом
+
+//- Always at bottom of the file
 
 mixin circularProgressBar(precent, status='Прогресс')
 	.circular-progress-bar(style=`--percent: ${status == 'Прогресс' ? '34' : status == 'Планирование' ? '0' : '100' }; --bgColor: ${status == 'Прогресс' ? '#467CF4' : status == 'Планирование' ? '#9A52DF' : status == 'Архив' ? '#8B9298' : '#1DBA6F'};`)
@@ -198,11 +226,3 @@ mixin circularProgressBar(precent, status='Прогресс')
 					else 
 						+icon('done')
 				p!= status
-
-mixin selectStatus()
-	+b.select-status
-		select(class="custom-select--js")
-			option(data-img='img/svg/play.svg') В работе
-			option(data-img='img/svg/done.svg') Планирование
-			option(data-img='img/svg/time.svg') Завершен
-			option(data-img='img/svg/archive.svg') Архив
