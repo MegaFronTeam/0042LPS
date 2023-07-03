@@ -5,8 +5,10 @@ mixin sPageInfo(data)
 			+e.wrap.bg-wrap
 				+img('img/service-1.jpg', 'bg').picture-bg
 				+e.row.row
-					.col-md
-						h1 ЖК видный
+					+e.section-title-col.col-md
+						.section-title
+							h1 ЖК видный
+							+selectStatus
 					.col-md-auto
 						+e.inner-wrap
 							+taskStat
@@ -14,7 +16,7 @@ mixin sPageInfo(data)
 				+e.body-row.row
 					.col-md
 						+circularProgressBar(34)
-						+detailsWithToggle()
+						+detailsWithToggle().d-none.d-md-block
 							mixin item(key, val, warning)
 								+e.col.col-md
 									+e.item
@@ -49,4 +51,25 @@ mixin sPageInfo(data)
 								+workStatus('Затирка', '100%', '#E94410').disabled
 							.col-12
 								+workStatus('Плинтус', '3%', '#8B9298').disabled
+			+detailsWithToggle().d-md-none
+				mixin item(key, val, warning)
+					+e.col.col-md
+						+e.item
+							span!= key
+							p(class=(warning ? 'text-danger' : ''))
+								if warning
+									+icon("warning")
+								!= val
+				+e.stats-row.row
+					+item('Срок', '90дней')
+					+item('До конца', '76 дней')
+					+item('План', '11 фев 24')
+					+item('Факт', `14 фев 24`, true)
+					+item('График', '3 дн', true)
+				+e.stats-row--without-span.row
+					+item('Дома', '3 дом')
+					+item('Подъезды', '12 под')
+					+item('Квартиры', '728 кв')
+					+item('Помещения', '1350 пом')
+					+item('Площадь', 'S 3440 м²')
 	// end sPageInfo

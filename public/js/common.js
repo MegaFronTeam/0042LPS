@@ -440,15 +440,40 @@ function eventHandler() {
 
 	$('[data-bs-toggle="tooltip"]').tooltip();
 
-	let select2Wrappers = document.querySelectorAll('.custom-select-wrap');
+	let select2Wrappers = document.querySelectorAll('.basic-select--js');
 	if (select2Wrappers.length > 0) {
 		for (const select2Wrapp of select2Wrappers) {
-			$(select2Wrapp.querySelector('.basic-select--js')).select2({
+			$(select2Wrapp).select2({
 				minimumResultsForSearch: Infinity,
-				dropdownParent: $(select2Wrapp)
+				dropdownParent: $(select2Wrapp).parent()
 			});
 		}
 	};
+
+	$('.custom-select--js').select2({
+		minimumResultsForSearch: -1,
+		// dropdownParent: $('.custom-select--js').parent(),
+		// templateResult: format,
+		templateSelection: format,
+		escapeMarkup: function(m) {
+			return m;
+		},
+	}).trigger("change");
+
+	function format(state) {
+		if (!state.id) return state.text; // optgroup
+		document.querySelector('.select2-selection--single').classList.remove('select2-selection--planning', 'select2-selection--in-work', 'select2-selection--done', 'select2-selection--arhive');
+		if(state.id == 'В работе') {
+			document.querySelector('.select2-selection--single').classList.add('select2-selection--in-work')
+		} else if (state.id == 'Планирование') {
+			document.querySelector('.select2-selection--single').classList.add('select2-selection--planning')
+		} else if (state.id == 'Завершен') {
+			document.querySelector('.select2-selection--single').classList.add('select2-selection--done')
+		} else if (state.id == 'Архив') {
+			document.querySelector('.select2-selection--single').classList.add('select2-selection--arhive')
+		}
+		return '<img src="' + state.element.dataset.img + '"/>' + state.text;
+	}
 
 	$('.details-with-toggle--js .details-with-toggle__btn-more').on('click', function () {
 		$('.details-with-toggle__wrap').slideToggle("fast");

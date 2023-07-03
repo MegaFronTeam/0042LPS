@@ -7,6 +7,7 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sPageInfo/_sPageInfo.pug
+include ../blocks/sMainInfo/_sMainInfo.pug
 
 block variables
 	- let  mainPage= 'main-page page-with-control-bar' 
@@ -26,4 +27,5 @@ block pagecontent
 			items: ['Объекты', 'ЖК видный']
 		}).mb-0
 		+sPageInfo
+		+sMainInfo
 	+bottomControlBar()

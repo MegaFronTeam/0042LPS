@@ -101,8 +101,18 @@
 						<div class="sPageInfo__continer container-fluid">
 							<div class="sPageInfo__wrap bg-wrap"><img class="object-fit-js picture-bg" src="img/service-1.jpg" alt="" loading="lazy"/>
 								<div class="sPageInfo__row row">
-									<div class="col-md">
-										<h1>ЖК видный</h1>
+									<div class="sPageInfo__section-title-col col-md">
+										<div class="section-title">
+											<h1>ЖК видный</h1>
+											<div class="select-status">
+												<select class="custom-select--js">
+													<option data-img="img/svg/play.svg">В работе</option>
+													<option data-img="img/svg/done.svg">Планирование</option>
+													<option data-img="img/svg/time.svg">Завершен</option>
+													<option data-img="img/svg/archive.svg">Архив</option>
+												</select>
+											</div>
+										</div>
 									</div>
 									<div class="col-md-auto">
 										<div class="sPageInfo__inner-wrap">
@@ -133,7 +143,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="details-with-toggle details-with-toggle--js">
+										<div class="details-with-toggle details-with-toggle--js d-none d-md-block">
 											<div class="details-with-toggle__wrap">
 												<div class="details-with-toggle__stats-row row">
 													<div class="details-with-toggle__col col-md">
@@ -275,14 +285,106 @@
 									</div>
 								</div>
 							</div>
+							<div class="details-with-toggle details-with-toggle--js d-md-none">
+								<div class="details-with-toggle__wrap">
+									<div class="details-with-toggle__stats-row row">
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>Срок</span>
+												<p>90дней
+												</p>
+											</div>
+										</div>
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>До конца</span>
+												<p>76 дней
+												</p>
+											</div>
+										</div>
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>План</span>
+												<p>11 фев 24
+												</p>
+											</div>
+										</div>
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>Факт</span>
+												<p class="text-danger">
+													<svg class="icon icon-warning ">
+														<use xlink:href="img/svg/sprite.svg#warning"></use>
+													</svg>14 фев 24
+												</p>
+											</div>
+										</div>
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>График</span>
+												<p class="text-danger">
+													<svg class="icon icon-warning ">
+														<use xlink:href="img/svg/sprite.svg#warning"></use>
+													</svg>3 дн
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="details-with-toggle__stats-row details-with-toggle__stats-row--without-span row">
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>Дома</span>
+												<p>3 дом
+												</p>
+											</div>
+										</div>
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>Подъезды</span>
+												<p>12 под
+												</p>
+											</div>
+										</div>
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>Квартиры</span>
+												<p>728 кв
+												</p>
+											</div>
+										</div>
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>Помещения</span>
+												<p>1350 пом
+												</p>
+											</div>
+										</div>
+										<div class="details-with-toggle__col col-md">
+											<div class="details-with-toggle__item"><span>Площадь</span>
+												<p>S 3440 м²
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<button class="details-with-toggle__btn-more btn d-md-none">
+									<div class="show">Подробнее</div>
+									<div class="hide">Свернуть</div>
+									<svg class="icon icon-chevron-down ">
+										<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+									</svg>
+								</button>
+							</div>
 						</div>
 					</div>
 					<!-- end sPageInfo-->
+					<!-- start sMainInfo-->
+					<section class="sMainInfo section" id="sMainInfo">
+						<div class="container">
+							<div class="section-title text-center">
+								<h2>sMainInfo</h2>
+							</div>
+							<div class="sMainInfo__row row">
+							</div>
+						</div>
+					</section>
+					<!-- end sMainInfo-->
 				</main>
 				<div class="bottom-control-bar">
 					<div class="row">
 						<div class="col me-auto">
-							<p>Выбрано: 1&nbsp;элемент(-ов)</p>
+							<p>Выбрано: 1 элемент(–ов)</p>
 						</div>
 						<div class="col-auto">
 							<a class="bottom-control-bar__btn btn btn-dark" href="#">

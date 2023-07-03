@@ -588,9 +588,9 @@
 }
 
 .select2 {
-	&-container {
-		left: 0 !important;
-	}
+	// &-container {
+	// 	left: 0 !important;
+	// }
 	&-dropdown {
 		border: none;
 		top: rem(12);
@@ -1047,5 +1047,56 @@
 				transform: rotateX(180deg);
 			}
 		}
+	}
+}
+
+.select-status {
+	position: relative;
+	.select2 {
+		width: max-content !important;
+		&-container--default {
+			.select2-selection {
+				&--single {
+					--bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.9647 6.82078C15.9461 6.76927 15.9308 6.7228 15.9306 6.71751C15.9294 6.68417 15.3403 6.11764 15.2681 6.08044C15.0826 5.98473 14.8178 5.98297 14.6313 6.0762C14.5925 6.09563 13.5361 7.1349 12.2838 8.38566L10.007 10.6598L7.71846 8.37438C5.18178 5.84117 5.36048 5.99957 5.04288 6.00301C4.8188 6.00545 4.71705 6.06644 4.39373 6.39205C4.00811 6.78039 3.91783 7.04701 4.07022 7.34755C4.14711 7.49916 9.60044 12.9333 9.73686 12.9942C9.88838 13.0619 10.1388 13.0658 10.2762 13.0026C10.4258 12.9338 15.8704 7.49036 15.9441 7.33584C16.0098 7.19841 16.0188 6.97103 15.9647 6.82078Z' fill='white'/%3E%3C/svg%3E%0A");
+					background-size: 20px;
+					border: none;
+					background-color: $primary;
+					padding: rem(4) rem(32) rem(4) rem(12);
+					img {
+						width: 100%;
+						max-width: rem(20);
+						margin-right: rem(6);
+						flex: 0 0 auto;
+					}
+					.select2-selection__rendered {
+						color: #fff;
+						font-weight: 500;
+						font-size: rem(16);
+						margin-right: rem(6);
+						display: flex;
+						align-items: center;
+					}
+				}
+				&--in-work {
+					background-color: $primary;
+				}
+				&--planning {
+					background-color: $purple;
+				}
+				&--done {
+					background-color: $success;
+				}
+				&--arhive {
+					background-color: $secondary;
+				}
+			}
+		}
+	}
+	.select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
+		border-bottom-left-radius: rem(6);
+    border-bottom-right-radius: rem(6);
+	}
+	.select2-container--open .select2-dropdown {
+    left: 15px;
 	}
 }
