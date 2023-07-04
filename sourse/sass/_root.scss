@@ -1,7 +1,8 @@
 
 :root {
 	--animate-delay: 1.2s;
-	--bs-body-font-size: #{$em-base};
+	// --bs-body-font-size: #{$em-base};
+	--bs-body-font-size: 14px;
 	--asideW: 0px;
 	@include media-breakpoint-up(md) {
 
@@ -13,7 +14,9 @@
 	@include media-breakpoint-up(lg) {
 		--asideW: #{rem(72)};
 	}
-
+	@media (min-width: 1470px) {
+		--bs-body-font-size: #{$em-base};
+	}
 	--sPT: 0;
 	--sPB: 0;
 	--sTPB: #{rem(40 * .5)};

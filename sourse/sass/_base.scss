@@ -554,7 +554,7 @@ iframe {
 
 p {
 	font-size: rem(14);
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(xxl) {
 		font-size: rem(16);
 	}
 }
