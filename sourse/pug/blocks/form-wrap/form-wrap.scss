@@ -34,6 +34,14 @@
 }
 
 // 
+
+.custom-input {
+	&__input {
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}
 @include media-breakpoint-up(xl) {}
 
 @include media-breakpoint-up(lg) {}
