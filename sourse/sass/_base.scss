@@ -874,7 +874,7 @@ td:not(:first-child) .sMainInfo__line{
 }
 
 .panel-body{
-	@include media-breakpoint-up(ьв) {
+	@include media-breakpoint-up(md) {
 		padding: rem(48);
 	}
 	padding: 18px 12px;
@@ -925,6 +925,9 @@ td:not(:first-child) .sMainInfo__line{
 			font-size: rem(20);
 		}
 	}
+	.icon-file-list{
+			font-size: rem(24);
+	}
 }
 
 .upload-field{
@@ -932,6 +935,7 @@ td:not(:first-child) .sMainInfo__line{
 		display: flex;
 		align-items: center;
 		width: 100%;
+		cursor: pointer;
 		
 	}
 	.icon{
@@ -955,6 +959,56 @@ td:not(:first-child) .sMainInfo__line{
 		@include media-breakpoint-up(md) {
 			padding-top: rem(24);
 			padding-bottom: rem(24);
+		}
+	}
+}
+
+.plan-block{
+	img{
+		margin-bottom: rem(24);
+	}
+	&--mw{
+		max-width: rem(300);
+	}
+	p.row{
+		font-style: italic;
+	}
+}
+
+.note-block{
+	max-width: rem(648);
+	margin-bottom: rem(26);
+	&__input-wrap{
+		position: relative;
+		margin-bottom: rem(14);
+		button{
+			background: none !important;
+			border: none !important;
+			padding: 0;
+			position: absolute;
+			top: rem(16);
+			right: rem(18);
+			color: $secondary;
+			.icon{
+				font-size: rem(24);
+			}
+		}
+	}
+	&__head{
+		margin-bottom: rem(24);
+	}
+	&__content{
+		padding-left: calc(10px + #{rem(36)});
+	}
+	&__item{
+		padding-bottom: rem(16);
+		&:not(:last-child){
+			border-bottom: 1px solid #E2E2E2;
+
+			margin-bottom: rem(24);
+		}
+		strong{
+			font-weight: 500;
 		}
 	}
 }

@@ -155,31 +155,93 @@ mixin sMainInfo4(data)
 						+toggleBtn('pen', `Заметки`)
 			.panel-body
 				.row.row--xxl(style='--bs-gutter-y: 18px')
-					.col-md
-						h4 Инфо
-						table.table
-							tr 
-								td Дата создания
-								td.text-end 23 дек 23, 18:59
-							tr 
-								td Дата создания
-								td.text-end 23 дек 23, 18:59
-							tr 
-								td Дата создания
-								td.text-end 
-									.row.g-2.align-items-center.justify-content-end
-										.col-auto
-											.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") МИ
-										.col-auto Михаил Иванов
+					.col
+						.row.row--xxl(style='--bs-gutter-y: 18px')
+							.col-md
+								h4 Инфо
+								table.table
+									tr 
+										td Дата создания
+										td.text-end 23 дек 23, 18:59
+									tr 
+										td Дата создания
+										td.text-end 23 дек 23, 18:59
+									tr 
+										td Дата создания
+										td.text-end 
+											.row.g-2.align-items-center.justify-content-end
+												.col-auto
+													.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") МИ
+												.col-auto Михаил Иванов
 
-					.col-md
-						h4 Описание
-						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
-					.col-xl-4
-						h4 Файлы
-						+file-item('Сметная документация.xlsx') 
-						+file-item('Генплан.pdf') 
-						+file-item('Генплан2.pdf') 
-						+add-file()
+							.col-md
+								h4 Описание
+								p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+							.col-12
+								h4 Файлы
+								+file-item('Сметная документация.xlsx') 
+								+file-item('Генплан.pdf') 
+								+file-item('Генплан2.pdf') 
+								+add-file()
+					.col-lg-4
+						+b.plan-block--mw
+							h4 Чертеж
+							img.res-i(src="img/plan-d.png", alt="")
+							p.row
+								span.col Площадь
+								span.col-auto 32
+							p.row
+								span.col Площадь стен
+								span.col-auto 324
+							p.row
+								span.col Площадь потолка
+								span.col-auto 322
+							p.row
+								span.col Площадь пола
+								span.col-auto 322
+	// end sMainInfo
+
+	
+mixin sMainInfo5(data)
+	// start sMainInfo
+	+b.sMainInfo.section#sMainInfo&attributes(attributes)
+		.container-fluid
+			+e.wrap
+				+toggleBlock()
+					.swiper-slide
+						+toggleBtn('list', `Список`)
+					.swiper-slide
+						+toggleBtn('tasks', `Задачи`)
+					.swiper-slide
+						+toggleBtn('gantt', `График работ`)
+					.swiper-slide
+						+toggleBtn('info', `Информация`)
+					.swiper-slide
+						+toggleBtn('pen', `Заметки`).active
+			.panel-body
+				h4.mb-4 Заметки
+				+b.note-block
+					+e.head
+						.row(style="--bs-gutter-x:12px")
+							.col-auto
+								.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") МИ
+							.col
+								+e.input-wrap
+									textarea.form-control(placeholder="Написать заметку")
+									button
+										+icon("submit")
+								+add-file()
+					+e.body
+						- for (var x = 0; x < 3; x++)
+							+e.item
+								.row.align-items-center(style="--bs-gutter-x:12px").mb-3
+									.col-auto
+										.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") АИ
+									.col
+										strong.me-2 Антон Иванов
+										span.text-secondary 23 дек 23, 18:59
+								+e.content
+									p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+									+file-item('Сметная документация.xlsx','14 мб','false', 'f')
 	// end sMainInfo
 
