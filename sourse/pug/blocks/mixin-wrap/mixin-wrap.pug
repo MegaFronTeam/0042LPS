@@ -754,3 +754,10 @@ mixin circularProgressBar(precent, status='Прогресс')
 					else 
 						+icon('done')
 				p!= status
+
+mixin file-item(t, s='14 мб') 
+	+b.file-item
+		+e.name(href="#")= t
+		+e.size= s
+		+e.btn-delete
+			+icon("delete")
