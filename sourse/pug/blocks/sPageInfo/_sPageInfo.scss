@@ -97,6 +97,9 @@
 	}
 	.details-with-toggle {
 		z-index: 6;
+		@include media-breakpoint-down(md) {
+			padding-top: 0;
+		}
 		&__item {
 			@include media-breakpoint-up(md) {
 				color: #fff;

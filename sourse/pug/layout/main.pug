@@ -47,12 +47,15 @@ html(lang="ru")
 	//- 	.loaded_hiding {  opacity: 0; pointer-events: none;  } .loaded_hiding::before { display: none; }
 	//- body.loaded_hiding(class= mainPage) 
 	body(class=mainPage data-bg=bg)
-		.main-wrapper
-			+aside()
-			.main-center-wrap
-				block pagecontent
-					h3 content
-				+img('img/svg/page-bg.svg').page-bg
+		if createObject
+			block pagecontent
+		else
+			.main-wrapper
+				+aside()
+				.main-center-wrap
+					block pagecontent
+						h3 content
+					+img('img/svg/page-bg.svg').page-bg
 
 		+allcjs()
 		block scripts

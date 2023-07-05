@@ -13,7 +13,7 @@
 	&__header {
 		display: flex;
 		flex-direction: column-reverse;
-		gap: rem(36);
+		// gap: rem(36);
 		@include media-breakpoint-up(md) {
 			flex-direction: column;
 		}

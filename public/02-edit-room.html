@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Создание объекта</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox/fancybox.css" rel="stylesheet"/>
+		<link href="libs/select2/css/select2.min.css" rel="stylesheet"/>
+		<link href="libs/daterangepicker/daterangepicker.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body class="createObject-page" data-bg="main.jpg">
+		<main>
+			<!-- start sCreateObject-->
+			<div class="sCreateObject" id="sCreateObject">
+				<div class="sCreateObject__body">
+					<div class="sCreateObject__left-side">
+						<h2>Редактирование помещения</h2>
+						<div class="custom-input-wrap form-group"><input class="custom-input-wrap__input form-control" name="text" type="text" placeholder="Введите название"/>
+							<div class="custom-input-wrap__line">
+							</div>
+						</div>
+						<div class="sCreateObject__input-wrap form-group"><textarea class="sCreateObject__input form-control" name="textarea" placeholder="Введите описание объекта"></textarea>
+						</div>
+						<!-- +e.input-wrap-->
+					</div>
+					<div class="sCreateObject__right-side">
+						<div class="sCreateObject__row row">
+							<div class="col-12">
+								<div class="sCreateObject__item">
+									<p>Дата начала</p>
+									<div class="sCreateObject__date dateSingle-js">
+										<svg class="icon icon-calendar ">
+											<use xlink:href="img/svg/sprite.svg#calendar"></use>
+										</svg><span>Указать дату начала</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="sCreateObject__item">
+									<p>Дата завершения</p>
+									<div class="sCreateObject__date dateSingle-js">
+										<svg class="icon icon-calendar ">
+											<use xlink:href="img/svg/sprite.svg#calendar"></use>
+										</svg><span>Указать дату завершения</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="sCreateObject__item">
+									<p>Автор</p>
+									<div class="avatar-wrap">
+										<div class="avatar"><span>МИ</span><img src="img/avatar.jpg" alt="" loading="lazy"/>
+										</div><span>Михаил Иванов</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="sCreateObject__item">
+									<p>Дата создания</p><span>30 мар 23, 18:59</span>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="sCreateObject__item">
+									<p>Последнее изменение</p><span>30 мар 23, 18:59</span>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="sCreateObject__btn-row row">
+									<div class="col-auto">
+										<a class="sCreateObject__control-btn btn btn-light" href="#">
+											<svg class="icon icon-copy ">
+												<use xlink:href="img/svg/sprite.svg#copy"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="col-auto">
+										<a class="sCreateObject__control-btn sCreateObject__control-btn--delete btn btn-light" href="#">
+											<svg class="icon icon-delete ">
+												<use xlink:href="img/svg/sprite.svg#delete"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sCreateObject__footer">
+					<div class="sCreateObject__footer-row">
+						<a class="sCreateObject__btn btn btn-accent" href="#">Сохранить изменения
+						</a>
+						<a class="sCreateObject__btn btn btn-light" href="#">Отмена
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- end sCreateObject-->
+			<div class="close-btn">
+				<svg class="icon icon-close ">
+					<use xlink:href="img/svg/sprite.svg#close"></use>
+				</svg>
+			</div>
+		</main>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/select2/js/select2.min.js"> </script>
+		<script src="libs/daterangepicker/moment.min.js"> </script>
+		<script src="libs/daterangepicker/daterangepicker.js"> </script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

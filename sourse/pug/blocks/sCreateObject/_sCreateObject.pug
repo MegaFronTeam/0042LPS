@@ -1,0 +1,61 @@
+mixin sCreateObject(data)
+	// start sCreateObject
+	+b.sCreateObject#sCreateObject&attributes(attributes)
+		+e.body
+			+e.left-side
+				block
+			+e.right-side
+				+e.row.row
+					if data.status
+						.col-12.d-none.d-md-block
+							+e.item
+								p Статус проекта
+								+selectStatus()
+					if data.workers
+						.col-12.d-none.d-md-block
+							+e.item
+								p Бригада
+								a(href="#") Не выбрано
+					if data.startDate
+						.col-12
+							+e.item
+								p Дата начала
+								+e.date.dateSingle-js
+									+icon('calendar')
+									span Указать дату начала
+					if data.endDate
+						.col-12
+							+e.item
+								p Дата завершения
+								+e.date.dateSingle-js
+									+icon('calendar')
+									span Указать дату завершения
+					if data.author
+						.col-12
+							+e.item
+								p Автор
+								+avatar(true, false)
+					if data.dateCreate
+						.col-12
+							+e.item
+								p Дата создания
+								span 30 мар 23, 18:59
+					if data.dateEdit
+						.col-12
+							+e.item
+								p Последнее изменение
+								span 30 мар 23, 18:59
+					if data.btns
+						.col-12
+							+e.btn-row.row
+								.col-auto
+									+e.control-btn.btn.btn-light(href='#')
+										+icon('copy')
+								.col-auto
+									+e.control-btn--delete.btn.btn-light(href='#')
+										+icon('delete')
+		+e.footer
+			+e.footer-row
+				+e.btn.btn.btn-accent(href='#') Сохранить изменения
+				+e.btn.btn.btn-light(href='#') Отмена
+	// end sCreateObject

@@ -468,7 +468,6 @@ function eventHandler() {
 			return m;
 		},
 	}).trigger("change");
-
 	function format(state) {
 		if (!state.id) return state.text; // optgroup
 		document.querySelector('.select2-selection--single').classList.remove('select2-selection--planning', 'select2-selection--in-work', 'select2-selection--done', 'select2-selection--arhive');
@@ -483,6 +482,7 @@ function eventHandler() {
 		}
 		return '<img src="' + state.element.dataset.img + '"/>' + state.text;
 	}
+
 
 	$('.details-with-toggle--js .details-with-toggle__btn-more').on('click', function () {
 		$('.details-with-toggle__wrap').slideToggle("fast");
@@ -538,6 +538,8 @@ function eventHandler() {
 
 	$('.dateSingle-js').daterangepicker({
 		singleDatePicker: true,
+		autoApply: true,
+		buttonClasses: 'd-none',
 		locale: {
 			"format": "DD.MM.YYYY",
 			"separator": " - ",
@@ -572,6 +574,13 @@ function eventHandler() {
 			],
 			"firstDay": 1
 		},
+	});
+
+	$('.dateSingle-js').on('apply.daterangepicker', function(ev, picker) {
+		let months = ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
+		let month = picker.endDate.format('MM').replace('0', '');
+
+		ev.target.querySelector('span').innerText = picker.endDate.format(`DD ${months[month]} YY`);
 	});
 
 	let maintable = document.querySelector('.main-table');

@@ -87,9 +87,7 @@ mixin aside()
 					li: a(href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Документы")
 						+icon('file')
 						span Документы
-			+e.avatar(href="#")
-				span МИ
-				+img('img/avatar.jpg') 
+			+avatar()
 			+e.settings(href="#"): +icon('settings')
 
 mixin logo()
@@ -105,6 +103,18 @@ mixin logo()
 		</defs>
 	</svg>
 
+mixin avatar(name, link=true)
+	.avatar-wrap
+		if link
+			+b.avatar(href="#")
+				span МИ
+				+img('img/avatar.jpg') 
+		else
+			+b.avatar
+				span МИ
+				+img('img/avatar.jpg') 
+		if name
+			span Михаил Иванов
 
 mixin taskStat()
 	+b.task-stat

@@ -1,0 +1,35 @@
+extends ../layout/main.pug
+
+include ../blocks/sCreateObject/_sCreateObject.pug
+ 
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sCatalog/_sCatalog.pug
+
+block variables
+	- let  mainPage= 'createObject-page' 
+	- let  bg= 'main.jpg'
+	- let  createObject = true
+
+block title
+	- let  title= 'Создание объекта'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	main
+		+sCreateObject({
+			startDate: true,
+			endDate: true,
+			author: true,
+		})
+			h2 Создание помещения
+			+customInput('Введите название', 'text')
+			//- .d-md-none
+			//- 	+selectStatus()
+			+input('Введите описание объекта', 'textarea')
+		.close-btn: +icon('close')
+      
+
+
+
