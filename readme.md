@@ -6,3 +6,4 @@
 3. <https://megafronteam.github.io/0042LPS/public/01-3-house.html>
 4. <https://megafronteam.github.io/0042LPS/public/01-info-object-d.html>
 5. <https://megafronteam.github.io/0042LPS/public/01-room-info-d.html>
+6. <https://megafronteam.github.io/0042LPS/public/01-notes-d.html>

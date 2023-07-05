@@ -874,7 +874,7 @@ td:not(:first-child) .sMainInfo__line{
 }
 
 .panel-body{
-	@include media-breakpoint-up(ьв) {
+	@include media-breakpoint-up(md) {
 		padding: rem(48);
 	}
 	padding: 18px 12px;
@@ -941,5 +941,17 @@ td:not(:first-child) .sMainInfo__line{
 	&__file-name{
 		@include ellips;
 		max-width: calc(100% - #{rem(30)});
+	}
+}
+
+.plan-block{
+	img{
+		margin-bottom: rem(24);
+	}
+	&--mw{
+		max-width: rem(300);
+	}
+	p.row{
+		font-style: italic;
 	}
 }
