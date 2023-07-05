@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>01-info-object-d2</title>
+		<title>01-notes-d</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
@@ -397,14 +397,14 @@
 											</a>
 										</div>
 										<div class="swiper-slide">
-											<a class="toggle-block__btn btn btn-outline-light active" href="#">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
 												<svg class="icon icon-info ">
 													<use xlink:href="img/svg/sprite.svg#info"></use>
 												</svg><span>Информация</span>
 											</a>
 										</div>
 										<div class="swiper-slide">
-											<a class="toggle-block__btn btn btn-outline-light" href="#">
+											<a class="toggle-block__btn btn btn-outline-light active" href="#">
 												<svg class="icon icon-pen ">
 													<use xlink:href="img/svg/sprite.svg#pen"></use>
 												</svg><span>Заметки</span>
@@ -414,76 +414,92 @@
 								</div>
 							</div>
 							<div class="panel-body">
-								<div class="row row--xxl" style="--bs-gutter-y: 18px">
-									<div class="col-md">
-										<h4>Инфо</h4>
-										<table class="table">
-											<tr> 
-												<td>Дата создания</td>
-												<td class="text-end">23 дек 23, 18:59</td>
-											</tr>
-											<tr> 
-												<td>Дата создания</td>
-												<td class="text-end">23 дек 23, 18:59</td>
-											</tr>
-											<tr> 
-												<td>Дата создания</td>
-												<td class="text-end"> 
-													<div class="row g-2 align-items-center justify-content-end">
-														<div class="col-auto">
-															<div class="avatar-block avatar-block--sm" style="background: #467CF4; color: #fff">МИ</div>
-														</div>
-														<div class="col-auto">Михаил Иванов</div>
+								<h4 class="mb-4">Заметки</h4>
+								<div class="note-block">
+									<div class="note-block__head">
+										<div class="row" style="--bs-gutter-x:12px">
+											<div class="col-auto">
+												<div class="avatar-block avatar-block--sm" style="background: #467CF4; color: #fff">МИ</div>
+											</div>
+											<div class="col">
+												<div class="note-block__input-wrap">
+													<textarea class="form-control" placeholder="Написать заметку"></textarea>
+													<button>
+														<svg class="icon icon-submit ">
+															<use xlink:href="img/svg/sprite.svg#submit"></use>
+														</svg>
+													</button>
+												</div>
+												<div class="upload-field text-primary">
+													<label><span class="upload-field__btn"> 
+														<svg class="icon icon-attach ">
+															<use xlink:href="img/svg/sprite.svg#attach"></use>
+														</svg></span><input class="upload-field__input input-upload invisible" name="file" type="file"/><span class="upload-field__file-name"> Прикрепить файл</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="note-block__body">
+										<div class="note-block__item">
+											<div class="row align-items-center mb-3" style="--bs-gutter-x:12px">
+												<div class="col-auto">
+													<div class="avatar-block avatar-block--sm" style="background: #467CF4; color: #fff">АИ</div>
+												</div>
+												<div class="col"><strong class="me-2">Антон Иванов</strong><span class="text-secondary">23 дек 23, 18:59</span></div>
+											</div>
+											<div class="note-block__content">
+												<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
+												<div class="file-item">
+													<svg class="icon icon-file-list ">
+														<use xlink:href="img/svg/sprite.svg#file-list"></use>
+													</svg>
+													<a class="file-item__name" href="#">Сметная документация.xlsx
+													</a>
+													<div class="file-item__size">14 мб
 													</div>
-												</td>
-											</tr>
-										</table>
-									</div>
-									<div class="col-md">
-										<h4>Описание</h4>
-										<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
-									</div>
-									<div class="col-xl-4">
-										<h4>Файлы</h4>
-										<div class="file-item">
-											<a class="file-item__name" href="#">Сметная документация.xlsx
-											</a>
-											<div class="file-item__size">14 мб
-											</div>
-											<div class="file-item__btn-delete">
-												<svg class="icon icon-delete ">
-													<use xlink:href="img/svg/sprite.svg#delete"></use>
-												</svg>
+												</div>
 											</div>
 										</div>
-										<div class="file-item">
-											<a class="file-item__name" href="#">Генплан.pdf
-											</a>
-											<div class="file-item__size">14 мб
+										<div class="note-block__item">
+											<div class="row align-items-center mb-3" style="--bs-gutter-x:12px">
+												<div class="col-auto">
+													<div class="avatar-block avatar-block--sm" style="background: #467CF4; color: #fff">АИ</div>
+												</div>
+												<div class="col"><strong class="me-2">Антон Иванов</strong><span class="text-secondary">23 дек 23, 18:59</span></div>
 											</div>
-											<div class="file-item__btn-delete">
-												<svg class="icon icon-delete ">
-													<use xlink:href="img/svg/sprite.svg#delete"></use>
-												</svg>
-											</div>
-										</div>
-										<div class="file-item">
-											<a class="file-item__name" href="#">Генплан2.pdf
-											</a>
-											<div class="file-item__size">14 мб
-											</div>
-											<div class="file-item__btn-delete">
-												<svg class="icon icon-delete ">
-													<use xlink:href="img/svg/sprite.svg#delete"></use>
-												</svg>
+											<div class="note-block__content">
+												<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
+												<div class="file-item">
+													<svg class="icon icon-file-list ">
+														<use xlink:href="img/svg/sprite.svg#file-list"></use>
+													</svg>
+													<a class="file-item__name" href="#">Сметная документация.xlsx
+													</a>
+													<div class="file-item__size">14 мб
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="upload-field text-primary">
-											<label><span class="upload-field__btn"> 
-												<svg class="icon icon-attach ">
-													<use xlink:href="img/svg/sprite.svg#attach"></use>
-												</svg></span><input class="upload-field__input input-upload invisible" name="file" type="file"/><span class="upload-field__file-name"> Прикрепить файл</span>
-											</label>
+										<div class="note-block__item">
+											<div class="row align-items-center mb-3" style="--bs-gutter-x:12px">
+												<div class="col-auto">
+													<div class="avatar-block avatar-block--sm" style="background: #467CF4; color: #fff">АИ</div>
+												</div>
+												<div class="col"><strong class="me-2">Антон Иванов</strong><span class="text-secondary">23 дек 23, 18:59</span></div>
+											</div>
+											<div class="note-block__content">
+												<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
+												<div class="file-item">
+													<svg class="icon icon-file-list ">
+														<use xlink:href="img/svg/sprite.svg#file-list"></use>
+													</svg>
+													<a class="file-item__name" href="#">Сметная документация.xlsx
+													</a>
+													<div class="file-item__size">14 мб
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
