@@ -1,0 +1,31 @@
+extends ../layout/main.pug
+
+include ../blocks/sObject/_sObject.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sPageInfo/_sPageInfo.pug
+include ../blocks/sMainInfo/_sMainInfo.pug
+
+block variables
+	- let  mainPage= 'main-page page-with-control-bar' 
+	- let  bg= '01-2-object.jpg'
+
+block title
+	- let  title= 'Объект 01-2'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	main
+		+page-head({
+			edit: {
+				class: 'd-none d-md-block',
+			},
+			items: ['Объекты', 'ЖК видный']
+		}).mb-0
+		+sPageInfo
+		+sMainInfo2
+	+bottomControlBar()

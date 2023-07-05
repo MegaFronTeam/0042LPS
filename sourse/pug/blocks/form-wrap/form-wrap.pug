@@ -66,12 +66,12 @@ mixin in-c(typ="checkbox", text, name= typ )
 				+e.SPAN.text.form-check-label= text
  
 mixin add-file(n)
-	+b.add-file
+	+b.upload-field.text-primary
 		label
-			+e.INPUT.input(name='file', type='file')
 			+e.SPAN.btn 
-			+e.SPAN.text   Прикрепить резюме
-		+e.SPAN.filename 
+				+icon("attach")
+			+e.INPUT.input.input-upload.invisible(name='file', type='file')
+			+e.SPAN.file-name  Прикрепить файл
 
 
 mixin policy()

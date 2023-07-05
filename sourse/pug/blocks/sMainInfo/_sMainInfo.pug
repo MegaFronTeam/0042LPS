@@ -16,3 +16,170 @@ mixin sMainInfo(data)
 						+toggleBtn('pen', `Заметки`)
 			+mainTable()
 	// end sMainInfo
+mixin sMainInfo2(data)
+	// start sMainInfo
+	+b.sMainInfo.section#sMainInfo&attributes(attributes)
+		.container-fluid
+			+e.wrap
+				+toggleBlock()
+					.swiper-slide
+						+toggleBtn('list', `Список`)
+					.swiper-slide
+						+toggleBtn('tasks', `Задачи`)
+					.swiper-slide
+						+toggleBtn('gantt', `График работ`).active
+					.swiper-slide
+						+toggleBtn('info', `Информация`)
+					.swiper-slide
+						+toggleBtn('pen', `Заметки`)
+			.bg-white
+				.row(style="--bs-gutter-x:0")
+					.col-5
+						.main-table
+							table.table
+								thead
+									tr
+										th Работы 
+										th.text-end(colspan="2") Прогресс
+								tbody
+									mixin tr(t1,t2,t3)
+										tr
+											td
+												span&attributes(attributes)= t1
+											td.text-end!= t2
+											td.text-end!= t3 
+									+tr(`1. Пол`,`<span class="text-success">+3 дн</span>`,`88%`).h4
+									+tr(`1.1. Стяжка пола`,`<span class="text-danger">-3 дн</span>`,`67%`)
+									+tr(`1.2. Затирка`,`<span class="text-secondary">0 дн</span>`,`13%`)
+									+tr(`2. Стены`,`<span class="text-success">+3 дн</span>`,`88%`).text-primary.h4
+									+tr(`2.1. Установка дверей`,`<span class="text-danger">-3 дн</span>`,`67%`)
+									+tr(`2.2. Штукатурка стен`,`<span class="text-secondary">0 дн</span>`,`100%`).text-secondary
+									+tr(`3. Потолок`,`<span class="text-success">+3 дн</span>`,`88%`).h4
+									+tr(`3.1. Натяжка потолка`,`<span class="text-danger">-3 дн</span>`,`67%`)
+					.col-7
+						.main-table.main-table--calendar
+							.main-table__head
+								| Апрель 2023
+							table.table
+								thead
+									tr
+										- for (var x = 1; x <= 31; x++)
+											th
+												if (x % 7 == 0)
+													span.text-danger= x
+												else
+													= x
+								tbody
+									mixin ttr(st, w1, w2)
+										tr
+											- for (var x = 1; x <= 31; x++)
+												td
+													.td-inner
+														if x == st
+															- let styl = `--w1: ${w1}; --w2: ${w2}; --bg:#467CF4 `;
+															+e.line(style= styl)
+									+ttr(1,2, '70%')
+									+ttr(2,13, '60%')
+									+ttr(5,13, '7%')
+									+ttr(10,13, '30%')
+									+ttr(6,13, '20%')
+									+ttr(1,13, '10%')
+									+ttr(24,13, '40%')
+									+ttr(14,13, '30%')
+	// end sMainInfo
+
+	
+mixin sMainInfo3(data)
+	// start sMainInfo
+	+b.sMainInfo.section#sMainInfo&attributes(attributes)
+		.container-fluid
+			+e.wrap
+				+toggleBlock()
+					.swiper-slide
+						+toggleBtn('list', `Список`)
+					.swiper-slide
+						+toggleBtn('tasks', `Задачи`)
+					.swiper-slide
+						+toggleBtn('gantt', `График работ`)
+					.swiper-slide
+						+toggleBtn('info', `Информация`).active
+					.swiper-slide
+						+toggleBtn('pen', `Заметки`)
+			.panel-body
+				.row.row--xxl(style='--bs-gutter-y: 18px')
+					.col-md
+						h4 Инфо
+						table.table
+							tr 
+								td Дата создания
+								td.text-end 23 дек 23, 18:59
+							tr 
+								td Дата создания
+								td.text-end 23 дек 23, 18:59
+							tr 
+								td Дата создания
+								td.text-end 
+									.row.g-2.align-items-center.justify-content-end
+										.col-auto
+											.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") МИ
+										.col-auto Михаил Иванов
+
+					.col-md
+						h4 Описание
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+					.col-xl-4
+						h4 Файлы
+						+file-item('Сметная документация.xlsx') 
+						+file-item('Генплан.pdf') 
+						+file-item('Генплан2.pdf') 
+						+add-file()
+	// end sMainInfo
+
+
+	
+mixin sMainInfo4(data)
+	// start sMainInfo
+	+b.sMainInfo.section#sMainInfo&attributes(attributes)
+		.container-fluid
+			+e.wrap
+				+toggleBlock()
+					.swiper-slide
+						+toggleBtn('list', `Список`)
+					.swiper-slide
+						+toggleBtn('tasks', `Задачи`)
+					.swiper-slide
+						+toggleBtn('gantt', `График работ`)
+					.swiper-slide
+						+toggleBtn('info', `Информация`).active
+					.swiper-slide
+						+toggleBtn('pen', `Заметки`)
+			.panel-body
+				.row.row--xxl(style='--bs-gutter-y: 18px')
+					.col-md
+						h4 Инфо
+						table.table
+							tr 
+								td Дата создания
+								td.text-end 23 дек 23, 18:59
+							tr 
+								td Дата создания
+								td.text-end 23 дек 23, 18:59
+							tr 
+								td Дата создания
+								td.text-end 
+									.row.g-2.align-items-center.justify-content-end
+										.col-auto
+											.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") МИ
+										.col-auto Михаил Иванов
+
+					.col-md
+						h4 Описание
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+					.col-xl-4
+						h4 Файлы
+						+file-item('Сметная документация.xlsx') 
+						+file-item('Генплан.pdf') 
+						+file-item('Генплан2.pdf') 
+						+add-file()
+	// end sMainInfo
+

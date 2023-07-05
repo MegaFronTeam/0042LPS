@@ -365,7 +365,16 @@ function eventHandler() {
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 
-	// JSCCommon.CustomInputFile(); 
+	function inputFile() {
+		let uploadField = document.querySelectorAll('.upload-field');
+		if (uploadField) {
+			for (let i = 0; i < uploadField.length; i++) {
+				let inputFile = uploadField[i].querySelector('.input-upload');
+				inputFile.addEventListener('change', () => uploadField[i].querySelector('.upload-field__file-name').innerHTML = inputFile.files[0].name);
+			}
+		}
+	}
+	inputFile();
 	var x = window.location.host;
 	let screenName;
 	screenName = 'screen/' + document.body.dataset.bg;
