@@ -18,7 +18,7 @@ mixin sPageInfo(data)
 						+circularProgressBar(34)
 						+detailsWithToggle().d-none.d-md-block
 							mixin item(key, val, warning)
-								+e.col.col-md
+								+e.col.col-md-3.col-xl
 									+e.item
 										span!= key
 										p(class=(warning ? 'text-danger' : ''))
@@ -37,7 +37,7 @@ mixin sPageInfo(data)
 								+item('Квартиры', '728 кв')
 								+item('Помещения', '1350 пом')
 								+item('Площадь', 'S 3440 м²')
-					+e.col.col-md-auto
+					+e.col.col-md-5.col-xxl-auto
 						+e.inner-row.row
 							.col-12
 								+workStatus('Стяжка пола', '22%', '#467CF4')

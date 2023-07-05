@@ -573,6 +573,21 @@ function eventHandler() {
 			"firstDay": 1
 		},
 	});
+
+	let maintable = document.querySelector('.main-table');
+	if(maintable) {
+		let toggleBtnsInnerLevel = maintable.querySelectorAll('.main-table__toggle-dropdown');
+		toggleBtnsInnerLevel.forEach(toggleBtn => {
+			toggleBtn.addEventListener('click', function(e) {
+				e.preventDefault();
+				if (this.closest('tr').nextElementSibling.classList == 'inner-level') {
+					this.closest('tr').classList.toggle('active');
+					$(this.closest('tr').nextElementSibling).toggle();
+				}
+			})
+		});
+	}
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
