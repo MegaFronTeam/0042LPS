@@ -15,7 +15,13 @@ mixin sCreateObject(data)
 						.col-12
 							+e.item
 								p Бригада
-								a(href="#") Не выбрано
+								+b.custom-select-wrap--simple
+									select(class="basic-select basic-select--js" data-placeholder='Не выбрано')
+										option
+										option Бригада №1
+										option Бригада №2
+										option Бригада №3
+										option Бригада №4
 					if data.startDate
 						.col-12
 							+e.item

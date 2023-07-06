@@ -314,3 +314,71 @@ textarea.form-control {
 .select2-container--default .select2-selection--single .select2-selection__arrow {
 	display: none;
 }
+
+
+.custom-input-label {
+	width: 100%;
+	position: relative;
+	--sp-y: #{rem(12)};
+	--fz: #{rem(16)};
+	label {
+		width: 100%;
+	}
+	&__input {
+		padding-top: calc(var(--sp-y) * 1.5);
+		padding-bottom: calc(var(--sp-y) * .5);
+		padding-right: rem(16) !important;
+		border: 2px solid $gray-100;
+		background-color: $gray-100;
+		border-radius: 4px;
+		&::placeholder {
+			opacity: 0 !important	;
+			color: transparent;
+		}
+		&:-webkit-autofill ,
+		&:focus, 
+		&:not(:placeholder-shown){
+			&:not(textarea) {
+				// box-shadow:  0px 3px 0px  $primary;
+			}
+		}
+		&:-webkit-autofill ,
+		&:focus, 
+		&:not(:placeholder-shown), 
+		&.form-select  {
+			box-shadow: none;
+			// background-color: #fff;
+			// border-color: $accent;
+			& ~ .custom-input-label__input-title{
+			 //  color: #846951;
+				transform: scale(0.70) translateY(-80%) ; 
+				font-weight: 500;
+			}
+		}
+		&:focus {
+			background-color: #fff;
+			border-color: $accent;
+		}
+		&:disabled {
+			background-color: $gray-400;
+			border-color: $gray-400;
+			pointer-events: none;
+			& ~ .custom-input-label__input-title {
+				color: rgba(0, 0, 0, 0.48);
+			}
+		}
+	}
+	&__input-title {
+		position: absolute;
+		// padding-left: $input-padding-x;
+		left: $input-padding-x;
+		top: calc(var(--sp-y) + #{rem(2)}); 
+		font-size: var(--fz);
+		color: $gray-600; 
+		transform-origin: left ;
+		pointer-events: none;
+		font-weight: 400;
+		@include mt;
+		max-width: calc(100% - #{$input-padding-x});
+	}
+}

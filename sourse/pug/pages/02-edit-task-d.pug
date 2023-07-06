@@ -31,9 +31,39 @@ block pagecontent
 			h2 Редактирование задачи
 			+e.main-row.row
 				.col-12
-					+customInput('Введите название', 'text')
+					+b.custom-select-wrap--third-type
+						select(class="basic-select basic-select--js" data-placeholder='Выберите наименование работы')
+							option
+							-for(let i = 1; i <= 10; i++)
+								option!= i
+				.col-12
+					+b.custom-input-label.form-group
+						label
+							+e.INPUT.input.form-control(name='Количество слоев' type='text' placeholder='Количество слоев')
+							+e.SPAN.input-title Количество слоев
+				.col-12
+					+b.custom-input-label.form-group
+						label
+							+e.INPUT.input.form-control(disabled name='Требуемый материал' type='text' placeholder='Требуемый материал')
+							+e.SPAN.input-title Требуемый материал
 				.col-12
 					+input('Введите описание объекта', 'textarea')
+				.col-12
+					+b.plan-block
+						img.res-i(src="img/plan-d.png", alt="")
+						+e.info
+							p.row
+								span.col Площадь
+								span.col-auto 32
+							p.row
+								span.col Площадь стен
+								span.col-auto 324
+							p.row
+								span.col Площадь потолка
+								span.col-auto 322
+							p.row
+								span.col Площадь пола
+								span.col-auto 322
 		.close-btn: +icon('close')
       
 

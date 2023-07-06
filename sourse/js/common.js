@@ -454,7 +454,8 @@ function eventHandler() {
 		for (const select2Wrapp of select2Wrappers) {
 			$(select2Wrapp).select2({
 				minimumResultsForSearch: Infinity,
-				dropdownParent: $(select2Wrapp).parent()
+				dropdownParent: $(select2Wrapp).parent(),
+				placeholder: select2Wrapp.dataset.placeholder ? select2Wrapp.dataset.placeholder : null,
 			});
 		}
 	};
