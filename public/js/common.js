@@ -461,7 +461,7 @@ function eventHandler() {
 
 	$('.custom-select--js').select2({
 		minimumResultsForSearch: -1,
-		// dropdownParent: $('.custom-select--js').parent(),
+		dropdownParent: $('.select-status'),
 		// templateResult: format,
 		templateSelection: format,
 		escapeMarkup: function(m) {
@@ -470,15 +470,17 @@ function eventHandler() {
 	}).trigger("change");
 	function format(state) {
 		if (!state.id) return state.text; // optgroup
-		document.querySelector('.select2-selection--single').classList.remove('select2-selection--planning', 'select2-selection--in-work', 'select2-selection--done', 'select2-selection--arhive');
+		let changedElem = state.element.closest('.select-status').querySelector('.select2-selection--single');
+
+		changedElem.classList.remove('select2-selection--planning', 'select2-selection--in-work', 'select2-selection--done', 'select2-selection--arhive');
 		if(state.id == 'В работе') {
-			document.querySelector('.select2-selection--single').classList.add('select2-selection--in-work')
+			changedElem.classList.add('select2-selection--in-work')
 		} else if (state.id == 'Планирование') {
-			document.querySelector('.select2-selection--single').classList.add('select2-selection--planning')
+			changedElem.classList.add('select2-selection--planning')
 		} else if (state.id == 'Завершен') {
-			document.querySelector('.select2-selection--single').classList.add('select2-selection--done')
+			changedElem.classList.add('select2-selection--done')
 		} else if (state.id == 'Архив') {
-			document.querySelector('.select2-selection--single').classList.add('select2-selection--arhive')
+			changedElem.classList.add('select2-selection--arhive')
 		}
 		return '<img src="' + state.element.dataset.img + '"/>' + state.text;
 	}
@@ -580,7 +582,7 @@ function eventHandler() {
 		let months = ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
 		let month = picker.endDate.format('MM').replace('0', '');
 
-		ev.target.querySelector('span').innerText = picker.endDate.format(`DD ${months[month]} YY`);
+		ev.target.querySelector('span').innerText = picker.endDate.format(`DD ${months[month-1]} YY`);
 	});
 
 	let maintable = document.querySelector('.main-table');

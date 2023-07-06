@@ -28,10 +28,11 @@ block pagecontent
 			btns: true
 		})
 			h2 Создание объекта
-			+customInput('Введите название', 'text')
-			//- .d-md-none
-			//- 	+selectStatus()
-			+input('Введите описание объекта', 'textarea')
+			+e.main-row.row
+				.col-12
+					+customInput('Введите название', 'text')
+				.col-12
+					+input('Введите описание объекта', 'textarea')
 		.close-btn: +icon('close')
       
 

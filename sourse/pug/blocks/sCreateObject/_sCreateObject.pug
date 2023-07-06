@@ -7,12 +7,12 @@ mixin sCreateObject(data)
 			+e.right-side
 				+e.row.row
 					if data.status
-						.col-12.d-none.d-md-block
+						.col-12
 							+e.item
 								p Статус проекта
 								+selectStatus()
 					if data.workers
-						.col-12.d-none.d-md-block
+						.col-12
 							+e.item
 								p Бригада
 								a(href="#") Не выбрано
