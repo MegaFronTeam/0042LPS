@@ -2,7 +2,7 @@ export function browserDownload(json) {
   var fileOutputLink = document.createElement('a');
 
   var filename = 'output' + Date.now() + '.json';
-  filename = window.prompt('Insert output filename', filename);
+  filename = window.prompt('Введите имя сохраняемого файла', filename);
   if (!filename) return;
 
   var output = JSON.stringify(json);
