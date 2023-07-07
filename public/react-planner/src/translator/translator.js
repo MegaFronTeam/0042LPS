@@ -2,7 +2,7 @@ import EN from './en'
 import IT from './it'
 import RU from './ru'
 
-const DEFAULT_LOCALE = 'en'
+const DEFAULT_LOCALE = 'ru'
 
 export default class Translator {
   constructor() {

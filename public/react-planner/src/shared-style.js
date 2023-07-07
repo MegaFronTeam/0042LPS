@@ -8,29 +8,29 @@ export const MATERIAL_COLORS = {
   500: {
     amber: '#FFC107',
     blue_grey: '#607D8B',
-    blue: '#2196F3',
+    blue: '#467CF4',
     brown: '#795548',
-    cyan: '#00BCD4',
+    cyan: '#467CF4',
     deep_orange: '#FF5722',
     deep_purple: '#673AB7',
-    green: '#4CAF50',
+    green: '#1DBA6F',
     grey: '#9E9E9E',
     indigo: '#3F51B5',
-    light_blue: '#03A9F4',
+    light_blue: '#467CF4',
     light_green: '#8BC34A',
     lime: '#CDDC39',
-    orange: '#FF9800',
+    orange: '#fd7e14',
     pink: '#E91E63',
-    purple: '#9C27B0',
-    red: '#F44336',
+    purple: '#9A52DF',
+    red: '#E94410',
     teal: '#009688',
-    yellow: '#FFEB3B'
+    yellow: '#F4B13E'
   }
 };
 
 export const PRIMARY_COLOR = {
-  main: '#28292D',
-  alt: '#2E2F33',
+  main: '#212529',
+  alt: '#212529',
   icon: '#C2C2C2',
   border: '1px solid #555',
   text_main: COLORS.white,
@@ -39,9 +39,9 @@ export const PRIMARY_COLOR = {
 };
 
 export const SECONDARY_COLOR = {
-  main: '#1CA6FC',
+  main: '#467CF4',
   alt: '#005FAF',
-  icon: '#1CA6FC',
+  icon: '#467CF4',
   border: '1px solid #FFF'
 };
 

@@ -87,7 +87,7 @@ export default class FooterBar extends Component {
             <div title={translator.t('Mouse Y Coordinate')} style={coordStyle}>Y : {y.toFixed(3)}</div>
           </div>
 
-          <div style={leftTextStyle} title={translator.t('Scene Zoom Level')}>Zoom: {zoom.toFixed(3)}X</div>
+          <div style={leftTextStyle} title={translator.t('Scene Zoom Level')}>Масштаб: {zoom.toFixed(3)}X</div>
 
           <div style={leftTextStyle}>
             <FooterToggleButton
@@ -135,7 +135,7 @@ export default class FooterBar extends Component {
 
         {this.props.footerbarComponents.map((Component, index) => <Component state={state} key={index} />)}
 
-        {
+        {/* {
           this.props.softwareSignature ?
             <div
               style={rightTextStyle}
@@ -144,7 +144,7 @@ export default class FooterBar extends Component {
               {this.props.softwareSignature}
             </div>
             : null
-        }
+        } */}
 
         <div style={rightTextStyle}>
           <FooterContentButton
