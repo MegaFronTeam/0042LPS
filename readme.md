@@ -16,3 +16,6 @@
 4. <https://megafronteam.github.io/0042LPS/public/02-edit-room.html>
 5. <https://megafronteam.github.io/0042LPS/public/02-create-task-d.html>
 6. <https://megafronteam.github.io/0042LPS/public/02-edit-task-d.html>
+
+##### Создание чертежа
+1. <https://megafronteam.github.io/0042LPS/public/react-planner/demo/dist/index.html>
