@@ -82,15 +82,15 @@ export default {
   prototype: 'holes',
 
   info: {
-    tag: ['door'],
-    title: 'sliding door',
-    description: 'iron door',
+    tag: ['дверь'],
+    title: 'Раздвижная дверь',
+    description: 'Железная дверь',
     image: require('./slidingDoor.png')
   },
 
   properties: {
     width: {
-      label: 'width',
+      label: 'Ширина',
       type: 'length-measure',
       defaultValue: {
         length: 200,
@@ -98,7 +98,7 @@ export default {
       }
     },
     height: {
-      label: 'height',
+      label: 'Высота',
       type: 'length-measure',
       defaultValue: {
         length: 215,
@@ -106,7 +106,7 @@ export default {
       }
     },
     thickness: {
-      label: 'thickness',
+      label: 'Толщина',
       type: 'length-measure',
       defaultValue: {
         length: 30,
@@ -114,7 +114,7 @@ export default {
       }
     },
     altitude: {
-      label: 'altitude',
+      label: 'Высота от пола',
       type: 'length-measure',
       defaultValue: {
         length: 0,
@@ -122,7 +122,7 @@ export default {
       }
     },
     flip_horizontal: {
-      label: 'horizontal flip',
+      label: 'Горизонтальный флип',
       type: 'checkbox',
       defaultValue: 'none',
       values: {
@@ -131,7 +131,7 @@ export default {
       }
     },
     flip_vertical: {
-      label: 'vertical flip',
+      label: 'Вертикальный флип',
       type: 'checkbox',
       defaultValue: 'right',
       values: {

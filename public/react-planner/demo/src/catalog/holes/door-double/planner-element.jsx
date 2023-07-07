@@ -113,15 +113,15 @@ export default {
   prototype: 'holes',
 
   info: {
-    tag: ['door'],
-    title: 'double door',
-    description: 'iron door',
+    tag: ['дверь'],
+    title: 'Двойная дверь',
+    description: 'Железная дверь',
     image: require('./door_double.png')
   },
 
   properties: {
     width: {
-      label: 'width',
+      label: 'Ширина',
       type: 'length-measure',
       defaultValue: {
         length: 200,
@@ -129,7 +129,7 @@ export default {
       }
     },
     height: {
-      label: 'height',
+      label: 'Высота',
       type: 'length-measure',
       defaultValue: {
         length: 215,
@@ -137,7 +137,7 @@ export default {
       }
     },
     thickness: {
-      label: 'thickness',
+      label: 'Толщина',
       type: 'length-measure',
       defaultValue: {
         length: 30,
@@ -145,7 +145,7 @@ export default {
       }
     },
     altitude: {
-      label:'altitude',
+      label:'Высота от пола',
       type: 'length-measure',
       defaultValue: {
         length: 0,
@@ -153,7 +153,7 @@ export default {
       }
     },
     flip_horizontal: {
-      label: 'flip',
+      label: 'Перевернуть',
       type: 'checkbox',
       defaultValue: false,
       values: {

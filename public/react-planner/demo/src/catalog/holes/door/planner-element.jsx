@@ -16,43 +16,43 @@ export default {
   prototype: 'holes',
 
   info: {
-    title: 'door',
-    tag: ['door'],
-    description: 'Wooden door',
+    title: 'Дверь',
+    tag: ['дверь'],
+    description: 'Деревянная дверь',
     image: require('./door.png')
   },
 
   properties: {
     width: {
-      label: 'Width',
+      label: 'Ширина',
       type: 'length-measure',
       defaultValue: {
         length: 80
       }
     },
     height: {
-      label: 'Height',
+      label: 'Высота',
       type: 'length-measure',
       defaultValue: {
         length: 215
       }
     },
     altitude: {
-      label: 'Altitude',
+      label: 'Высота от пола',
       type: 'length-measure',
       defaultValue: {
         length: 0
       }
     },
     thickness: {
-      label: 'Thickness',
+      label: 'Толщина',
       type: 'length-measure',
       defaultValue: {
         length: 30
       }
     },
     flip_orizzontal: {
-      label: 'flip orizzontale',
+      label: 'Горизонтальный флип',
       type: 'checkbox',
       defaultValue: false,
       values: {

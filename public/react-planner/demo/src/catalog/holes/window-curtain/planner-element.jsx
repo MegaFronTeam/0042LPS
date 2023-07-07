@@ -14,43 +14,43 @@ export default {
   prototype: 'holes',
 
   info: {
-    tag: ['Finestre'],
-    title: 'Curtain window',
-    description: 'Curtain window',
+    tag: ['окно'],
+    title: 'Занавес окна',
+    description: 'Занавес окна',
     image: require('./window-curtain.jpg')
   },
 
   properties: {
     width: {
-      label: 'width',
+      label: 'Ширина',
       type: 'length-measure',
       defaultValue: {
         length: 90
       }
     },
     height: {
-      label: 'height',
+      label: 'Высота',
       type: 'length-measure',
       defaultValue: {
         length: 100
       }
     },
     altitude: {
-      label: 'altitudine',
+      label: 'Высота от пола',
       type: 'length-measure',
       defaultValue: {
         length: 90
       }
     },
     thickness: {
-      label: 'spessore',
+      label: 'Спессор',
       type: 'length-measure',
       defaultValue: {
         length: 10
       }
     },
     flip: {
-      label: 'flip',
+      label: 'Перевернуть',
       type: 'checkbox',
       defaultValue: 'none',
       values: {

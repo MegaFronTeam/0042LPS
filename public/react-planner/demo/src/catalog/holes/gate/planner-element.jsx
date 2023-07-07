@@ -7,9 +7,9 @@ export default {
   prototype: 'holes',
 
   info: {
-    tag: ['gate'],
-    title: 'gate',
-    description: 'hole in the wall',
+    tag: ['проем'],
+    title: 'Проем',
+    description: 'Дверной проем',
     image: require('./gate.jpg')
   },
 

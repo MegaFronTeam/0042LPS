@@ -70,14 +70,14 @@ export default {
   prototype: 'items',
 
   info: {
-    tag: ['furnishings', 'metal'],
-    title: 'balcony',
-    description: 'balcony',
+    tag: ['Обстановка', 'Металлический'],
+    title: 'Балкон',
+    description: 'Балкон',
     image: require('./balcony.png')
   },
   properties: {
     width: {
-      label: 'width',
+      label: 'Ширина',
       type: 'length-measure',
       defaultValue: {
         length: 500,
@@ -85,7 +85,7 @@ export default {
       }
     },
     depth: {
-      label: 'depth',
+      label: 'Глубина',
       type: 'length-measure',
       defaultValue: {
         length: 100,
@@ -93,7 +93,7 @@ export default {
       }
     },
     height: {
-      label: 'height',
+      label: 'Высота',
       type: 'length-measure',
       defaultValue: {
         length: 100,
@@ -101,7 +101,7 @@ export default {
       }
     },
     altitude: {
-      label: 'altitude',
+      label: 'Высота от пола',
       type: 'length-measure',
       defaultValue: {
         length: 0,
@@ -109,7 +109,7 @@ export default {
       }
     },
     patternColor: {
-      label: '2D color',
+      label: '2D цвет',
       type: 'color',
       defaultValue: '#f5f4f4'
     }

@@ -1,9 +1,9 @@
 import {ElementsFactories} from 'react-planner';
 
 const info = {
-  title: 'wall',
-  tag: ['wall'],
-  description: 'Wall with bricks or painted',
+  title: 'Стена',
+  tag: ['стена'],
+  description: 'Стена с кирпичами или окрашены',
   image: require('./wall.png'),
   visibility: {
     catalog: true,
@@ -13,7 +13,7 @@ const info = {
 
 const textures = {
   bricks: {
-    name: 'Bricks',
+    name: 'Кирпичи',
     uri: require('./textures/bricks.jpg'),
     lengthRepeatScale: 0.01,
     heightRepeatScale: 0.01,
@@ -26,7 +26,7 @@ const textures = {
     }
   },
   painted: {
-    name:'Painted',
+    name:'Окрашенный',
     uri: require('./textures/painted.jpg'),
     lengthRepeatScale: 0.01,
     heightRepeatScale: 0.01,

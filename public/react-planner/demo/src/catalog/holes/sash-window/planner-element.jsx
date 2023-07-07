@@ -10,36 +10,36 @@ export default {
   prototype: "holes",
 
   info: {
-    title: "sash window",
-    tag: ['window'],
-    description: "Sash window",
+    title: "Створки окна",
+    tag: ['окно'],
+    description: "Створки окна",
     image: require('./window.png')
   },
 
   properties: {
     width: {
-      label: "Width",
+      label: "Ширина",
       type: "length-measure",
       defaultValue: {
         length: 90
       }
     },
     height: {
-      label: "Height",
+      label: "Высота",
       type: "length-measure",
       defaultValue: {
         length: 100
       }
     },
     altitude: {
-      label: "Altitude",
+      label: "Высота от пола",
       type: "length-measure",
       defaultValue: {
         length: 90
       }
     },
     thickness: {
-      label: "Thickness",
+      label: "Толщина",
       type: "length-measure",
       defaultValue: {
         length: 10

@@ -10,43 +10,43 @@ export default {
   prototype: 'holes',
 
   info: {
-    tag: ['Window'],
-    title: 'Venetian Blind Window',
-    description: 'Venetian Blind Window',
+    tag: ['окно'],
+    title: 'Венецианское шторное окно',
+    description: 'Венецианское шторное окно',
     image: require('./venetian.jpg')
   },
 
   properties: {
     width: {
-      label: 'Width',
+      label: 'Ширина',
       type: 'length-measure',
       defaultValue: {
         length: 90
       }
     },
     height: {
-      label: 'Height',
+      label: 'Высота',
       type: 'length-measure',
       defaultValue: {
         length: 100
       }
     },
     altitude: {
-      label: 'Altitude',
+      label: 'Высота от пола',
       type: 'length-measure',
       defaultValue: {
         length: 90
       }
     },
     thickness: {
-      label: 'Thickness',
+      label: 'Толщина',
       type: 'length-measure',
       defaultValue: {
         length: 10
       }
     },
     flip: {
-      label: 'Flip',
+      label: 'Перевернуть',
       type: 'checkbox',
       defaultValue: 'false',
     },

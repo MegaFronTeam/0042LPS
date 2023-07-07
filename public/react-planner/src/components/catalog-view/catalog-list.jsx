@@ -177,7 +177,7 @@ export default class CatalogList extends Component {
 
     let selectedHistory = this.props.state.get('selectedElementsHistory');
     let selectedHistoryElements = selectedHistory.map( ( el, ind ) =>
-      <div key={ind} style={historyElementStyle} title={el.name} onClick={() => this.select(el) }>{el.name}</div>
+      <div key={ind} style={historyElementStyle} title={el.name} onClick={() => this.select(el) }>{ el.info.title }</div>
     );
 
     return (
