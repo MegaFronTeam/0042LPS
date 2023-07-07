@@ -22,7 +22,8 @@ export default class Translator {
         break
       }
     }
-    locale = locale ? locale : DEFAULT_LOCALE
+    // locale = locale ? locale : DEFAULT_LOCALE
+    locale = 'ru';
 
     this.setLocale(locale)
   }
