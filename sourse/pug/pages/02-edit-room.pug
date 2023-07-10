@@ -27,30 +27,31 @@ block pagecontent
 			btns: true
 		})
 			h2 Редактирование помещения
-			+e.main-row.row
-				.col-12
-					+customInput('Введите название', 'text')
-				.col-12
-					+input('Введите описание объекта', 'textarea')
-				.col-12
-					+b.plan-block
-						img.res-i(src="img/plan-d.png", alt="")
-						+e.info
-							p.row
-								span.col Площадь
-								span.col-auto 32
-							p.row
-								span.col Площадь стен
-								span.col-auto 324
-							p.row
-								span.col Площадь потолка
-								span.col-auto 322
-							p.row
-								span.col Площадь пола
-								span.col-auto 322
-							+e.edit(href='./react-planner/demo/dist/index.html' target='_blank')
-								| Редактировать
-								+icon('edit')
+			+b.form-wrap
+				+e.main-row.row
+					.col-12
+						+customInput('Введите название', 'text')
+					.col-12
+						+input('Введите описание объекта', 'textarea')
+					.col-12
+						+b.plan-block
+							img.res-i(src="img/plan-d.png", alt="")
+							+e.info
+								p.row
+									span.col Площадь
+									span.col-auto 32
+								p.row
+									span.col Площадь стен
+									span.col-auto 324
+								p.row
+									span.col Площадь потолка
+									span.col-auto 322
+								p.row
+									span.col Площадь пола
+									span.col-auto 322
+								+e.edit(href='./react-planner/demo/dist/index.html' target='_blank')
+									| Редактировать
+									+icon('edit')
 		.close-btn: +icon('close')
       
 

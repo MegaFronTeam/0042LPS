@@ -209,53 +209,6 @@
 			}
 		}
 	}
-	&__main-row {
-		--bs-gutter-y: #{rem(18)};
-		@include media-breakpoint-up(md) {
-			--bs-gutter-y: #{rem(24)};
-		}
-	}
-	&__create-room {
-		@include mt;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		padding: rem(18);
-		aspect-ratio: 336/192;
-		border: 1px dashed $gray-200;
-		color: #000;
-		font-weight: 500;
-		line-height: 1.25;
-		font-size: rem(16);
-		cursor: pointer;
-		@include media-breakpoint-up(sm) {
-			aspect-ratio: 624/300;
-		}
-		&:hover {
-			background-color: $accent;
-			border-color: $accent;
-			.sCreateObject__icon-wrap {
-				background-color: #fff;
-			}
-		}
-	}
-	&__icon-wrap {
-		@include mt;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: rem(48);
-		height: rem(48);
-		border-radius: 50%;
-		background-color: $accent;
-		color: #000;
-		margin-bottom: rem(12);
-		.icon {
-			flex: 0 0 auto;
-			font-size: rem(20);
-		}
-	}
 	.select2-dropdown--below {
 		@include media-breakpoint-down(md) {
 			left: -62px !important;
