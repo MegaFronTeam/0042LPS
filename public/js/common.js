@@ -490,6 +490,7 @@ function eventHandler() {
 	$('.details-with-toggle--js .details-with-toggle__btn-more').on('click', function () {
 		$('.details-with-toggle__wrap').slideToggle("fast");
 		$(this).toggleClass('active');
+		$('.details-with-toggle').toggleClass("active");
 	});
 
 

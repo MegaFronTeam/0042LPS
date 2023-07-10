@@ -20,6 +20,39 @@
 			padding: rem(24) rem(48);
 		}
 	}
+	&__selects-wrap {
+		background-color: #fff;
+		padding: rem(18) rem(12);
+		@include media-breakpoint-up(md) {
+			padding: rem(24) rem(48);
+		}
+		.row {
+			--bs-gutter-x: #{rem(24)};
+			--bs-gutter-y: #{rem(12)};
+			@include media-breakpoint-up(md) {
+				--bs-gutter-y: #{rem(24)};
+			}
+
+			align-items: center;
+		}
+		.custom-select-wrap--second-type {
+			max-width: max-content;
+		}
+	}
+	&__reset {
+		color: $gray-600;
+		font-size: rem(16);
+		line-height: 1.25;
+		font-style: italic;
+		&:hover {
+			color: $primary;
+		}
+	}
+	&__col {
+		@include media-breakpoint-up(md) {
+			max-width: calc(rem(288) + var(--bs-gutter-x));
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

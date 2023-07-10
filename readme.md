@@ -1,12 +1,16 @@
 # 0042LPS
  
 1. <https://megafronteam.github.io/0042LPS/public>
-2. <!-- <https://megafronteam.github.io/0042LPS/public/01-object-d.html> -->
+2. <https://megafronteam.github.io/0042LPS/public/01-object-d.html>
+3. <https://megafronteam.github.io/0042LPS/public/01-house-d.html>
+4. <https://megafronteam.github.io/0042LPS/public/01-entrance-d.html>
+5. <https://megafronteam.github.io/0042LPS/public/01-floor-d.html>
+6. <https://megafronteam.github.io/0042LPS/public/01-apt-d.html>
+7. <https://megafronteam.github.io/0042LPS/public/01-room-d.html>
+8. <https://megafronteam.github.io/0042LPS/public/01-info-object-d.html>
+9. <https://megafronteam.github.io/0042LPS/public/01-room-info-d.html>
+10. <https://megafronteam.github.io/0042LPS/public/01-notes-d.html>
 3. <!-- <https://megafronteam.github.io/0042LPS/public/01-2-object-schedule.html> -->
-4. <!-- <https://megafronteam.github.io/0042LPS/public/01-house-d.html> -->
-5. <https://megafronteam.github.io/0042LPS/public/01-info-object-d.html>
-6. <https://megafronteam.github.io/0042LPS/public/01-room-info-d.html>
-7. <https://megafronteam.github.io/0042LPS/public/01-notes-d.html>
 
 
 #### Работа с объектом

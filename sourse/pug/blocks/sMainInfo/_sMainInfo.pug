@@ -1,4 +1,4 @@
-mixin sMainInfo(data)
+mixin sMainInfo(selects, secondTable)
 	// start sMainInfo
 	+b.sMainInfo.section#sMainInfo&attributes(attributes)
 		.container-fluid
@@ -14,7 +14,42 @@ mixin sMainInfo(data)
 						+toggleBtn('info', `Информация`)
 					.swiper-slide
 						+toggleBtn('pen', `Заметки`)
-			+mainTable()
+			if selects
+				+e.selects-wrap
+					.row
+						+e.col.col-md.col-xl-3
+							+b.custom-select-wrap--third-type
+								select(class="basic-select basic-select--js")
+									option Все бригады
+									-for(let i = 1; i <= 10; i++)
+										option!= i
+						+e.col.col-md.col-xl-3
+							+b.custom-select-wrap--third-type
+								select(class="basic-select basic-select--js")
+									option Все поверхности
+									-for(let i = 1; i <= 10; i++)
+										option!= i
+						+e.col.col-md.col-xl-3
+							+b.custom-select-wrap--third-type
+								select(class="basic-select basic-select--js")
+									option Все работы
+									-for(let i = 1; i <= 10; i++)
+										option!= i
+						.col.col-md-12.order-md-last
+							+b.custom-select-wrap--second-type
+								+e.label.text-secondary Сортировать по
+								select(class="basic-select basic-select--js")
+									option Все статусы
+									option Планирование
+									option В работе
+									option Все статусы
+						.col-auto.ms-auto
+							+e.reset(href='#') Сбросить
+			if secondTable
+				+mainTable2()
+			else
+				+mainTable()
+					block
 	// end sMainInfo
 mixin sMainInfo2(data)
 	// start sMainInfo

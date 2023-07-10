@@ -1012,3 +1012,18 @@ td:not(:first-child) .sMainInfo__line{
 		}
 	}
 }
+
+.room-page {
+	.page-head {
+		@include media-breakpoint-down(md) {
+			margin-bottom: 0;
+		}
+	}
+	.sObjectDetails {
+		.details-with-toggle {
+			@include media-breakpoint-up(md) {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
