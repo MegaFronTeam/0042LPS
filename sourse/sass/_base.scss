@@ -910,6 +910,9 @@ td:not(:first-child) .sMainInfo__line{
 	margin-bottom: rem(12);
 	&__name{
 		color: $body-color;
+		&:hover{
+			color: var(--bs-primary);
+		}
 	}
 	&__size{
 		color: $secondary;
