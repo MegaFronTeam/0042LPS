@@ -354,7 +354,7 @@ const $ = jQuery;
 
 function eventHandler() {
 	JSCCommon.modalCall();
-	// JSCCommon.tabscostume('tabs');
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	// JSCCommon.sendForm();
@@ -592,9 +592,10 @@ function eventHandler() {
 		toggleBtnsInnerLevel.forEach(toggleBtn => {
 			toggleBtn.addEventListener('click', function(e) {
 				e.preventDefault();
-				if (this.closest('tr').nextElementSibling.classList == 'inner-level') {
-					this.closest('tr').classList.toggle('active');
-					$(this.closest('tr').nextElementSibling).toggle();
+				let selfTr = this.closest('tr');
+				if (selfTr.nextElementSibling.classList == 'inner-level') {
+					selfTr.classList.toggle('active')
+					$(selfTr.nextElementSibling).toggle('fast');
 				}
 			})
 		});

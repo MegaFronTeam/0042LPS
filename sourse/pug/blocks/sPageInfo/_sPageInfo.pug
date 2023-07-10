@@ -1,9 +1,12 @@
 mixin sPageInfo(data)
 	// start sPageInfo
 	+b.sPageInfo.section#sPageInfo&attributes(attributes)
-		+e.continer.container-fluid
+		+e.continer.container-fluid.tabs
 			+e.wrap.bg-wrap
-				+img('img/service-1.jpg', 'bg').picture-bg
+				.tabs__wrap
+					- for (var x = 0; x < 6; x++)
+						.tabs__content(class=`${x == 0 ? "active" : ""}`)
+							+img('img/service-1.jpg', 'bg').picture-bg
 				+e.row.row
 					+e.section-title-col.col-md
 						.section-title
@@ -38,19 +41,19 @@ mixin sPageInfo(data)
 								+item('Помещения', '1350 пом')
 								+item('Площадь', 'S 3440 м²')
 					+e.col.col-md-5.col-xxl-auto
-						+e.inner-row.row
-							.col-12
+						+e.inner-row.row.tabs__caption
+							.col-12.tabs__btn.active
 								+workStatus('Стяжка пола', '22%', '#467CF4')
-							.col-12
-								+workStatus('Натяжка потолка', '63%', '#1DBA6F').disabled
-							.col-12
-								+workStatus('Штукатурка стен', '90%', '#F4B13E').disabled
-							.col-12
-								+workStatus('Шпаклевание стен', '33%', '#9A52DF').disabled
-							.col-12
-								+workStatus('Затирка', '100%', '#E94410').disabled
-							.col-12
-								+workStatus('Плинтус', '3%', '#8B9298').disabled
+							.col-12.tabs__btn
+								+workStatus('Натяжка потолка', '63%', '#1DBA6F')
+							.col-12.tabs__btn
+								+workStatus('Штукатурка стен', '90%', '#F4B13E')
+							.col-12.tabs__btn
+								+workStatus('Шпаклевание стен', '33%', '#9A52DF')
+							.col-12.tabs__btn
+								+workStatus('Затирка', '100%', '#E94410')
+							.col-12.tabs__btn
+								+workStatus('Плинтус', '3%', '#8B9298')
 			+detailsWithToggle().d-md-none
 				mixin item(key, val, warning)
 					+e.col.col-md
