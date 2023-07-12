@@ -36,14 +36,20 @@
 			align-items: center;
 		}
 		.custom-select-wrap--second-type {
-			max-width: max-content;
+			min-width: max-content;
+			.select2 {
+				flex-grow: 0;
+			}
 		}
 	}
 	&__reset {
 		color: $gray-600;
-		font-size: rem(16);
+		font-size: rem(14);
 		line-height: 1.25;
 		font-style: italic;
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
 		&:hover {
 			color: $primary;
 		}

@@ -35,7 +35,7 @@ mixin sMainInfo(selects, secondTable)
 									option Все работы
 									-for(let i = 1; i <= 10; i++)
 										option!= i
-						.col.col-md-12.order-md-last
+						.col.col-md-12.order-md-last.me-auto
 							+b.custom-select-wrap--second-type
 								+e.label.text-secondary Сортировать по
 								select(class="basic-select basic-select--js")
@@ -43,7 +43,7 @@ mixin sMainInfo(selects, secondTable)
 									option Планирование
 									option В работе
 									option Все статусы
-						.col-auto.ms-auto
+						.col-auto.ms-md-auto
 							+e.reset(href='#') Сбросить
 			if secondTable
 				+mainTable2()

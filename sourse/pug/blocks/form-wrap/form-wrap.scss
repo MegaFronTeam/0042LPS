@@ -94,8 +94,11 @@
 		color: #000;
 		font-weight: 500;
 		line-height: 1.25;
-		font-size: rem(16);
+		font-size: rem(14);
 		cursor: pointer;
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
 		@include media-breakpoint-up(sm) {
 			aspect-ratio: 624/300;
 		}

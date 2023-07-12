@@ -140,12 +140,12 @@
 			font-size: rem(20);
 		}
 	}
-	.custom-input-wrap {
-		margin-bottom: rem(24);
-		@include media-breakpoint-up(md) {
-			margin-bottom: 0;
-		}
-	}
+	// .custom-input-wrap {
+	// 	margin-bottom: rem(24);
+	// 	@include media-breakpoint-up(md) {
+	// 		margin-bottom: 0;
+	// 	}
+	// }
 	&__item {
 		display: flex;
 		align-items: center;
@@ -155,6 +155,12 @@
 			align-items: flex-start;
 			flex-direction: column;
 			justify-content: flex-start;
+		}
+		span {
+			font-size: rem(14);
+			@include media-breakpoint-up(md) {
+				font-size: rem(16);
+			}
 		}
 	}
 	&__btn-row {
@@ -209,9 +215,12 @@
 			}
 		}
 	}
-	.select2-dropdown--below {
-		@include media-breakpoint-down(md) {
-			left: -62px !important;
+	.custom-select-wrap--simple,
+	.select-status {
+		.select2-dropdown--below {
+			@include media-breakpoint-down(md) {
+				left: -62px !important;
+			}
 		}
 	}
 	.plan-block {
@@ -257,8 +266,10 @@
 			color: $gray-600;
 			margin-left: auto;
 			margin-top: rem(12);
+			font-size: rem(14);
 			@include media-breakpoint-up(md) {
 				flex-direction: row;
+				font-size: rem(16);
 			}
 			&:hover {
 				color: $primary;

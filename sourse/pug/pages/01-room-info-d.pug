@@ -11,7 +11,7 @@ include ../blocks/sPageInfo/_sPageInfo.pug
 include ../blocks/sMainInfo/_sMainInfo.pug
 
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= 'room-page' 
 	- let  bg= '01-3-house.jpg'
 
 block title
@@ -29,5 +29,20 @@ block pagecontent
 			stat: ' ',
 			date: ' ',
 		})
-		
+		+sObjectDetails()
+			+e.header
+				+detailsWithToggle()
+					mixin item(key, val, warning)
+						+e.col.col-md-auto
+							+e.item
+								span!= key
+								p(class=(warning ? 'text-danger' : ''))
+									if warning
+										+icon("warning")
+									!= val
+					+e.stats-row--without-span.row
+						+item('Этаж', '7 эт')
+						+item('Квартиры', '728 кв')
+						+item('Помещения', '1350 пом')
+						+item('Площадь', 'S 3440 м²')
 		+sMainInfo4
