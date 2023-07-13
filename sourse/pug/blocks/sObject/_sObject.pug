@@ -19,12 +19,13 @@ mixin sObject(data)
 		.container-fluid
 			+e.head-row.row
 				.col-auto.ms-auto.ms-md-0.me-auto.me-md-0
-					+b.custom-select-wrap--first-type
+					+b.custom-select-wrap--first-type(data-number='5')
 						select(class="basic-select basic-select--js")
-							-for(let i = 1; i <= 10; i++)
-								option!= i
-						+e.label Все статусы
-							span
+							option Все статусы
+							option Планирование
+							option В работе
+							option Все статусы
+						+e.label 1
 				.col-auto.ms-auto.me-auto.me-md-0
 					+b.custom-select-wrap--second-type
 						+e.label.text-secondary Сортировать по

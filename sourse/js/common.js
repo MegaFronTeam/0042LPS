@@ -489,6 +489,12 @@ function eventHandler() {
 		return '<img src="' + state.element.dataset.img + '"/>' + state.text;
 	}
 
+	let customSelectWraps = document.querySelectorAll('.custom-select-wrap');
+	for (const customSelectWrap of customSelectWraps) {
+		if(customSelectWrap.dataset.number) {
+			customSelectWrap.querySelector('.custom-select-wrap__label').innerHTML = customSelectWrap.dataset.number;
+		}
+	}
 
 	$('.details-with-toggle--js .details-with-toggle__btn-more').on('click', function () {
 		$('.details-with-toggle__wrap').slideToggle();

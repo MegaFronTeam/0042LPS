@@ -573,7 +573,7 @@
 		@include mt;
 		font-size: rem(14);
 		margin-right: rem(6);
-		order: 1;
+		// order: 1;
 		display: flex;
 		align-items: center;
 		@include media-breakpoint-up(md) {
@@ -601,7 +601,7 @@
 	}
 	.select2 {
 		flex-grow: 1;
-		order: 2;
+		// order: 2;
 		width: max-content !important;
     padding-right: rem(26);
 		&-selection {
@@ -679,9 +679,56 @@
 				color: rgba($color: #000000, $alpha: 0.48);
 			}
 		}
+		.select2 {
+			padding-right: 0;
+			&-selection {
+				display: flex;
+				align-items: center;
+				&:before {
+					content: '';
+					background-image: none;
+					width: 100%;
+					height: 100%;
+					left: rem(40);
+					top: 0;
+					transform: none;
+				}
+				&:after {
+					position: static;
+					background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='2' fill='%238B9298'/%3E%3C/svg%3E%0A");
+					background-repeat: no-repeat;
+					background-size: contain;
+					background-position: center;
+					transform: none;
+					flex: 0 0 auto;
+					width: rem(20);
+					height: rem(20);
+					min-width: auto;
+				}
+			}
+		}
 		.select2-container--open {
 			& ~ .custom-select-wrap__label {
-				color: #000;
+				&::after {
+					transform: rotateX(-180deg);
+				}
+			}
+		}
+		.custom-select-wrap__label {
+			display: flex;
+			align-items: center;
+			&::after {
+				@include mt;
+				content: '';
+				display: block;
+				width: rem(20);
+				height: rem(20);
+				flex: 0 0 auto;
+				background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.9647 6.82078C15.9461 6.76927 15.9308 6.7228 15.9306 6.71751C15.9294 6.68417 15.3403 6.11764 15.2681 6.08044C15.0826 5.98473 14.8178 5.98297 14.6313 6.0762C14.5925 6.09563 13.5361 7.1349 12.2838 8.38566L10.007 10.6598L7.71846 8.37438C5.18178 5.84117 5.36048 5.99957 5.04288 6.00301C4.8188 6.00545 4.71705 6.06644 4.39373 6.39205C4.00811 6.78039 3.91783 7.04701 4.07022 7.34755C4.14711 7.49916 9.60044 12.9333 9.73686 12.9942C9.88838 13.0619 10.1388 13.0658 10.2762 13.0026C10.4258 12.9338 15.8704 7.49036 15.9441 7.33584C16.0098 7.19841 16.0188 6.97103 15.9647 6.82078Z' fill='%23F4B13E'/%3E%3C/svg%3E%0A");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				margin-left: rem(6);
 			}
 		}
 	}
