@@ -184,7 +184,7 @@ mixin bottomControlBar()
 	+b.bottom-control-bar
 		.row
 			.col.me-auto
-				p Выбрано: 1 элемент(–ов)
+				p Выбрано: #[span] элемент(–ов)
 			.col-auto
 				+e.btn.btn.btn-dark(href='#')
 					+icon('edit')
@@ -227,7 +227,7 @@ mixin mainTable()
 							+e.title
 								+e.toggle-dropdown(href='#'): +icon('chevron-right')
 								+in-c()
-								.h3!= title
+								a(href="#").h3!= title
 						td!= pod
 						td!= floor
 						td!= room
@@ -251,7 +251,7 @@ mixin mainTable()
 								if toggle
 									+e.toggle-dropdown(href='#'): +icon('chevron-right')
 								+in-c()
-								p!= title
+								a(href="#")!= title
 						td!= pod
 						td!= floor
 						td!= room
