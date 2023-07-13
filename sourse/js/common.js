@@ -623,8 +623,10 @@ function eventHandler() {
 			tableCheckbox.addEventListener('click', () => {
 				if(tableCheckbox.checked === true) {
 					count += 1;
+					tableCheckbox.closest('tr').classList.add('checked');
 				} else {
 					count -= 1;
+					tableCheckbox.closest('tr').classList.remove('checked');
 				}
 				bottomControlBar.querySelector('p span').innerHTML = count;
 				checkStatusBar();

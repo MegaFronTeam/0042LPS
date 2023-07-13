@@ -1274,8 +1274,10 @@
 	& > table {
 		& > tbody {
 			& > tr {
-				& > td { 
-					border-top: 1px solid $gray-200;
+				&:not(:nth-child(2)) {
+					& > td { 
+						border-top: 1px solid $gray-200;
+					}
 				}
 			}
 		}
@@ -1295,9 +1297,9 @@
 			}
 			&.active {
 				td {
-					background-color: $gray-400;
-					border-top: 1px solid $gray-400;
-					border-bottom: 1px solid $gray-400;
+					background-color: $gray-100;
+					// border-top: 1px solid $gray-100;
+					// border-bottom: 1px solid $gray-100;
 					// .h3, p {
 					// 	color: $primary;
 					// }
@@ -1310,6 +1312,9 @@
 						// border-bottom: 1px solid $gray-200;
 					}
 				}
+			}
+			&.checked {
+				background-color: $gray-400;
 			}
 			&:hover {
 				& > td {

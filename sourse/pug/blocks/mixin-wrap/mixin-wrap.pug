@@ -80,7 +80,10 @@ mixin parts(elem)
 mixin aside()
 	aside 
 		+b.aside-wrap
-			+e.logo(href='#'): +logo()
+			//- +e.logo(href='#'): +logo()
+			+e.logo(href='#')
+				+img('img/svg/logo.svg').d-none.d-md-block
+				+img('img/svg/logo-sm.svg').d-md-none
 			+e.nav
 				ul
 					li: a.active(href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Объекты")
