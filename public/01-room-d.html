@@ -25,7 +25,7 @@
 			}
 		</script>
 	</head>
-	<body class="room-page" data-bg="01-3-house.jpg">
+	<body class="room-page page-with-control-bar" data-bg="01-3-house.jpg">
 		<div class="main-wrapper">
 			<aside> 
 				<div class="aside-wrap">
@@ -378,7 +378,35 @@
 						</div>
 					</div>
 					<!-- end sMainInfo-->
-				</main><img class="page-bg" src="img/svg/page-bg.svg" alt="" loading="lazy"/>
+				</main>
+				<div class="bottom-control-bar">
+					<div class="row">
+						<div class="col me-auto">
+							<p>Выбрано: <span></span> элемент(–ов)</p>
+						</div>
+						<div class="col-auto">
+							<a class="bottom-control-bar__btn btn btn-dark" href="#">
+								<svg class="icon icon-edit ">
+									<use xlink:href="img/svg/sprite.svg#edit"></use>
+								</svg><span>Изменить</span>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a class="bottom-control-bar__btn btn btn-dark" href="#">
+								<svg class="icon icon-copy ">
+									<use xlink:href="img/svg/sprite.svg#copy"></use>
+								</svg><span>Дублировать</span>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a class="bottom-control-bar__btn bottom-control-bar__btn--delete btn btn-dark" href="#">
+								<svg class="icon icon-delete ">
+									<use xlink:href="img/svg/sprite.svg#delete"></use>
+								</svg><span>Удалить</span>
+							</a>
+						</div>
+					</div>
+				</div><img class="page-bg" src="img/svg/page-bg.svg" alt="" loading="lazy"/>
 			</div>
 		</div>
 		<script src="libs/jquery/jquery.min.js"></script>

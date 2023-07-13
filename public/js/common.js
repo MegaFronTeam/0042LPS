@@ -598,8 +598,9 @@ function eventHandler() {
 				e.preventDefault();
 				let selfTr = this.closest('tr');
 				if (selfTr.nextElementSibling.classList == 'inner-level') {
-					selfTr.classList.toggle('active')
-					$(selfTr.nextElementSibling).toggle('fast');
+					selfTr.classList.toggle('active');
+					console.log(selfTr.nextElementSibling.querySelector('td > div'));
+					$(selfTr.nextElementSibling.querySelector('td > div')).slideToggle();
 				}
 			})
 		});

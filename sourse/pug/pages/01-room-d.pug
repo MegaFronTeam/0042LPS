@@ -10,7 +10,7 @@ include ../blocks/sObjectDetails/_sObjectDetails.pug
 include ../blocks/sMainInfo/_sMainInfo.pug
 
 block variables
-	- let  mainPage= 'room-page' 
+	- let  mainPage= 'room-page page-with-control-bar' 
 	- let  bg= '01-3-house.jpg'
 
 block title
@@ -59,3 +59,4 @@ block pagecontent
 				//- 	.col-sm-6.col-lg-4.col-xl-3
 				//- 		+workStatus('Плинтус', '22%', '#8B9298')
 		+sMainInfo(true, true)
+	+bottomControlBar()
