@@ -201,13 +201,17 @@ mixin bottomControlBar()
 					+icon('delete')
 					span Удалить
 
-mixin selectStatus()
+mixin selectStatus(def=true)
 	+b.select-status
 		select(class="custom-select--js")
-			option(data-img='img/svg/play.svg') В работе
-			option(data-img='img/svg/done.svg') Планирование
-			option(data-img='img/svg/time.svg') Завершен
-			option(data-img='img/svg/archive.svg') Архив
+			if def
+				option(data-img='img/svg/play.svg') В работе
+				option(data-img='img/svg/done.svg') Планирование
+				option(data-img='img/svg/time.svg') Завершен
+				option(data-img='img/svg/archive.svg') Архив
+			else
+				option(data-img='img/svg/play.svg') В работе
+				option(data-img='img/svg/time.svg') Завершен
 
 mixin mainTable()
 	+b.main-table

@@ -13,13 +13,15 @@ block variables
 	- let  createObject = true
 
 block title
-	- let  title= 'Создание объекта'
+	- let  title= 'Редактирование объекта'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 	main
 		+sCreateObject({
-			status: true,
+			status: {
+				title: 'Статус проекта'
+			},
 			startDate: true,
 			endDate: true,
 			author: true,
@@ -27,7 +29,7 @@ block pagecontent
 			dateEdit: true,
 			btns: true
 		})
-			h2 Создание объекта
+			h2 Редактирование объекта
 			+b.form-wrap
 				+e.main-row.row
 					.col-12

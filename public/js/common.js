@@ -452,6 +452,11 @@ function eventHandler() {
 		container: '.aside-wrap__nav',
 	});
 
+	$('[data-bs-toggle="tooltip2"]').tooltip({
+		animation: true,
+		offset: [0, 5],
+	});
+
 	let select2Wrappers = document.querySelectorAll('.basic-select--js');
 	if (select2Wrappers.length > 0) {
 		for (const select2Wrapp of select2Wrappers) {

@@ -113,7 +113,7 @@ main {
 	padding-bottom: calc(rem(24) + rem(48));
 	padding-top: rem(48);
 	@include media-breakpoint-up(md) {
-		padding-bottom: rem(24);
+		padding-bottom: rem(86);
 		padding-top: 0;
 	}
 }
@@ -887,12 +887,14 @@ td:not(:first-child) .sMainInfo__line{
 	background-color: #fff;
 
 	h4 {
+		font-family: 'AkzidenzGroteskProExtended';
 		@include media-breakpoint-down(md) {
 			font-size: rem(18);
 		}
 	}
 }
 .avatar-block{
+	position: relative;
 	text-transform: uppercase;
 	border-radius: 50%;
 	background-color: #fff;
@@ -905,6 +907,28 @@ td:not(:first-child) .sMainInfo__line{
 	{
 		width: rem(36);
 		height: rem(36);
+	}
+	span {
+		bottom: auto;
+    color: #fff;
+    left: 50%;
+    line-height: 1;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0);
+    z-index: 1;
+		font-size: rem(14);
+	}
+	img {
+		border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+		background-color: #fff;
 	}
 }
 

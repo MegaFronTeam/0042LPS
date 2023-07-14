@@ -13,19 +13,21 @@ block variables
 	- let  createObject = true
 
 block title
-	- let  title= 'Создание объекта'
+	- let  title= 'Создание задачи'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 	main
 		+sCreateObject({
 			workers: true,
-			status: true,
+			status: {
+				title: 'Создание задачи'
+			},
 			startDate: true,
 			endDate: true,
 			author: true,
 		})
-			h2 1. Натяжка потолка
+			h2 Создание задачи
 			+b.form-wrap
 				+e.main-row.row
 					.col-12

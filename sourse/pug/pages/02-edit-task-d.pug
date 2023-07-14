@@ -19,7 +19,9 @@ block pagecontent
 	//- +mob-mnu()
 	main
 		+sCreateObject({
-			status: true,
+			status: {
+				title: 'Статус задачи'
+			},
 			workers: true,
 			startDate: true,
 			endDate: true,

@@ -9,8 +9,8 @@ mixin sCreateObject(data)
 					if data.status
 						.col-12
 							+e.item
-								p Статус проекта
-								+selectStatus()
+								p!= data.status.title
+								+selectStatus(false)
 					if data.workers
 						.col-12
 							+e.item
@@ -55,10 +55,10 @@ mixin sCreateObject(data)
 						.col-12
 							+e.btn-row.row
 								.col-auto
-									+e.control-btn.btn.btn-light(href='#')
+									+e.control-btn.btn.btn-light(href='#' data-bs-toggle="tooltip2" data-bs-placement="top" title="Дублировать")
 										+icon('copy')
 								.col-auto
-									+e.control-btn--delete.btn.btn-light(href='#')
+									+e.control-btn--delete.btn.btn-light(href='#' data-bs-toggle="tooltip2" data-bs-placement="top" title="Удалить")
 										+icon('delete')
 		+e.footer
 			+e.footer-row
