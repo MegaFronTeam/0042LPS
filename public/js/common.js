@@ -602,6 +602,9 @@ function eventHandler() {
 	});
 
 	let maintable = document.querySelector('.main-table');
+	let tableCheckboxs = document.querySelectorAll('.main-table__title .custom-input input');
+	let bottomControlBar = document.querySelector('.bottom-control-bar');
+	let count = 0;
 	if(maintable) {
 		let toggleBtnsInnerLevel = maintable.querySelectorAll('.main-table__toggle-dropdown');
 		toggleBtnsInnerLevel.forEach(toggleBtn => {
@@ -610,16 +613,25 @@ function eventHandler() {
 				let selfTr = this.closest('tr');
 				if (selfTr.nextElementSibling.classList == 'inner-level') {
 					selfTr.classList.toggle('active');
-					console.log(selfTr.nextElementSibling.querySelector('td > div'));
+					// console.log(selfTr.nextElementSibling.querySelector('td > div'));
 					$(selfTr.nextElementSibling.querySelector('td > div')).slideToggle();
+				}
+				let allCheckboxes = selfTr.nextElementSibling.querySelectorAll('.custom-input__input');
+				for (const checkbox of allCheckboxes) {
+					if(checkbox.checked) {
+						checkbox.checked = false;
+						count--;
+					}	
+				}
+				bottomControlBar.querySelector('p span').innerHTML = count;
+				if (count === 0) {
+					document.querySelector('body').classList.remove('page-with-control-bar');
+					if (bottomControlBar) $(bottomControlBar).fadeOut('fast');
 				}
 			})
 		});
 	}
 
-	let tableCheckboxs = document.querySelectorAll('.main-table__title .custom-input input');
-	let bottomControlBar = document.querySelector('.bottom-control-bar');
-	let count = 0;
 	function checkStatusBar() {
 		if (count === 0) {
 			document.querySelector('body').classList.remove('page-with-control-bar');
@@ -635,10 +647,8 @@ function eventHandler() {
 			tableCheckbox.addEventListener('click', () => {
 				if(tableCheckbox.checked === true) {
 					count += 1;
-					tableCheckbox.closest('tr').classList.add('checked');
 				} else {
 					count -= 1;
-					tableCheckbox.closest('tr').classList.remove('checked');
 				}
 				bottomControlBar.querySelector('p span').innerHTML = count;
 				checkStatusBar();
