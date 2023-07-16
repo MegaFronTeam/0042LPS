@@ -1,20 +1,131 @@
 .form-wrap{
- 	&__input-wrap{
-			// @extend .form-group;
-			
-		}
-		&__input{
-			// @extend .form-control;
-		//  outline: 0 !important;
-		 resize: none;
- 	}
- 	&__btn{
- 		cursor: pointer;
- 	}
  	label{
  		width: 100%;
  		display: block;
  	}
+
+	label {
+		width: 100%;
+	}
+	&__input-wrap {
+		width: 100%;
+		position: relative;
+		--sp-y: #{$input-padding-y};
+		--fz: #{rem(16)};
+	}
+	&__input {
+		padding-top: calc(var(--sp-y) * 1.5);
+		padding-bottom: calc(var(--sp-y) * .5);
+		padding-right: rem(16) !important;
+		border: 2px solid $gray-100;
+		// background-color: $gray-100;
+		border-radius: 4px;
+		&::placeholder {
+			opacity: 0 !important	;
+			color: transparent;
+		}
+		&:-webkit-autofill ,
+		&:focus, 
+		&:not(:placeholder-shown){
+			&:not(textarea) {
+				// box-shadow:  0px 3px 0px  $primary;
+			}
+		}
+		&:-webkit-autofill ,
+		&:focus, 
+		&:not(:placeholder-shown) {
+			box-shadow: none;
+			// background-color: #fff;
+			// border-color: $accent;
+			& ~ .form-wrap__input-title{
+			//  color: #846951;
+				transform: scale(0.70) translateY(-80%) ; 
+				font-weight: 500;
+			}
+		}
+		// &:focus {
+		// 	background-color: #fff;
+		// 	border-color: $accent;
+		// }
+		&:disabled {
+			// background-color: $gray-400;
+			// border-color: $gray-400;
+			cursor: not-allowed;
+			& ~ .custom-input-label__input-title {
+				color: rgba(0, 0, 0, 0.48);
+			}
+		}
+	}
+	&__input-title {
+		position: absolute;
+		// padding-left: $input-padding-x;
+		left: $input-padding-x;
+		top: calc(var(--sp-y) + #{rem(2)}); 
+		font-size: var(--fz);
+		color: $gray-600; 
+		transform-origin: left ;
+		pointer-events: none;
+		font-weight: 400;
+		@include mt;
+		max-width: calc(100% - #{$input-padding-x});
+	}
+
+	textarea {
+		&::placeholder {
+			opacity: 1 !important	;
+			color: $gray-600;
+		}
+	}
+	&__main-row {
+		--bs-gutter-y: #{rem(18)};
+		@include media-breakpoint-up(md) {
+			--bs-gutter-y: #{rem(24)};
+		}
+	}
+	&__create-room {
+		@include mt;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: rem(18);
+		aspect-ratio: 336/192;
+		border: 1px dashed $gray-200;
+		color: #000;
+		font-weight: 500;
+		line-height: 1.25;
+		font-size: rem(14);
+		cursor: pointer;
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
+		@include media-breakpoint-up(sm) {
+			aspect-ratio: 624/300;
+		}
+		&:hover {
+			background-color: $accent;
+			border-color: $accent;
+			.form-wrap__icon-wrap {
+				background-color: #fff;
+			}
+		}
+	}
+	&__icon-wrap {
+		@include mt;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(48);
+		height: rem(48);
+		border-radius: 50%;
+		background-color: $accent;
+		color: #000;
+		margin-bottom: rem(12);
+		.icon {
+			flex: 0 0 auto;
+			font-size: rem(20);
+		}
+	}
 }
 
 .parsley-error{
@@ -55,6 +166,7 @@
 		line-height: 1.25;
 		color: #000;
 		border-radius: 0;
+		background-color: transparent;
 		&::placeholder {
 			color: $gray-600;
 		}
@@ -316,69 +428,69 @@ textarea.form-control {
 }
 
 
-.custom-input-label {
-	width: 100%;
-	position: relative;
-	--sp-y: #{rem(12)};
-	--fz: #{rem(16)};
-	label {
-		width: 100%;
-	}
-	&__input {
-		padding-top: calc(var(--sp-y) * 1.5);
-		padding-bottom: calc(var(--sp-y) * .5);
-		padding-right: rem(16) !important;
-		border: 2px solid $gray-100;
-		background-color: $gray-100;
-		border-radius: 4px;
-		&::placeholder {
-			opacity: 0 !important	;
-			color: transparent;
-		}
-		&:-webkit-autofill ,
-		&:focus, 
-		&:not(:placeholder-shown){
-			&:not(textarea) {
-				// box-shadow:  0px 3px 0px  $primary;
-			}
-		}
-		&:-webkit-autofill ,
-		&:focus, 
-		&:not(:placeholder-shown), 
-		&.form-select  {
-			box-shadow: none;
-			// background-color: #fff;
-			// border-color: $accent;
-			& ~ .custom-input-label__input-title{
-			 //  color: #846951;
-				transform: scale(0.70) translateY(-80%) ; 
-				font-weight: 500;
-			}
-		}
-		&:focus {
-			background-color: #fff;
-			border-color: $accent;
-		}
-		&:disabled {
-			background-color: $gray-400;
-			border-color: $gray-400;
-			pointer-events: none;
-			& ~ .custom-input-label__input-title {
-				color: rgba(0, 0, 0, 0.48);
-			}
-		}
-	}
-	&__input-title {
-		position: absolute;
-		// padding-left: $input-padding-x;
-		left: $input-padding-x;
-		top: calc(var(--sp-y) + #{rem(2)}); 
-		font-size: var(--fz);
-		color: $gray-600; 
-		transform-origin: left ;
-		pointer-events: none;
-		font-weight: 400;
-		@include mt;
-		max-width: calc(100% - #{$input-padding-x});
-	}
-}
+// .custom-input-label {
+// 	width: 100%;
+// 	position: relative;
+// 	--sp-y: #{rem(12)};
+// 	--fz: #{rem(16)};
+// 	label {
+// 		width: 100%;
+// 	}
+// 	&__input {
+// 		padding-top: calc(var(--sp-y) * 1.5);
+// 		padding-bottom: calc(var(--sp-y) * .5);
+// 		padding-right: rem(16) !important;
+// 		border: 2px solid $gray-100;
+// 		background-color: $gray-100;
+// 		border-radius: 4px;
+// 		&::placeholder {
+// 			opacity: 0 !important	;
+// 			color: transparent;
+// 		}
+// 		&:-webkit-autofill ,
+// 		&:focus, 
+// 		&:not(:placeholder-shown){
+// 			&:not(textarea) {
+// 				// box-shadow:  0px 3px 0px  $primary;
+// 			}
+// 		}
+// 		&:-webkit-autofill ,
+// 		&:focus, 
+// 		&:not(:placeholder-shown), 
+// 		&.form-select  {
+// 			box-shadow: none;
+// 			// background-color: #fff;
+// 			// border-color: $accent;
+// 			& ~ .custom-input-label__input-title{
+// 			 //  color: #846951;
+// 				transform: scale(0.70) translateY(-80%) ; 
+// 				font-weight: 500;
+// 			}
+// 		}
+// 		&:focus {
+// 			background-color: #fff;
+// 			border-color: $accent;
+// 		}
+// 		&:disabled {
+// 			background-color: $gray-400;
+// 			border-color: $gray-400;
+// 			pointer-events: none;
+// 			& ~ .custom-input-label__input-title {
+// 				color: rgba(0, 0, 0, 0.48);
+// 			}
+// 		}
+// 	}
+// 	&__input-title {
+// 		position: absolute;
+// 		// padding-left: $input-padding-x;
+// 		left: $input-padding-x;
+// 		top: calc(var(--sp-y) + #{rem(2)}); 
+// 		font-size: var(--fz);
+// 		color: $gray-600; 
+// 		transform-origin: left ;
+// 		pointer-events: none;
+// 		font-weight: 400;
+// 		@include mt;
+// 		max-width: calc(100% - #{$input-padding-x});
+// 	}
+// }

@@ -19,17 +19,20 @@ block pagecontent
 	//- +mob-mnu()
 	main
 		+sCreateObject({
-			status: true,
+			status: {
+				title: 'Статус проекта',
+			},
 			startDate: true,
 			endDate: true,
 			author: true
 		})
 			h2 Создание объекта
-			+e.main-row.row
-				.col-12
-					+customInput('Введите название', 'text')
-				.col-12
-					+input('Введите описание объекта', 'textarea')
+			+b.form-wrap
+				+e.main-row.row
+					.col-12
+						+customInput('Введите название', 'text')
+					.col-12
+						+input('Введите описание объекта', 'textarea')
 		.close-btn: +icon('close')
       
 

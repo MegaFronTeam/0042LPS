@@ -3,6 +3,9 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
+	@include media-breakpoint-up(md) {
+		--sPB: #{rem(24)};
+	}
 	&__row {
 		--bs-gutter-x: #{rem(12)};
 		--bs-gutter-y: var(--bs-gutter-x);
@@ -23,6 +26,9 @@
 		color: $body-color;
 	}
 	.details-with-toggle {
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(36);
+		}
 		@include media-breakpoint-down(md) {
 			margin-left: rem(-12);
 			margin-right: rem(-12);

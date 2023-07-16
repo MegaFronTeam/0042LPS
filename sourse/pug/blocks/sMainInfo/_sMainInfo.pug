@@ -1,4 +1,4 @@
-mixin sMainInfo(data)
+mixin sMainInfo(selects, secondTable, tile)
 	// start sMainInfo
 	+b.sMainInfo.section#sMainInfo&attributes(attributes)
 		.container-fluid
@@ -6,6 +6,9 @@ mixin sMainInfo(data)
 				+toggleBlock()
 					.swiper-slide
 						+toggleBtn('list', `Список`).active
+					if tile
+						.swiper-slide
+							+toggleBtn('tile', `Шахматка`)
 					.swiper-slide
 						+toggleBtn('tasks', `Задачи`)
 					.swiper-slide
@@ -14,7 +17,42 @@ mixin sMainInfo(data)
 						+toggleBtn('info', `Информация`)
 					.swiper-slide
 						+toggleBtn('pen', `Заметки`)
-			+mainTable()
+			if selects
+				+e.selects-wrap
+					.row
+						+e.col.col-md.col-xl-3
+							+b.custom-select-wrap--third-type
+								select(class="basic-select basic-select--js")
+									option Все бригады
+									-for(let i = 1; i <= 10; i++)
+										option!= i
+						+e.col.col-md.col-xl-3
+							+b.custom-select-wrap--third-type
+								select(class="basic-select basic-select--js")
+									option Все поверхности
+									-for(let i = 1; i <= 10; i++)
+										option!= i
+						+e.col.col-md.col-xl-3
+							+b.custom-select-wrap--third-type
+								select(class="basic-select basic-select--js")
+									option Все работы
+									-for(let i = 1; i <= 10; i++)
+										option!= i
+						.col.col-md-12.order-md-last.me-auto
+							+b.custom-select-wrap--second-type
+								+e.label.text-secondary Сортировать по
+								select(class="basic-select basic-select--js")
+									option Все статусы
+									option Планирование
+									option В работе
+									option Все статусы
+						.col-auto.ms-md-auto
+							+e.reset(href='#') Сбросить
+			if secondTable
+				+mainTable2()
+			else
+				+mainTable()
+					block
 	// end sMainInfo
 mixin sMainInfo2(data)
 	// start sMainInfo
@@ -224,7 +262,8 @@ mixin sMainInfo5(data)
 					+e.head
 						.row(style="--bs-gutter-x:12px")
 							.col-auto
-								.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") МИ
+								.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") 
+									span МИ
 							.col
 								+e.input-wrap
 									textarea.form-control(placeholder="Написать заметку")
@@ -232,11 +271,24 @@ mixin sMainInfo5(data)
 										+icon("submit")
 								+add-file()
 					+e.body
-						- for (var x = 0; x < 3; x++)
+						+e.item
+							.row.align-items-center(style="--bs-gutter-x:12px").mb-3
+								.col-auto
+									.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") 
+										span АИ
+										+img('img/avatar.jpg') 
+								.col
+									strong.me-2 Антон Иванов
+									span.text-secondary 23 дек 23, 18:59
+							+e.content
+								p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+								+file-item('Сметная документация.xlsx','14 мб','false', 'f')
+						- for (var x = 0; x < 2; x++)
 							+e.item
 								.row.align-items-center(style="--bs-gutter-x:12px").mb-3
 									.col-auto
-										.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") АИ
+										.avatar-block.avatar-block--sm(style="background: #467CF4; color: #fff") 
+											span АИ
 									.col
 										strong.me-2 Антон Иванов
 										span.text-secondary 23 дек 23, 18:59

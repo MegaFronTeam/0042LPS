@@ -18,6 +18,7 @@
 	}
 	@include media-breakpoint-down(md) {
 		min-height: 100vh;
+		padding-bottom: rem(165);
 	}
 	&__body {
 		display: flex;
@@ -89,6 +90,14 @@
 		@include media-breakpoint-up(md) {
 			padding: rem(24) rem(48);
 		}
+		@include media-breakpoint-down(md) {
+			position: fixed;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			z-index: 100;
+			background-color: #fff;
+		}
 	}
 	&__footer-row {
 		@include roww('24px', '12px', 'm');
@@ -140,12 +149,12 @@
 			font-size: rem(20);
 		}
 	}
-	.custom-input-wrap {
-		margin-bottom: rem(24);
-		@include media-breakpoint-up(md) {
-			margin-bottom: 0;
-		}
-	}
+	// .custom-input-wrap {
+	// 	margin-bottom: rem(24);
+	// 	@include media-breakpoint-up(md) {
+	// 		margin-bottom: 0;
+	// 	}
+	// }
 	&__item {
 		display: flex;
 		align-items: center;
@@ -155,6 +164,12 @@
 			align-items: flex-start;
 			flex-direction: column;
 			justify-content: flex-start;
+		}
+		span {
+			font-size: rem(14);
+			@include media-breakpoint-up(md) {
+				font-size: rem(16);
+			}
 		}
 	}
 	&__btn-row {
@@ -209,56 +224,12 @@
 			}
 		}
 	}
-	&__main-row {
-		--bs-gutter-y: #{rem(18)};
-		@include media-breakpoint-up(md) {
-			--bs-gutter-y: #{rem(24)};
-		}
-	}
-	&__create-room {
-		@include mt;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		padding: rem(18);
-		aspect-ratio: 336/192;
-		border: 1px dashed $gray-200;
-		color: #000;
-		font-weight: 500;
-		line-height: 1.25;
-		font-size: rem(16);
-		cursor: pointer;
-		@include media-breakpoint-up(sm) {
-			aspect-ratio: 624/300;
-		}
-		&:hover {
-			background-color: $accent;
-			border-color: $accent;
-			.sCreateObject__icon-wrap {
-				background-color: #fff;
+	.custom-select-wrap--simple,
+	.select-status {
+		.select2-dropdown--below {
+			@include media-breakpoint-down(md) {
+				left: -62px !important;
 			}
-		}
-	}
-	&__icon-wrap {
-		@include mt;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: rem(48);
-		height: rem(48);
-		border-radius: 50%;
-		background-color: $accent;
-		color: #000;
-		margin-bottom: rem(12);
-		.icon {
-			flex: 0 0 auto;
-			font-size: rem(20);
-		}
-	}
-	.select2-dropdown--below {
-		@include media-breakpoint-down(md) {
-			left: -62px !important;
 		}
 	}
 	.plan-block {
@@ -303,9 +274,11 @@
 			font-style: italic;
 			color: $gray-600;
 			margin-left: auto;
-			margin-top: rem(12);
+			margin-bottom: rem(12);
+			font-size: rem(14);
 			@include media-breakpoint-up(md) {
 				flex-direction: row;
+				font-size: rem(16);
 			}
 			&:hover {
 				color: $primary;
@@ -318,6 +291,29 @@
 					margin-right: 0;
 					margin-left: rem(12);
 				}
+			}
+		}
+	}
+	.select-status {
+		.select2-container.select2-container--default.select2-container--open {
+			@include media-breakpoint-down(md) {
+				width: calc(100vw - 1.5rem)!important;
+				max-width: none;
+			}
+		}
+		.select2-container.select2-container--default.select2-container--open .select2-dropdown {
+			@include media-breakpoint-down(md) {
+				width: 100%!important;
+			}
+		}
+		.select2-dropdown--below {
+			@include media-breakpoint-down(md) {
+				left: 0!important;
+			}
+		}
+		.select2.select2-container.select2-container--default.select2-container--below.select2-container--open.select2-container--focus {
+			@include media-breakpoint-down(md) {
+				width: max-content !important;
 			}
 		}
 	}

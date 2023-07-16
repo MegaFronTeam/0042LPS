@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>Создание объекта</title>
+		<title>Редактирование объекта</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
@@ -31,18 +31,20 @@
 			<div class="sCreateObject" id="sCreateObject">
 				<div class="sCreateObject__body">
 					<div class="sCreateObject__left-side">
-						<h2>Создание объекта</h2>
-						<div class="sCreateObject__main-row row">
-							<div class="col-12">
-								<div class="custom-input-wrap form-group"><input class="custom-input-wrap__input form-control" name="text" type="text" placeholder="Введите название"/>
-									<div class="custom-input-wrap__line">
+						<h2>Редактирование объекта</h2>
+						<div class="form-wrap">
+							<div class="form-wrap__main-row row">
+								<div class="col-12">
+									<div class="custom-input-wrap form-group"><input class="custom-input-wrap__input form-control" name="text" type="text" placeholder="Введите название"/>
+										<div class="custom-input-wrap__line">
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-12">
-								<div class="sCreateObject__input-wrap form-group"><textarea class="sCreateObject__input form-control" name="textarea" placeholder="Введите описание объекта"></textarea>
+								<div class="col-12">
+									<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" name="textarea" placeholder="Введите описание объекта"></textarea>
+									</div>
+									<!-- +e.input-wrap-->
 								</div>
-								<!-- +e.input-wrap-->
 							</div>
 						</div>
 					</div>
@@ -54,9 +56,7 @@
 									<div class="select-status">
 										<select class="custom-select--js">
 											<option data-img="img/svg/play.svg">В работе</option>
-											<option data-img="img/svg/done.svg">Планирование</option>
 											<option data-img="img/svg/time.svg">Завершен</option>
-											<option data-img="img/svg/archive.svg">Архив</option>
 										</select>
 									</div>
 								</div>
@@ -103,14 +103,14 @@
 							<div class="col-12">
 								<div class="sCreateObject__btn-row row">
 									<div class="col-auto">
-										<a class="sCreateObject__control-btn btn btn-light" href="#">
+										<a class="sCreateObject__control-btn btn btn-light" href="#" data-bs-toggle="tooltip2" data-bs-placement="top" title="Дублировать">
 											<svg class="icon icon-copy ">
 												<use xlink:href="img/svg/sprite.svg#copy"></use>
 											</svg>
 										</a>
 									</div>
 									<div class="col-auto">
-										<a class="sCreateObject__control-btn sCreateObject__control-btn--delete btn btn-light" href="#">
+										<a class="sCreateObject__control-btn sCreateObject__control-btn--delete btn btn-light" href="#" data-bs-toggle="tooltip2" data-bs-placement="top" title="Удалить">
 											<svg class="icon icon-delete ">
 												<use xlink:href="img/svg/sprite.svg#delete"></use>
 											</svg>

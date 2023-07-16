@@ -13,38 +13,41 @@ block variables
 	- let  createObject = true
 
 block title
-	- let  title= 'Создание объекта'
+	- let  title= 'Создание задачи'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 	main
 		+sCreateObject({
 			workers: true,
-			status: true,
+			status: {
+				title: 'Создание задачи'
+			},
 			startDate: true,
 			endDate: true,
 			author: true,
 		})
-			h2 1. Натяжка потолка
-			+e.main-row.row
-				.col-12
-					+b.custom-select-wrap--third-type
-						select(class="basic-select basic-select--js" data-placeholder='Выберите наименование работы')
-							option
-							-for(let i = 1; i <= 10; i++)
-								option!= i
-				.col-12
-					+b.custom-input-label.form-group
-						label
-							+e.INPUT.input.form-control(name='Количество слоев' type='text' placeholder='Количество слоев')
-							+e.SPAN.input-title Количество слоев
-				.col-12
-					+b.custom-input-label.form-group
-						label
-							+e.INPUT.input.form-control(disabled name='Требуемый материал' type='text' placeholder='Требуемый материал')
-							+e.SPAN.input-title Требуемый материал
-				.col-12
-					+input('Введите описание объекта', 'textarea')
+			h2 Создание задачи
+			+b.form-wrap
+				+e.main-row.row
+					.col-12
+						+b.custom-select-wrap--third-type
+							select(class="basic-select basic-select--js" data-placeholder='Выберите наименование работы')
+								option
+								-for(let i = 1; i <= 10; i++)
+									option!= i
+					.col-12
+						+e.input-wrap.form-group
+							label
+								+e.INPUT.input.form-control(name='Количество слоев' type='text' placeholder='Количество слоев')
+								+e.SPAN.input-title Количество слоев
+					.col-12
+						+e.input-wrap.form-group
+							label
+								+e.INPUT.input.form-control(disabled name='Требуемый материал' type='text' placeholder='Требуемый материал')
+								+e.SPAN.input-title Требуемый материал
+					.col-12
+						+input('Введите описание объекта', 'textarea')
 		.close-btn: +icon('close')
       
 

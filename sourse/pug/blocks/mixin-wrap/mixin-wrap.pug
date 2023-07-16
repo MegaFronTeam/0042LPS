@@ -51,6 +51,14 @@ mixin page-head(data)
 						h1!= data.t
 							if data.badge
 								.badge.badge-primary!= data.badge
+						if data.sample
+							+e.sample
+								if data.sample.done
+									+icon('check2')
+									| Замеры
+								else
+									+icon('write')
+									| Нужны замеры
 				.col-12.d-none.d-md-block.m-0.p-0.order-md-3
 				if data.edit
 					+e.col.col-md-auto.order-md-2(class=data.edit.class)
@@ -72,7 +80,10 @@ mixin parts(elem)
 mixin aside()
 	aside 
 		+b.aside-wrap
-			+e.logo(href='#'): +logo()
+			//- +e.logo(href='#'): +logo()
+			+e.logo(href='#')
+				+img('img/svg/logo.svg').d-none.d-md-block
+				+img('img/svg/logo-sm.svg').d-md-none
 			+e.nav
 				ul
 					li: a.active(href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Объекты")
@@ -176,7 +187,7 @@ mixin bottomControlBar()
 	+b.bottom-control-bar
 		.row
 			.col.me-auto
-				p Выбрано: 1 элемент(–ов)
+				p Выбрано: #[span] элемент(–ов)
 			.col-auto
 				+e.btn.btn.btn-dark(href='#')
 					+icon('edit')
@@ -190,13 +201,17 @@ mixin bottomControlBar()
 					+icon('delete')
 					span Удалить
 
-mixin selectStatus()
+mixin selectStatus(def=true)
 	+b.select-status
 		select(class="custom-select--js")
-			option(data-img='img/svg/play.svg') В работе
-			option(data-img='img/svg/done.svg') Планирование
-			option(data-img='img/svg/time.svg') Завершен
-			option(data-img='img/svg/archive.svg') Архив
+			if def
+				option(data-img='img/svg/play.svg') В работе
+				option(data-img='img/svg/done.svg') Планирование
+				option(data-img='img/svg/time.svg') Завершен
+				option(data-img='img/svg/archive.svg') Архив
+			else
+				option(data-img='img/svg/play.svg') В работе
+				option(data-img='img/svg/time.svg') Завершен
 
 mixin mainTable()
 	+b.main-table
@@ -213,18 +228,13 @@ mixin mainTable()
 					th Прогресс
 					th Сроки
 			tbody
-				tr
-					td(colspan='9').add-more
-						+e.add-new(href='#')
-							+icon('add')
-							| Добавить дом
 				mixin firstLevel(title, pod, floor, room, placment, area, done, all, precent, date)
 					tr&attributes(attributes)
 						td
 							+e.title
 								+e.toggle-dropdown(href='#'): +icon('chevron-right')
 								+in-c()
-								.h3!= title
+								a(href="#").h3!= title
 						td!= pod
 						td!= floor
 						td!= room
@@ -248,7 +258,7 @@ mixin mainTable()
 								if toggle
 									+e.toggle-dropdown(href='#'): +icon('chevron-right')
 								+in-c()
-								p!= title
+								a(href="#")!= title
 						td!= pod
 						td!= floor
 						td!= room
@@ -265,486 +275,76 @@ mixin mainTable()
 								!= precent
 						td!= date
 						block
-				+firstLevel('1. Дом №1', '3', '-', '130', '268', '1300 м²', 321, '/433', '67%', '11 ноя 23 – 11 фев 24')
-					tr.inner-level
-						td(colspan='9')
-							table
-								tr
-									td(colspan='9').add-more
-										+e.add-new(href='#')
-											+icon('add')
-											| Добавить подъезд
-								+secondLevel('2.1. Подъезд №1', '-', '12', '36', '104', '696 м²', '321', '/433', '59%', '15 ноя 23 – 10 фев 24')
-									tr.inner-level
-										td(colspan='9')
-											table
-												tr
-													td(colspan='9').add-more
-														+e.add-new(href='#')
-															+icon('add')
-															| Добавить этаж
-												+secondLevel('2.2.1. Этаж №1', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-								+secondLevel('2.1. Подъезд №2', '-', '12', '36', '104', '696 м²', '321', '/433', '59%', '15 ноя 23 – 10 фев 24')
-									tr.inner-level
-										td(colspan='9')
-											table
-												tr
-													td(colspan='9').add-more
-														+e.add-new(href='#')
-															+icon('add')
-															| Добавить этаж
-												+secondLevel('2.2.1. Этаж №1', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-												+secondLevel('2.2.1. Этаж №2', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-				+firstLevel('2. Дом №2', '4', '-', '126', '280', '1291 м²', 81, '/441', '67%', '15 ноя 23 – 10 фев 24')
-					tr.inner-level
-						td(colspan='9')
-							table
-								tr
-									td(colspan='9').add-more
-										+e.add-new(href='#')
-											+icon('add')
-											| Добавить подъезд
-								+secondLevel('2.1. Подъезд №1', '-', '12', '36', '104', '696 м²', '321', '/433', '59%', '15 ноя 23 – 10 фев 24')
-									tr.inner-level
-										td(colspan='9')
-											table
-												tr
-													td(colspan='9').add-more
-														+e.add-new(href='#')
-															+icon('add')
-															| Добавить этаж
-												+secondLevel('2.2.1. Этаж №1', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-								+secondLevel('2.1. Подъезд №2', '-', '12', '36', '104', '696 м²', '321', '/433', '59%', '15 ноя 23 – 10 фев 24')
-									tr.inner-level
-										td(colspan='9')
-											table
-												tr
-													td(colspan='9').add-more
-														+e.add-new(href='#')
-															+icon('add')
-															| Добавить этаж
-												+secondLevel('2.2.1. Этаж №1', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-												+secondLevel('2.2.1. Этаж №2', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-				+firstLevel('3. Дом №3', '4', '-', '126', '280', '1291 м²', 81, '/441', '67%', '15 ноя 23 – 10 фев 24')
-					tr.inner-level
-						td(colspan='9')
-							table
-								tr
-									td(colspan='9').add-more
-										+e.add-new(href='#')
-											+icon('add')
-											| Добавить подъезд
-								+secondLevel('2.1. Подъезд №1', '-', '12', '36', '104', '696 м²', '321', '/433', '59%', '15 ноя 23 – 10 фев 24')
-									tr.inner-level
-										td(colspan='9')
-											table
-												tr
-													td(colspan='9').add-more
-														+e.add-new(href='#')
-															+icon('add')
-															| Добавить этаж
-												+secondLevel('2.2.1. Этаж №1', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-								+secondLevel('2.1. Подъезд №2', '-', '12', '36', '104', '696 м²', '321', '/433', '59%', '15 ноя 23 – 10 фев 24')
-									tr.inner-level
-										td(colspan='9')
-											table
-												tr
-													td(colspan='9').add-more
-														+e.add-new(href='#')
-															+icon('add')
-															| Добавить этаж
-												+secondLevel('2.2.1. Этаж №1', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-												+secondLevel('2.2.1. Этаж №2', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-				+firstLevel('4. Дом №4', '4', '-', '126', '280', '1291 м²', 81, '/441', '67%', '15 ноя 23 – 10 фев 24')
-					tr.inner-level
-						td(colspan='9')
-							table
-								tr
-									td(colspan='9').add-more
-										+e.add-new(href='#')
-											+icon('add')
-											| Добавить подъезд
-								+secondLevel('2.1. Подъезд №1', '-', '12', '36', '104', '696 м²', '321', '/433', '59%', '15 ноя 23 – 10 фев 24')
-									tr.inner-level
-										td(colspan='9')
-											table
-												tr
-													td(colspan='9').add-more
-														+e.add-new(href='#')
-															+icon('add')
-															| Добавить этаж
-												+secondLevel('2.2.1. Этаж №1', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-								+secondLevel('2.1. Подъезд №2', '-', '12', '36', '104', '696 м²', '321', '/433', '59%', '15 ноя 23 – 10 фев 24')
-									tr.inner-level
-										td(colspan='9')
-											table
-												tr
-													td(colspan='9').add-more
-														+e.add-new(href='#')
-															+icon('add')
-															| Добавить этаж
-												+secondLevel('2.2.1. Этаж №1', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-												+secondLevel('2.2.1. Этаж №2', '-', '-', '16', '66', '436 м²', '81', '/441', '56%', '15 ноя 23 – 10 фев 24')
-													tr.inner-level
-														td(colspan='9')
-															table
-																tr
-																	td(colspan='9').add-more
-																		+e.add-new(href='#')
-																			+icon('add')
-																			| Добавить квартиру
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																+secondLevel('2.2.2.1. Квартира №27', '-', '-', '-', '120', '426 м²', '15', '/45', '19%', '15 ноя 23 – 10 фев 24')
-																	tr.inner-level
-																		td(colspan='9')
-																			table
-																				tr
-																					td(colspan='9').add-more
-																						+e.add-new(href='#')
-																							+icon('add')
-																							| Добавить помещение
-																				+secondLevel('2.2.2.2.1. Кухня', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
-																				+secondLevel('2.2.2.2.1. Санузел', '-', '-', '-', '-', '546 м²', '321', '/433', '90%', '15 ноя 23 – 10 фев 24', false)
+				block
+
+mixin mainTable2()
+	+b.main-table--2
+		table
+			thead
+				tr
+					th Задача
+					th Поверхность
+					th Бригада
+					th Площадь
+					th Сроки
+			tbody
+				tr
+					td(colspan='5').add-more
+						+e.add-new(href='#')
+							+icon('add')
+							| Добавить дом
+				tr
+					td
+						+e.title
+							+in-c()
+							.badge.badge-primary В работе 
+							a(href='#') 1. Натяжка потолка
+					td Потолок
+					td Бригада №3
+					td 1300 м²
+					td 30 ноя 23 – 30 фев 24
+				tr
+					td
+						+e.title
+							+in-c()
+							.badge.badge-success Завершен
+							a(href='#') 2. Шпаклевка стен
+					td Пол
+					td Бригада №3
+					td 1300 м²
+					td 30 ноя 23 – 30 фев 24
+				tr
+					td
+						+e.title
+							+in-c()
+							.badge.badge-primary В работе 
+							a(href='#') 3. Заливка полов
+					td Стены
+					td Бригада №3
+					td 1300 м²
+					td 30 ноя 23 – 30 фев 24
+				tr
+					td
+						+e.title
+							+in-c()
+							.badge.badge-primary В работе 
+							a(href='#') 4. Штукатурка стен
+					td Стены
+					td Бригада №3
+					td 1300 м²
+					td.text-danger
+						+icon('warning')
+						| 30 ноя 23 – 30 фев 24
+				tr
+					td
+						+e.title
+							+in-c()
+							.badge.badge-primary В работе 
+							a(href='#') 5. Заливка
+					td Потолок
+					td Бригада №3
+					td 1300 м²
+					td 30 ноя 23 – 30 фев 24
 //- Always at bottom of the file
 
 mixin circularProgressBar(precent, status='Прогресс')

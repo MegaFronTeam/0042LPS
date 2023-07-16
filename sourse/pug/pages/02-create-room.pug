@@ -24,16 +24,17 @@ block pagecontent
 			author: true,
 		})
 			h2 Создание помещения
-			+e.main-row.row
-				.col-12
-					+customInput('Введите название', 'text')
-				.col-12
-					+input('Введите описание объекта', 'textarea')
-				.col-12
-					+e.create-room
-						+e.icon-wrap
-							+icon('plus')
-						| Указать замеры помещения
+			+b.form-wrap
+				+e.main-row.row
+					.col-12
+						+customInput('Введите название', 'text')
+					.col-12
+						+input('Введите описание объекта', 'textarea')
+					.col-12
+						+e.create-room
+							+e.icon-wrap
+								+icon('plus')
+							| Указать замеры помещения
 			//- .d-md-none
 			//- 	+selectStatus()
 		.close-btn: +icon('close')

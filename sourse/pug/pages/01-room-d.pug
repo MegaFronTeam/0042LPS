@@ -7,27 +7,27 @@ include ../blocks/sObject/_sObject.pug
 //- include ../blocks/sForm/_sForm.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sObjectDetails/_sObjectDetails.pug
-include ../blocks/sPageInfo/_sPageInfo.pug
 include ../blocks/sMainInfo/_sMainInfo.pug
 
 block variables
-	- let  mainPage= 'room-page' 
+	- let  mainPage= 'room-page page-with-control-bar' 
 	- let  bg= '01-3-house.jpg'
 
 block title
-	- let  title= '01-room-info-d'
+	- let  title= 'Кухня'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 
 	main
 		+page-head({
-			items: ['Объекты', 'ЖК видный', 'Дом №1','Подъезд №2','Этаж №2','Квартира №32','Кухня №1'],
+			items: ['Объекты', 'ЖК видный', 'Дом №1', 'Подъезд №2', 'Этаж №2', 'Квартира №32', 'Кухня №1'],
 			edit: {},
 			t: 'Кухня',
 			badge: '33%',
 			stat: ' ',
 			date: ' ',
+			sample: {done: "true"}
 		})
 		+sObjectDetails()
 			+e.header
@@ -45,4 +45,18 @@ block pagecontent
 						+item('Квартиры', '728 кв')
 						+item('Помещения', '1350 пом')
 						+item('Площадь', 'S 3440 м²')
-		+sMainInfo4
+				//- +e.row.row
+				//- 	.col-sm-6.col-lg-4.col-xl-3
+				//- 		+workStatus('Стяжка пола', '22%', '#467CF4')
+				//- 	.col-sm-6.col-lg-4.col-xl-3
+				//- 		+workStatus('Натяжка потолка', '22%', '#1DBA6F')
+				//- 	.col-sm-6.col-lg-4.col-xl-3
+				//- 		+workStatus('Штукатурка стен', '22%', '#F4B13E')
+				//- 	.col-sm-6.col-lg-4.col-xl-3
+				//- 		+workStatus('Шпаклевка стен', '22%', '#9A52DF')
+				//- 	.col-sm-6.col-lg-4.col-xl-3
+				//- 		+workStatus('Затирка', '22%', '#E94410')
+				//- 	.col-sm-6.col-lg-4.col-xl-3
+				//- 		+workStatus('Плинтус', '22%', '#8B9298')
+		+sMainInfo(true, true)
+	+bottomControlBar()
