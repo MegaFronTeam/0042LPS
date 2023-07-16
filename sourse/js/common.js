@@ -508,44 +508,46 @@ function eventHandler() {
 	});
 
 
+	let datePickersSettings = {
+		"format": "DD.MM.YYYY",
+		"separator": " - ",
+		"applyLabel": "Применить",
+		"cancelLabel": "Сбросить",
+		"fromLabel": "с",
+		"toLabel": "по",
+		// "customRangeLabel": "Custom",
+		// "weekLabel": "W",
+		"daysOfWeek": [
+			"Вс",
+			"Пн",
+			"Вт",
+			"Ср",
+			"Чт",
+			"Пт",
+			"Сб"
+		],
+		"monthNames": [
+			"Январь",
+			"Февраль",
+			"Март",
+			"Апрель",
+			"Май",
+			"Июнь",
+			"Июль",
+			"Август",
+			"Сентябрь",
+			"Октябрь",
+			"Ноябрь",
+			"Декабрь"
+		],
+		"firstDay": 1
+	};
+
 	$('.dateRange-js').daterangepicker({
 		buttonClasses: 'btn',
 		applyButtonClasses: 'btn-warning',
 		cancelButtonClasses: 'btn-light',
-		locale: {
-			"format": "DD.MM.YYYY",
-			"separator": " - ",
-			"applyLabel": "Применить",
-			"cancelLabel": "Сбросить",
-			"fromLabel": "с",
-			"toLabel": "по",
-			// "customRangeLabel": "Custom",
-			// "weekLabel": "W",
-			"daysOfWeek": [
-				"Вс",
-				"Пн",
-				"Вт",
-				"Ср",
-				"Чт",
-				"Пт",
-				"Сб"
-			],
-			"monthNames": [
-				"Январь",
-				"Февраль",
-				"Март",
-				"Апрель",
-				"Май",
-				"Июнь",
-				"Июль",
-				"Август",
-				"Сентябрь",
-				"Октябрь",
-				"Ноябрь",
-				"Декабрь"
-			],
-			"firstDay": 1
-		},
+		locale: datePickersSettings
 	},
 	);
 
@@ -553,45 +555,13 @@ function eventHandler() {
 		//do something, like clearing an input
 		$('.dateRange-js').val('');
 	});
+	
 
 	$('.dateSingle-js').daterangepicker({
 		singleDatePicker: true,
 		autoApply: true,
 		buttonClasses: 'd-none',
-		locale: {
-			"format": "DD.MM.YYYY",
-			"separator": " - ",
-			"applyLabel": "Применить",
-			"cancelLabel": "Сбросить",
-			"fromLabel": "с",
-			"toLabel": "по",
-			// "customRangeLabel": "Custom",
-			// "weekLabel": "W",
-			"daysOfWeek": [
-				"Вс",
-				"Пн",
-				"Вт",
-				"Ср",
-				"Чт",
-				"Пт",
-				"Сб"
-			],
-			"monthNames": [
-				"Январь",
-				"Февраль",
-				"Март",
-				"Апрель",
-				"Май",
-				"Июнь",
-				"Июль",
-				"Август",
-				"Сентябрь",
-				"Октябрь",
-				"Ноябрь",
-				"Декабрь"
-			],
-			"firstDay": 1
-		},
+		locale: datePickersSettings
 	});
 
 	$('.dateSingle-js').on('apply.daterangepicker', function(ev, picker) {
@@ -644,10 +614,16 @@ function eventHandler() {
 	checkStatusBar();
 	if (tableCheckboxs.length > 0) {
 		for (const tableCheckbox of tableCheckboxs) {
-			tableCheckbox.addEventListener('click', () => {
+			tableCheckbox.addEventListener('change', (el) => {
+
 				if(tableCheckbox.checked === true) {
+					$(tableCheckbox).closest('.main-table').find('input[type="checkbox"]:not(:checked)').prop('disabled', true); 
+					$(tableCheckbox).closest('tr').siblings('tr:not(.inner-level)').find('input[type="checkbox"]').prop('disabled', false);
 					count += 1;
 				} else {
+					if ($(tableCheckbox).closest('.main-table').find('input[type="checkbox"]:checked').length === 0) {
+						$(tableCheckbox).closest('.main-table').find('input[type="checkbox"]').prop('disabled', false);
+					}
 					count -= 1;
 				}
 				bottomControlBar.querySelector('p span').innerHTML = count;
