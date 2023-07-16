@@ -10,7 +10,7 @@ mixin sCreateObject(data)
 						.col-12
 							+e.item
 								p!= data.status.title
-								+selectStatus(false)
+								+selectStatus(data.status.def)
 					if data.workers
 						.col-12
 							+e.item
