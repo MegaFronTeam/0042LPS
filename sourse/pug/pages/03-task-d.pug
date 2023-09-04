@@ -1,0 +1,30 @@
+extends ../layout/main.pug
+
+include ../blocks/sObject/_sObject.pug
+
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sObjectDetails/_sObjectDetails.pug
+include ../blocks/sMainInfo/_sMainInfo.pug
+
+block variables
+	- let  mainPage= 'room-page page-with-control-bar' 
+	- let  bg= '01-3-house.jpg'
+
+block title
+	- let  title= 'Кухня'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+
+	main
+		+page-head({
+			items: ['Задачи'],
+			t: 'Кухня',
+			sample: false,
+			strength: "323"
+		})
+		+sMainInfo(true, true, '', true, true, false)
+	+bottomControlBar()

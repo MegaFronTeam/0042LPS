@@ -1,25 +1,33 @@
-mixin sMainInfo(selects, secondTable, tile)
+mixin sMainInfo(selects, secondTable, tile, allObjects, object, toggleBlock=true)
 	// start sMainInfo
 	+b.sMainInfo.section#sMainInfo&attributes(attributes)
 		.container-fluid
-			+e.wrap
-				+toggleBlock()
-					.swiper-slide
-						+toggleBtn('list', `Список`).active
-					if tile
+			if toggleBlock
+				+e.wrap
+					+toggleBlock()
 						.swiper-slide
-							+toggleBtn('tile', `Шахматка`)
-					.swiper-slide
-						+toggleBtn('tasks', `Задачи`)
-					.swiper-slide
-						+toggleBtn('gantt', `График работ`)
-					.swiper-slide
-						+toggleBtn('info', `Информация`)
-					.swiper-slide
-						+toggleBtn('pen', `Заметки`)
+							+toggleBtn('list', `Список`).active
+						if tile
+							.swiper-slide
+								+toggleBtn('tile', `Шахматка`)
+						.swiper-slide
+							+toggleBtn('tasks', `Задачи`)
+						.swiper-slide
+							+toggleBtn('gantt', `График работ`)
+						.swiper-slide
+							+toggleBtn('info', `Информация`)
+						.swiper-slide
+							+toggleBtn('pen', `Заметки`)
 			if selects
 				+e.selects-wrap
 					.row
+						if allObjects
+							+e.col.col-md.col-xl-3
+								+b.custom-select-wrap--third-type
+									select(class="basic-select basic-select--js")
+										option Все объекты
+										-for(let i = 1; i <= 10; i++)
+											option!= i
 						+e.col.col-md.col-xl-3
 							+b.custom-select-wrap--third-type
 								select(class="basic-select basic-select--js")
@@ -49,7 +57,7 @@ mixin sMainInfo(selects, secondTable, tile)
 						.col-auto.ms-md-auto
 							+e.reset(href='#') Сбросить
 			if secondTable
-				+mainTable2()
+				+mainTable2(object)
 			else
 				+mainTable()
 					block

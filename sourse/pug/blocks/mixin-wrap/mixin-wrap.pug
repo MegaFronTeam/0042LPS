@@ -47,7 +47,7 @@ mixin page-head(data)
 					if data.items
 						+breadcrumb(...data.items)
 				if data.t
-					+e.col.col-lg.order-md-4
+					+e.col--title.col-lg.order-md-4
 						h1!= data.t
 							if data.badge
 								.badge.badge-primary!= data.badge
@@ -59,6 +59,8 @@ mixin page-head(data)
 								else
 									+icon('write')
 									| Нужны замеры
+						if data.strength
+							+taskStat(data.strength)
 				.col-12.d-none.d-md-block.m-0.p-0.order-md-3
 				if data.edit
 					+e.col.col-md-auto.order-md-2(class=data.edit.class)
@@ -127,10 +129,10 @@ mixin avatar(name, link=true)
 		if name
 			span Михаил Иванов
 
-mixin taskStat()
+mixin taskStat(text='321/433')
 	+b.task-stat
 		+icon('fist')
-		| 321/433
+		!= text
 
 mixin startDate()
 	+b.startDate
@@ -277,12 +279,14 @@ mixin mainTable()
 						block
 				block
 
-mixin mainTable2()
-	+b.main-table--2
+mixin mainTable2(object)
+	+b.main-table--2(class=(object ? '--object' : ''))
 		table
 			thead
 				tr
 					th Задача
+					if object
+						th Объект
 					th Поверхность
 					th Бригада
 					th Площадь
@@ -292,13 +296,20 @@ mixin mainTable2()
 					td(colspan='5').add-more
 						+e.add-new(href='#')
 							+icon('add')
-							| Добавить дом
+							if object
+								| Добавить задачу
+							else
+								| Добавить дом
 				tr
 					td
 						+e.title
 							+in-c()
 							.badge.badge-primary В работе 
+							if object
+								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
 							a(href='#') 1. Натяжка потолка
+					if object
+						td ЖК Династия Парк
 					td Потолок
 					td Бригада №3
 					td 1300 м²
@@ -308,7 +319,11 @@ mixin mainTable2()
 						+e.title
 							+in-c()
 							.badge.badge-success Завершен
+							if object
+								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
 							a(href='#') 2. Шпаклевка стен
+					if object
+						td ЖК Династия Парк
 					td Пол
 					td Бригада №3
 					td 1300 м²
@@ -318,7 +333,11 @@ mixin mainTable2()
 						+e.title
 							+in-c()
 							.badge.badge-primary В работе 
+							if object
+								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
 							a(href='#') 3. Заливка полов
+					if object
+						td ЖК Династия Парк
 					td Стены
 					td Бригада №3
 					td 1300 м²
@@ -328,7 +347,11 @@ mixin mainTable2()
 						+e.title
 							+in-c()
 							.badge.badge-primary В работе 
+							if object
+								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
 							a(href='#') 4. Штукатурка стен
+					if object
+						td ЖК Династия Парк
 					td Стены
 					td Бригада №3
 					td 1300 м²
@@ -340,11 +363,17 @@ mixin mainTable2()
 						+e.title
 							+in-c()
 							.badge.badge-primary В работе 
+							if object
+								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
 							a(href='#') 5. Заливка
+					if object
+						td ЖК Династия Парк
 					td Потолок
 					td Бригада №3
 					td 1300 м²
 					td 30 ноя 23 – 30 фев 24
+
+					
 //- Always at bottom of the file
 
 mixin circularProgressBar(precent, status='Прогресс')

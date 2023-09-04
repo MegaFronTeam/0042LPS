@@ -457,6 +457,13 @@ function eventHandler() {
 		offset: [0, 5],
 	});
 
+	$('[data-bs-toggle="tooltip3"]').tooltip({
+		animation: true,
+		offset: [0, 5],
+		container: '.main-table__more-info',
+		placement: 'top',
+	});
+
 	let select2Wrappers = document.querySelectorAll('.basic-select--js');
 	if (select2Wrappers.length > 0) {
 		for (const select2Wrapp of select2Wrappers) {
@@ -619,11 +626,13 @@ function eventHandler() {
 				if(tableCheckbox.checked === true) {
 					$(tableCheckbox).closest('.main-table').find('input[type="checkbox"]:not(:checked)').prop('disabled', true); 
 					$(tableCheckbox).closest('tr').siblings('tr:not(.inner-level)').find('input[type="checkbox"]').prop('disabled', false);
+					$(tableCheckbox).closest('tr').addClass('activeCheckbox');
 					count += 1;
 				} else {
 					if ($(tableCheckbox).closest('.main-table').find('input[type="checkbox"]:checked').length === 0) {
 						$(tableCheckbox).closest('.main-table').find('input[type="checkbox"]').prop('disabled', false);
 					}
+					$(tableCheckbox).closest('tr').removeClass('activeCheckbox');
 					count -= 1;
 				}
 				bottomControlBar.querySelector('p span').innerHTML = count;
