@@ -65,3 +65,14 @@ mixin sCreateObject(data)
 				+e.btn.btn.btn-accent(href='#') Сохранить изменения
 				+e.btn.btn.btn-light(href='#') Отмена
 	// end sCreateObject
+
+mixin sCreateObject2(data)
+	// start sCreateObject
+	+b.sCreateObject#sCreateObject&attributes(attributes)
+		+e.body
+			+e.left-side
+				block
+		+e.footer
+			+e.footer-row
+				+e.btn.btn.btn-accent(href='#') Сохранить изменения
+				+e.btn.btn.btn-light(href='#') Отмена

@@ -27,3 +27,6 @@
 ### Второй спринт
 
 1. <https://megafronteam.github.io/0042LPS/public/03-task-d.html>
+
+1. <https://megafronteam.github.io/0042LPS/public/04-teams.html>
+1. <https://megafronteam.github.io/0042LPS/public/04-edit-team.html>

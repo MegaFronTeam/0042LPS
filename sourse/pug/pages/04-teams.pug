@@ -1,0 +1,72 @@
+extends ../layout/main.pug
+
+include ../blocks/sObject/_sObject.pug
+
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sObjectDetails/_sObjectDetails.pug
+include ../blocks/sMainInfo/_sMainInfo.pug
+
+block variables
+	- let  mainPage= 'page-with-control-bar' 
+	- let  bg= '01-3-house.jpg'
+
+block title
+	- let  title= 'Бригады'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+
+	main
+		+page-head({
+			items: ['Бригады'],
+			t: 'Бригады',
+			sample: false,
+		})
+		+sMainInfo6()
+			+e.selects-wrap
+				.row
+					+e.col.col-md.col-xl-3
+						+b.custom-select-wrap--third-type
+							select(class="basic-select basic-select--js")
+								option Все объекты
+								-for(let i = 1; i <= 10; i++)
+									option!= i
+					.col-auto.ms-md-auto
+						+e.reset(href='#') Сбросить
+			+mainTable3().--teams
+				table
+					thead
+						tr
+							th Наименование
+							th Работы
+							th Задачи
+							th Работники
+					tbody
+						tr
+							td(colspan='4').add-more
+								+e.add-new(href='#')
+									+icon('add')
+									| Добавить бригаду
+						mixin row(title)
+							tr
+								td 
+									+e.title
+										a.h3(href='#')!= title
+								td Натяжка потолков, Заливка полов
+								td
+									+e.goals
+										+img('img/svg/fist.svg')
+										span 81
+										| /441
+								td 
+									+e.members
+										+img('img/svg/members.svg')
+										| 6
+						+row('Бригада №1')
+						+row('Бригада №2')
+						+row('Бригада №1')
+						+row('Бригада №2')
+	+bottomControlBar()

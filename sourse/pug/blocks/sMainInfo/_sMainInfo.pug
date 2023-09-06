@@ -305,3 +305,9 @@ mixin sMainInfo5(data)
 									+file-item('Сметная документация.xlsx','14 мб','false', 'f')
 	// end sMainInfo
 
+mixin sMainInfo6()
+	// start sMainInfo
+	+b.sMainInfo.section#sMainInfo&attributes(attributes)
+		.container-fluid
+			block
+	// end sMainInfo

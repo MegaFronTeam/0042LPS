@@ -293,7 +293,7 @@ mixin mainTable2(object)
 					th Сроки
 			tbody
 				tr
-					td(colspan='5').add-more
+					td(colspan=(object ? '6' : '5')).add-more
 						+e.add-new(href='#')
 							+icon('add')
 							if object
@@ -373,6 +373,9 @@ mixin mainTable2(object)
 					td 1300 м²
 					td 30 ноя 23 – 30 фев 24
 
+mixin mainTable3()
+	+b.main-table&attributes(attributes)
+		block
 					
 //- Always at bottom of the file
 

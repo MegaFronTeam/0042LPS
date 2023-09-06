@@ -126,6 +126,111 @@
 			font-size: rem(20);
 		}
 	}
+	&__edit-row {
+		--bs-gutter-y: #{rem(18)};
+		@include media-breakpoint-up(md) {
+			--bs-gutter-y: #{rem(36)};
+		}
+	}
+	&__wrap {
+		h4 {
+			font-family: 'AkzidenzGroteskProExtended';
+			margin-bottom: rem(12);
+			@include media-breakpoint-down(md) {
+				font-size: rem(18);
+			}
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(24);
+			}
+		}
+		& > .row {
+			--bs-gutter-x: #{rem(24)};
+			--bs-gutter-y: #{rem(12)};
+			&:not(:last-child ) {
+				margin-bottom: rem(18);
+				@include media-breakpoint-up(md) {
+					margin-bottom: rem(24);
+				}
+			}
+		}
+		ul {
+			margin-bottom: 0;
+			list-style-type: none;
+			columns: 2;
+			@include media-breakpoint-up(md) {
+				columns: 3;
+			}
+			&.in-one-row {
+				@include media-breakpoint-down(md) {
+					columns: 1;
+					display: flex;
+					align-items: center;
+					flex-wrap: wrap;
+					@include roww('24px', '12px', 'm');
+					.custom-input {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+		.custom-input {
+			padding-left: 0;
+			margin-bottom: 0;
+			display: flex;
+			align-items: center;
+			margin-bottom: rem(12);
+			&__input {
+				width: rem(20);
+				height: rem(20);
+				margin-left: 0;
+				flex: 0 0 auto;
+				margin-right: rem(12);
+				margin-top: 0;
+				background-color: #fff;
+			}
+		}
+	}
+	&__title-col {
+		@include media-breakpoint-up(md) {
+			width: rem(292);
+		}
+	}
+	&__worker-wrap {
+		.form-wrap__input-wrap {
+			&:not(:last-child) {
+				margin-bottom: rem(12);
+			}
+		}
+	}
+	&__add-new {
+		font-size: rem(14);
+		font-weight: 500;
+		line-height: 1.25;
+		color: $gray-600;
+		display: flex;
+		align-items: center;
+		margin-top: rem(24);
+		.icon {
+			font-size: rem(20);
+			margin-right: rem(12);
+		}
+		&:hover {
+			color: $primary;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
+	}
+	&__delete {
+		color: $danger;
+		margin-left: rem(12);
+		.icon {
+			font-size: rem(20);
+		}
+		&:hover {
+			color: $secondary;
+		}
+	}
 }
 
 .parsley-error{
