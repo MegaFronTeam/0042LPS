@@ -317,7 +317,12 @@
 			}
 		}
 	}
-	
+	&--creat-work {
+		max-width: rem(720);
+		@include media-breakpoint-up(md) {
+			max-width: rem(720);
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

@@ -25,7 +25,6 @@
 1. <https://megafronteam.github.io/0042LPS/public/react-planner/demo/dist/index.html>
 
 ### Второй спринт
-
 #### Задачи
 1. <https://megafronteam.github.io/0042LPS/public/03-task-d.html>
 
@@ -36,4 +35,12 @@
 #### Пользователи
 1. <https://megafronteam.github.io/0042LPS/public/05-user.html>
 2. <https://megafronteam.github.io/0042LPS/public/05-create-user.html>
-3. <https://megafronteam.github.io/0042LPS/public/05-create-user.html>
+3. <https://megafronteam.github.io/0042LPS/public/05-create-user-2.html>
+
+#### Подтверждение
+1. <https://megafronteam.github.io/0042LPS/public/00-modal.html>
+
+#### Работы
+1. <https://megafronteam.github.io/0042LPS/public/06-works.html>
+1. <https://megafronteam.github.io/0042LPS/public/06-create-work.html>
+1. <https://megafronteam.github.io/0042LPS/public/06-edit-work.html>

@@ -1,0 +1,87 @@
+extends ../layout/main.pug
+
+include ../blocks/sCreateObject/_sCreateObject.pug
+ 
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sCatalog/_sCatalog.pug
+
+block variables
+	- let  mainPage= 'createObject-page' 
+	- let  bg= 'main.jpg'
+	- let  createObject = true
+
+block title
+	- let  title= 'Редактирование бригады'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	main
+		+sCreateObject2()
+			h2 Редактирование бригады
+			+b.form-wrap
+				+e.edit-row.row
+					.col-12
+						+customInput('Введите название', 'text')
+					.col-12
+						+e.wrap
+							h4 Информация
+							.row
+								+e.title-col.col-md-auto Поверхность
+								.col-md
+									ul.in-one-row
+										li: +in-c('checkbox', 'Пол', 'surface')
+										li: +in-c('checkbox', 'Потолок', 'surface')
+										li: +in-c('checkbox', 'Стены', 'surface')
+							.row
+								+e.title-col.col-md-auto Наименование работ
+								.col-md
+									ul
+										li: +in-c('checkbox', 'Шпатлевка стен', 'surface')
+										li: +in-c('checkbox', 'Штукатурка стен', 'surface')
+										li: +in-c('checkbox', 'Заливка пола', 'surface')
+										li: +in-c('checkbox', 'Натяжка потолка', 'surface')
+										li: +in-c('checkbox', 'Шпатлевка стен', 'surface')
+										li: +in-c('checkbox', 'Штукатурка стен', 'surface')
+										li: +in-c('checkbox', 'Заливка пола', 'surface')
+										li: +in-c('checkbox', 'Натяжка потолка', 'surface')
+										li: +in-c('checkbox', 'Шпатлевка стен', 'surface')
+										li: +in-c('checkbox', 'Штукатурка стен', 'surface')
+					.col-12
+						+e.wrap
+							h4 Работники
+							.row
+								+e.title-col.col-md-auto Работник 1
+								.col-md
+									+e.worker-wrap
+										+e.input-wrap.form-group
+											label
+												+e.INPUT.input.form-control(name='ФИО' type='text' placeholder='ФИО')
+												+e.SPAN.input-title ФИО
+										+e.input-wrap.form-group
+											label
+												+e.INPUT.input.form-control(name='Телефон' type='tel' placeholder='Телефон')
+												+e.SPAN.input-title Телефон
+							.row
+								+e.title-col.col-md-auto 
+									| Работник 2
+									+e.delete(href='#'): +icon('delete')
+								.col-md
+									+e.worker-wrap
+										+e.input-wrap.form-group
+											label
+												+e.INPUT.input.form-control(name='ФИО' type='text' placeholder='ФИО' value='Петров Петр Петрович')
+												+e.SPAN.input-title ФИО
+										+e.input-wrap.form-group
+											label
+												+e.INPUT.input.form-control(name='Телефон' type='tel' placeholder='Телефон' value='+7 (919) 811-28-44')
+												+e.SPAN.input-title Телефон
+									+e.add-new(href='#')
+										+icon('add')
+										| Добавить работника
+		.close-btn: +icon('close')
+      
+
+
+

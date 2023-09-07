@@ -14,17 +14,16 @@ block variables
 	- let  bg= '01-3-house.jpg'
 
 block title
-	- let  title= 'Пользователи'
+	- let  title= 'Работы'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 
 	main
 		+page-head({
-			items: ['Пользователи'],
-			t: 'Пользователи',
+			items: ['Работы'],
+			t: 'Работы',
 			sample: false,
-			team: 4
 		})
 		+sMainInfo6()
 			+e.selects-wrap
@@ -32,33 +31,30 @@ block pagecontent
 					+e.col.col-md.col-xl-3
 						+b.custom-select-wrap--third-type
 							select(class="basic-select basic-select--js")
-								option Все пользователи
+								option Все работы
 								-for(let i = 1; i <= 10; i++)
 									option!= i
 					.col-auto
 						+e.reset(href='#') Сбросить
-			+mainTable3().--users
+			+mainTable3().--works
 				table
 					thead
 						tr
-							th Пользователь
-							th Роль
-							th Email
+							th Наименование работы
+							th Поверхность
 					tbody
 						tr
-							td(colspan='3').add-more
+							td(colspan='2').add-more
 								+e.add-new(href='#')
 									+icon('add')
-									| Добавить пользователя
-						mixin row(title, role, email)
+									| Добавить работу
+						mixin row(title, surface)
 							tr
 								td 
 									+e.title
 										a.h3(href='#')!= title
-								td!=role
-								td: +e.email(href=`mailto:${email}`)!= email
-						+row('Иванов И. C.', 'Администратор', 'ivanov@lpsplus.ru')
-						+row('Максимов И. C.', 'Замерщик', 'maksimov@gmail.com')
-						+row('Иванов И. C.', 'Администратор', 'ivanov@lpsplus.ru')
-						+row('Максимов И. C.', 'Замерщик', 'maksimov@gmail.com')
+								td!=surface
+						+row('Заливка пола', 'Пол')
+						+row('Натяжка потолка', 'Стена')
+						+row('Штукатурка стен', 'Потолок')
 	//- +bottomControlBar()

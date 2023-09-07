@@ -2,28 +2,144 @@
 	--fancybox-content-bg: none;
 }
 
+.fancybox__slide {
+	@include media-breakpoint-down(sm) {
+		padding: 0;
+		&:before, &:after {
+			content: unset;
+		}
+		& > * {
+			height: 100%;
+			display: flex !important;
+			align-items: center;
+			justify-content: center;
+			background-color: #fff;
+		}
+	}
+}
+
+#modal-call {
+	@include media-breakpoint-down(sm) {
+	}
+}
+
+.fancybox__container {
+	--fancybox-bg: rgba(0, 0, 0, 0.48);
+}
+
 .fancybox__content {
 	padding: 0;
 	max-width: 100%;
 }
+
+.fancybox__content>.f-button.is-close-btn {
+	--f-button-width: #{rem(32)};
+	--f-button-height: #{rem(32)};
+	--f-button-svg-width: #{rem(20)};
+	--f-button-svg-height: #{rem(20)};
+	--f-button-color: #{$gray-600};
+	--f-button-hover-color: #{$gray-600};
+	--f-button-bg: transparent;
+	--f-button-hover-bg: transparent;
+	--f-button-active-bg: transparent;
+	opacity: 1;
+	top: rem(10);
+	right: rem(10);
+	@include media-breakpoint-up(md) {
+		--f-button-width: #{rem(48)};
+		--f-button-height: #{rem(48)};
+		--f-button-color: #fff;
+		--f-button-hover-color: #fff;
+		--f-button-bg: rgba(0, 0, 0, 0.48);
+		--f-button-hover-bg: #000;
+		--f-button-active-bg: #000;
+
+		top: 0;
+		right: rem(-60);
+	}
+}
+
+.is-compact .fancybox__content>.f-button.is-close-btn {
+	--f-button-width: #{rem(32)};
+	--f-button-height: #{rem(32)};
+	--f-button-svg-width: #{rem(20)};
+	--f-button-svg-height: #{rem(20)};
+	--f-button-color: #{$gray-600};
+	--f-button-hover-color: #{$gray-600};
+	--f-button-bg: transparent;
+	--f-button-hover-bg: transparent;
+	--f-button-active-bg: transparent;
+	top: rem(10);
+	right: rem(10);
+	opacity: 1;
+}
+
 .modal-win {
 	// display: block;
 	background-color: #fff;
 	max-width: 100%;
 	position: relative;
-	width: rem(1500);
+	width: 100%;
 	// min-height: 100%; 
-	padding: 40px;
-
-	.modal-content {
-		// max-width: 485px;
-		// padding-right: 40px 15px;
+	padding: rem(12);
+	@include media-breakpoint-up(sm) {
+		padding: rem(48);
+		width: rem(504);
 	}
+	.h4 {
+		font-family: 'AkzidenzGroteskProExtended';
+		line-height: 1.25;
+		margin-bottom: rem(18);
+		text-align: center;
+	}
+	p {
+		line-height: 1.25;
+		margin-bottom: rem(24);
+		text-align: center;
+	}
+	&__inputs-row {
+		margin-bottom: rem(24);
+	}
+	.row {
+		--bs-gutter-x: #{rem(18)};
+		--bs-gutter-y: #{rem(12)};
+	}
+	&__btn {
+		--bs-btn-padding-x: #{rem(34.5)};
+    --bs-btn-padding-y: #{rem(17)};
 
-	.mfp-close {
-		color: $accent;
-		font-size: 40px;
-		font-weight: 100;
+		width: 100%;
+		&.btn-light {
+			--bs-btn-color: #000;
+			--bs-btn-bg: #{$gray-400};
+			--bs-btn-border-color: #{$gray-400};
+			--bs-btn-hover-color: #000;
+			--bs-btn-hover-bg: #{$gray-100};
+			--bs-btn-hover-border-color: #{$gray-100};
+			--bs-btn-active-color: #000;
+			--bs-btn-active-bg: #{$gray-100};
+			--bs-btn-active-border-color: #{$gray-100};
+			--bs-btn-disabled-color: #000;
+			--bs-btn-disabled-bg: #CCCCCC5C;
+			--bs-btn-disabled-border-color: #CCCCCC5C;
+		}
+	}
+	.custom-input {
+		padding-left: 0;
+		margin-bottom: 0;
+		display: flex;
+		align-items: center;
+		&__input {
+			width: rem(20);
+			height: rem(20);
+			margin-left: 0;
+			flex: 0 0 auto;
+			margin-right: rem(12);
+			margin-top: 0;
+			&:not(:checked) {
+				background-color: #fff;
+			}
+		}
 	}
 }
 

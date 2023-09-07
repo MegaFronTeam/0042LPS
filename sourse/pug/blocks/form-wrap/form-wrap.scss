@@ -5,6 +5,9 @@
 			--bs-gutter-y: #{rem(18)};
 		}
 	}
+	&__work-row {
+		--bs-gutter-y: #{rem(12)};
+	}
  	label{
  		width: 100%;
  		display: block;
@@ -80,7 +83,7 @@
 	&__input-title {
 		position: absolute;
 		// padding-left: $input-padding-x;
-		left: $input-padding-x;
+		left: rem(19);
 		top: calc(var(--sp-y) + #{rem(2)}); 
 		font-size: var(--fz);
 		color: $gray-600; 

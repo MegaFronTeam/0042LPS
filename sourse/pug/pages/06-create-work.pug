@@ -1,0 +1,46 @@
+extends ../layout/main.pug
+
+include ../blocks/sCreateObject/_sCreateObject.pug
+ 
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sCatalog/_sCatalog.pug
+
+block variables
+	- let  mainPage= 'createObject-page' 
+	- let  bg= 'main.jpg'
+	- let  createObject = true
+
+block title
+	- let  title= 'Создание работы '
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	main
+		+sCreateObject2().--creat-work
+			h2 Создание работы 
+			+b.form-wrap
+				+e.work-row.row
+					.col-12
+						+e.input-wrap.form-group
+							label
+								+e.INPUT.input.form-control(name='Наименование работы' type='text' placeholder='Наименование работы')
+								+e.SPAN.input-title Наименование работы
+					.col-12
+						+b.custom-select-wrap--fourth-type
+							select(class="basic-select basic-select--js" data-placeholder='Поверхность')
+								option
+								-for(let i = 1; i <= 10; i++)
+									option!= i
+					.col-12
+						+b.custom-select-wrap--fourth-type
+							select(class="basic-select basic-select--js" data-placeholder='Формула')
+								option
+								-for(let i = 1; i <= 10; i++)
+									option!= i
+		.close-btn: +icon('close')
+      
+
+
+

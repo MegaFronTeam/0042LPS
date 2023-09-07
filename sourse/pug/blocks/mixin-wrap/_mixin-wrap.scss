@@ -790,7 +790,7 @@
 			background-color: $gray-100;
 		}
 		.select2-selection__placeholder {
-			color: $gray-600;
+			color: $gray-600 !important;
 		}
 	}
 	&--simple {
@@ -1879,10 +1879,21 @@
 					width: rem(228);
 				}
 			}
-			a {
+			.main-table__email {
 				&:not(:hover) {
 					color: #000;
 				}
+			}
+		}
+	}
+	&--works {
+		th {
+			&:nth-child(1) {
+				min-width: rem(270) !important;
+				width: 50%;
+			}
+			&:nth-child(2) {
+				width: 50%;
 			}
 		}
 	}
