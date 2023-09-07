@@ -14,16 +14,17 @@ block variables
 	- let  bg= '01-3-house.jpg'
 
 block title
-	- let  title= 'Бригады'
+	- let  title= 'Пользователи'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 
 	main
 		+page-head({
-			items: ['Бригады'],
-			t: 'Бригады',
+			items: ['Пользователи'],
+			t: 'Пользователи',
 			sample: false,
+			team: 4
 		})
 		+sMainInfo6()
 			+e.selects-wrap
@@ -31,42 +32,33 @@ block pagecontent
 					+e.col.col-md.col-xl-3
 						+b.custom-select-wrap--third-type
 							select(class="basic-select basic-select--js")
-								option Все объекты
+								option Все пользователи
 								-for(let i = 1; i <= 10; i++)
 									option!= i
 					.col-auto
 						+e.reset(href='#') Сбросить
-			+mainTable3().--teams
+			+mainTable3().--users
 				table
 					thead
 						tr
-							th Наименование
-							th Работы
-							th Задачи
-							th Работники
+							th Пользователь
+							th Роль
+							th Email
 					tbody
 						tr
-							td(colspan='4').add-more
+							td(colspan='3').add-more
 								+e.add-new(href='#')
 									+icon('add')
-									| Добавить бригаду
-						mixin row(title)
+									| Добавить пользователя
+						mixin row(title, role, email)
 							tr
 								td 
 									+e.title
 										a.h3(href='#')!= title
-								td Натяжка потолков, Заливка полов
-								td
-									+e.goals
-										+img('img/svg/fist.svg')
-										span 81
-										| /441
-								td 
-									+e.members
-										+img('img/svg/members.svg')
-										| 6
-						+row('Бригада №1')
-						+row('Бригада №2')
-						+row('Бригада №1')
-						+row('Бригада №2')
+								td!=role
+								td: a(href=`mailto:${email}`)!= email
+						+row('Иванов И. C.', 'Администратор', 'ivanov@lpsplus.ru')
+						+row('Максимов И. C.', 'Замерщик', 'maksimov@gmail.com')
+						+row('Иванов И. C.', 'Администратор', 'ivanov@lpsplus.ru')
+						+row('Максимов И. C.', 'Замерщик', 'maksimov@gmail.com')
 	//- +bottomControlBar()

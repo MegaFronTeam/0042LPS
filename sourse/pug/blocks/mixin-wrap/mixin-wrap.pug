@@ -61,6 +61,10 @@ mixin page-head(data)
 									| Нужны замеры
 						if data.strength
 							+taskStat(data.strength)
+						if data.team
+							+b.task-stat
+								+icon('members')
+								!= data.team
 				.col-12.d-none.d-md-block.m-0.p-0.order-md-3
 				if data.edit
 					+e.col.col-md-auto.order-md-2(class=data.edit.class)
@@ -376,7 +380,23 @@ mixin mainTable2(object)
 mixin mainTable3()
 	+b.main-table&attributes(attributes)
 		block
-					
+
+
+mixin uploadAvatar(initials)
+	+b.upload-avatar
+		+e.LABEL.input-wrap
+			input.input-upload(type='file' name='file')
+			+e.stub
+				if initials
+					+img('img/svg/user.svg').d-none
+					span ИИ
+				else
+					+img('img/svg/user.svg')
+					span.d-none ИИ
+			.img-wrap-center
+				+img('', 'bg')
+			+e.file-name Загрузить фото
+		+e.delete-photo Удалить фото
 //- Always at bottom of the file
 
 mixin circularProgressBar(precent, status='Прогресс')

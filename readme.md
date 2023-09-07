@@ -26,7 +26,14 @@
 
 ### Второй спринт
 
+#### Задачи
 1. <https://megafronteam.github.io/0042LPS/public/03-task-d.html>
 
+#### Бригады
 1. <https://megafronteam.github.io/0042LPS/public/04-teams.html>
-1. <https://megafronteam.github.io/0042LPS/public/04-edit-team.html>
+2. <https://megafronteam.github.io/0042LPS/public/04-edit-team.html>
+
+#### Пользователи
+1. <https://megafronteam.github.io/0042LPS/public/05-user.html>
+2. <https://megafronteam.github.io/0042LPS/public/05-create-user.html>
+3. <https://megafronteam.github.io/0042LPS/public/05-create-user.html>

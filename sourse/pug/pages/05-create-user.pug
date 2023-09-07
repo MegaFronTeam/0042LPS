@@ -1,0 +1,53 @@
+extends ../layout/main.pug
+
+include ../blocks/sCreateObject/_sCreateObject.pug
+ 
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sCatalog/_sCatalog.pug
+
+block variables
+	- let  mainPage= 'createObject-page' 
+	- let  bg= 'main.jpg'
+	- let  createObject = true
+
+block title
+	- let  title= 'Редактирование бригады'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	main
+		+sCreateObject({
+			uploadPhoto: true
+		})
+			h2 Редактирование пользователя
+			+b.form-wrap
+				+e.row.row
+					.col-12
+						+e.input-wrap.form-group
+							label
+								+e.INPUT.input.form-control(name='ФИО' type='text' placeholder='ФИО')
+								+e.SPAN.input-title ФИО
+					.col-12
+						+b.custom-select-wrap--fourth-type
+							select(class="basic-select basic-select--js" data-placeholder='Роль')
+								option
+								-for(let i = 1; i <= 10; i++)
+									option!= i
+					.col-12
+						+e.input-wrap.form-group
+							label
+								+e.INPUT.input.form-control(name='Email' type='email' placeholder='Email')
+								+e.SPAN.input-title Email
+					.col-12
+						+e.input-wrap.form-group
+							label
+								+e.INPUT.input.form-control(name='Пароль' type='password' placeholder='Пароль')
+								+e.SPAN.input-title Пароль
+								+e.SPAN.pass-eye: +icon('eye')
+		.close-btn: +icon('close')
+      
+
+
+

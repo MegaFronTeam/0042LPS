@@ -60,6 +60,9 @@ mixin sCreateObject(data)
 								.col-auto
 									+e.control-btn--delete.btn.btn-light(href='#' data-bs-toggle="tooltip2" data-bs-placement="top" title="Удалить")
 										+icon('delete')
+					if data.uploadPhoto
+						.col-12
+							+uploadAvatar(data.uploadPhoto.initials)
 		+e.footer
 			+e.footer-row
 				+e.btn.btn.btn-accent(href='#') Сохранить изменения

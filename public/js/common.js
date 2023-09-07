@@ -641,6 +641,37 @@ function eventHandler() {
 		}
 	}
 
+	let uploadavatar = document.querySelector('.upload-avatar');
+	if (uploadavatar){
+		let inputFile = uploadavatar.querySelector('.input-upload');
+		let img = uploadavatar.querySelector('.img-wrap-center img');
+		inputFile.addEventListener('change', () => {
+			var reader = new FileReader();
+			reader.onload = function(){ img.src = reader.result;}
+			reader.readAsDataURL(event.target.files[0]);
+
+			inputFile.files[0].name.length > 0 ? uploadavatar.classList.add('active') : uploadavatar.classList.remove('active');
+		});
+		uploadavatar.querySelector('.upload-avatar__delete-photo').addEventListener('click', () => {
+			img.src = '';
+			uploadavatar.classList.remove('active');
+		})
+	}
+
+	let passwordInputs = document.querySelectorAll('.form-wrap__input[type="password"]');
+	if (passwordInputs.length > 0) {
+		for (const passwordInput of passwordInputs) {
+			let passwordWrap = passwordInput.closest('.form-wrap__input-wrap');
+			passwordWrap.querySelector('.form-wrap__pass-eye').addEventListener('click', () => {
+				passwordWrap.querySelector('.form-wrap__pass-eye').classList.toggle('active');
+				if (passwordWrap.querySelector('.form-wrap__input').getAttribute('type') == 'password') {
+					passwordWrap.querySelector('.form-wrap__input').setAttribute('type', 'text');
+				} else {
+					passwordWrap.querySelector('.form-wrap__input').setAttribute('type', 'password');
+				}
+			})
+		}
+	}
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
