@@ -43,8 +43,8 @@ mixin page-head(data)
 		//- - let l = data.items.length
 		.container-fluid
 			+e.row.row.align-items-center
-				.col
-					if data.items
+				if data.items
+					.col
 						+breadcrumb(...data.items)
 				if data.t
 					+e.col--title.col-lg.order-md-4
@@ -234,12 +234,14 @@ mixin mainTable()
 					th Прогресс
 					th Сроки
 			tbody
-				mixin firstLevel(title, pod, floor, room, placment, area, done, all, precent, date)
+				mixin firstLevel(title, pod, floor, room, placment, area, done, all, precent, date, dropdown=true, customInput=true)
 					tr&attributes(attributes)
 						td
 							+e.title
-								+e.toggle-dropdown(href='#'): +icon('chevron-right')
-								+in-c()
+								if dropdown
+									+e.toggle-dropdown(href='#'): +icon('chevron-right')
+								if customInput
+									+in-c()
 								a(href="#").h3!= title
 						td!= pod
 						td!= floor
@@ -283,7 +285,7 @@ mixin mainTable()
 						block
 				block
 
-mixin mainTable2(object)
+mixin mainTable2(object, entrance)
 	+b.main-table--2(class=(object ? '--object' : ''))
 		table
 			thead
@@ -296,18 +298,20 @@ mixin mainTable2(object)
 					th Площадь
 					th Сроки
 			tbody
-				tr
-					td(colspan=(object ? '6' : '5')).add-more
-						+e.add-new(href='#')
-							+icon('add')
-							if object
-								| Добавить задачу
-							else
-								| Добавить дом
+				if !entrance
+					tr
+						td(colspan=(object ? '6' : '5')).add-more
+							+e.add-new(href='#')
+								+icon('add')
+								if object
+									| Добавить задачу
+								else
+									| Добавить дом
 				tr
 					td
 						+e.title
-							+in-c()
+							if !entrance
+								+in-c()
 							.badge.badge-primary В работе 
 							if object
 								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
@@ -321,8 +325,12 @@ mixin mainTable2(object)
 				tr
 					td
 						+e.title
-							+in-c()
-							.badge.badge-success Завершен
+							if !entrance
+								+in-c()
+							if entrance
+								.badge.badge-primary В работе 
+							else
+								.badge.badge-success Завершен
 							if object
 								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
 							a(href='#') 2. Шпаклевка стен
@@ -335,7 +343,8 @@ mixin mainTable2(object)
 				tr
 					td
 						+e.title
-							+in-c()
+							if !entrance
+								+in-c()
 							.badge.badge-primary В работе 
 							if object
 								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
@@ -349,7 +358,8 @@ mixin mainTable2(object)
 				tr
 					td
 						+e.title
-							+in-c()
+							if !entrance
+								+in-c()
 							.badge.badge-primary В работе 
 							if object
 								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')
@@ -359,13 +369,17 @@ mixin mainTable2(object)
 					td Стены
 					td Бригада №3
 					td 1300 м²
-					td.text-danger
-						+icon('warning')
-						| 30 ноя 23 – 30 фев 24
+					if entrance
+						td 30 ноя 23 – 30 фев 24
+					else
+						td.text-danger
+							+icon('warning')
+							| 30 ноя 23 – 30 фев 24
 				tr
 					td
 						+e.title
-							+in-c()
+							if !entrance
+								+in-c()
 							.badge.badge-primary В работе 
 							if object
 								+e.more-info(data-bs-toggle="tooltip3" data-bs-placement="top" title="ЖК Династия Парк / Дом №1 / Подъезд №1 / Этаж №2 / Квартира №2 / Кухня"): +icon('info2')

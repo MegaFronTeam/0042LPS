@@ -26,6 +26,7 @@
 
 ### Второй спринт
 1. <https://megafronteam.github.io/0042LPS/public/01-entrance-chess-d.html>
+1. <https://megafronteam.github.io/0042LPS/public/01-entrance-chess-info.html>
 
 #### Задачи
 1. <https://megafronteam.github.io/0042LPS/public/03-task-d.html>

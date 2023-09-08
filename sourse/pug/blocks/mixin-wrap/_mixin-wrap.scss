@@ -2030,3 +2030,36 @@
 .input-upload {
 	display: none;
 }
+
+.go-back {
+	width: 100%;
+	height: rem(44);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $gray-400;
+	color: $accent;
+	@include media-breakpoint-up(md) {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: rem(72);
+		height: calc(var(--vh) * 100);
+	}
+	&:hover {
+		background-color: $accent;
+		color: #000;
+	}
+	.icon {
+		font-size: rem(20);
+	}
+	span  {
+		font-size: 14px;
+		font-style: italic;
+		line-height: 1.25;
+		color: $gray-600;
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+	}
+}
