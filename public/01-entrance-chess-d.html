@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Подъезд №2</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox/fancybox.css" rel="stylesheet"/>
+		<link href="libs/select2/css/select2.min.css" rel="stylesheet"/>
+		<link href="libs/daterangepicker/daterangepicker.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body class="main-page" data-bg="01-3-house.jpg">
+		<div class="main-wrapper">
+			<aside> 
+				<div class="aside-wrap">
+					<a class="aside-wrap__logo" href="#"><img class="d-none d-md-block" src="img/svg/logo.svg" alt="" loading="lazy"/><img class="d-md-none" src="img/svg/logo-sm.svg" alt="" loading="lazy"/>
+					</a>
+					<div class="aside-wrap__nav">
+						<ul>
+							<li><a class="active" href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Объекты">
+									<svg class="icon icon-objects ">
+										<use xlink:href="img/svg/sprite.svg#objects"></use>
+									</svg><span>Объекты</span></a></li>
+							<li><a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Задачи">
+									<svg class="icon icon-tasks ">
+										<use xlink:href="img/svg/sprite.svg#tasks"></use>
+									</svg><span>Задачи</span></a></li>
+							<li><a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Бригады">
+									<svg class="icon icon-workers ">
+										<use xlink:href="img/svg/sprite.svg#workers"></use>
+									</svg><span>Бригады</span></a></li>
+							<li><a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Документы">
+									<svg class="icon icon-file ">
+										<use xlink:href="img/svg/sprite.svg#file"></use>
+									</svg><span>Документы</span></a></li>
+						</ul>
+					</div>
+					<div class="avatar-wrap">
+						<a class="avatar" href="#"><span>МИ</span><img src="img/avatar.jpg" alt="" loading="lazy"/>
+						</a>
+					</div>
+					<a class="aside-wrap__settings" href="#">
+						<svg class="icon icon-settings ">
+							<use xlink:href="img/svg/sprite.svg#settings"></use>
+						</svg>
+					</a>
+				</div>
+			</aside>
+			<div class="main-center-wrap">
+				<main>
+					<div class="page-head">
+						<div class="container-fluid">
+							<div class="page-head__row row align-items-center">
+								<div class="col">
+									<nav class="swiper freeMode-slider--js" aria-label="breadcrumb">
+										<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+											<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Объекты</span>
+													<meta itemprop="position" content="1"/></a></li>
+											<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">ЖК видный</span>
+													<meta itemprop="position" content="2"/></a></li>
+											<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Дом №1</span>
+													<meta itemprop="position" content="3"/></a></li>
+											<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Подъезд №2</span>
+													<meta itemprop="position" content="4"/></a></li>
+										</ol>
+									</nav>
+								</div>
+								<div class="page-head__col page-head__col--title col-lg order-md-4">
+									<h1>Подъезд №2
+										<div class="badge badge-primary">33%</div>
+									</h1>
+								</div>
+								<div class="col-12 d-none d-md-block m-0 p-0 order-md-3"></div>
+								<div class="page-head__col col-md-auto order-md-2">
+									<a class="page-head__edit" href="#">Редактировать
+										<svg class="icon icon-edit ">
+											<use xlink:href="img/svg/sprite.svg#edit"></use>
+										</svg>
+									</a>
+								</div>
+								<div class="page-head__col col-md-auto order-md-last">
+									<div class="startDate">
+										<svg class="icon icon-calendar ">
+											<use xlink:href="img/svg/sprite.svg#calendar"></use>
+										</svg>11 ноя 23 – 11 фев 24
+									</div>
+								</div>
+								<div class="page-head__col col-md-auto order-md-5">
+									<div class="task-stat">
+										<svg class="icon icon-fist ">
+											<use xlink:href="img/svg/sprite.svg#fist"></use>
+										</svg>321/433
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- start sObjectDetails-->
+					<div class="sObjectDetails section" id="sObjectDetails">
+						<div class="container-fluid">
+							<div class="sObjectDetails__header">
+								<div class="details-with-toggle details-with-toggle--js">
+									<div class="details-with-toggle__wrap">
+										<div class="details-with-toggle__stats-row details-with-toggle__stats-row--without-span row">
+											<div class="details-with-toggle__col col-md-auto">
+												<div class="details-with-toggle__item"><span>Этаж</span>
+													<p>7 эт
+													</p>
+												</div>
+											</div>
+											<div class="details-with-toggle__col col-md-auto">
+												<div class="details-with-toggle__item"><span>Квартиры</span>
+													<p>728 кв
+													</p>
+												</div>
+											</div>
+											<div class="details-with-toggle__col col-md-auto">
+												<div class="details-with-toggle__item"><span>Помещения</span>
+													<p>1350 пом
+													</p>
+												</div>
+											</div>
+											<div class="details-with-toggle__col col-md-auto">
+												<div class="details-with-toggle__item"><span>Площадь</span>
+													<p>S 3440 м²
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<button class="details-with-toggle__btn-more btn d-md-none">
+										<div class="show">Подробнее</div>
+										<div class="hide">Свернуть</div>
+										<svg class="icon icon-chevron-down ">
+											<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+										</svg>
+									</button>
+								</div>
+								<div class="sObjectDetails__row row">
+									<div class="col-sm-6 col-lg-4 col-xl-3">
+										<div class="work-status">
+											<div class="row">
+												<div class="col">Стяжка пола</div>
+												<div class="col-auto fw-500">22%</div>
+											</div>
+											<div class="line" style="--w: 22%; --bgColor: #467CF4"></div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-4 col-xl-3">
+										<div class="work-status">
+											<div class="row">
+												<div class="col">Натяжка потолка</div>
+												<div class="col-auto fw-500">22%</div>
+											</div>
+											<div class="line" style="--w: 22%; --bgColor: #1DBA6F"></div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-4 col-xl-3">
+										<div class="work-status">
+											<div class="row">
+												<div class="col">Штукатурка стен</div>
+												<div class="col-auto fw-500">22%</div>
+											</div>
+											<div class="line" style="--w: 22%; --bgColor: #F4B13E"></div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-4 col-xl-3">
+										<div class="work-status">
+											<div class="row">
+												<div class="col">Шпаклевка стен</div>
+												<div class="col-auto fw-500">22%</div>
+											</div>
+											<div class="line" style="--w: 22%; --bgColor: #9A52DF"></div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-4 col-xl-3">
+										<div class="work-status">
+											<div class="row">
+												<div class="col">Затирка</div>
+												<div class="col-auto fw-500">22%</div>
+											</div>
+											<div class="line" style="--w: 22%; --bgColor: #E94410"></div>
+										</div>
+									</div>
+									<div class="col-sm-6 col-lg-4 col-xl-3">
+										<div class="work-status">
+											<div class="row">
+												<div class="col">Плинтус</div>
+												<div class="col-auto fw-500">22%</div>
+											</div>
+											<div class="line" style="--w: 22%; --bgColor: #8B9298"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end sObjectDetails-->
+					<!-- start sMainInfo-->
+					<div class="sMainInfo section" id="sMainInfo">
+						<div class="container-fluid">
+							<div class="sMainInfo__wrap">
+								<div class="toggle-block swiper freeMode-slider freeMode-slider--js">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-list ">
+													<use xlink:href="img/svg/sprite.svg#list"></use>
+												</svg><span>Список</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light active" href="#">
+												<svg class="icon icon-tile ">
+													<use xlink:href="img/svg/sprite.svg#tile"></use>
+												</svg><span>Шахматка</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-tasks ">
+													<use xlink:href="img/svg/sprite.svg#tasks"></use>
+												</svg><span>Задачи</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-gantt ">
+													<use xlink:href="img/svg/sprite.svg#gantt"></use>
+												</svg><span>График работ</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-info ">
+													<use xlink:href="img/svg/sprite.svg#info"></use>
+												</svg><span>Информация</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a class="toggle-block__btn btn btn-outline-light" href="#">
+												<svg class="icon icon-pen ">
+													<use xlink:href="img/svg/sprite.svg#pen"></use>
+												</svg><span>Заметки</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sMainInfo__selects-wrap">
+								<div class="row">
+									<div class="sMainInfo__col col-md col-xl-3">
+										<div class="custom-select-wrap custom-select-wrap--third-type">
+											<select class="basic-select basic-select--js">
+												<option>Все объекты</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+											</select>
+										</div>
+									</div>
+									<div class="sMainInfo__col col-md col-xl-3">
+										<div class="custom-select-wrap custom-select-wrap--third-type">
+											<select class="basic-select basic-select--js">
+												<option>Все бригады</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+											</select>
+										</div>
+									</div>
+									<div class="sMainInfo__col col-md col-xl-3">
+										<div class="custom-select-wrap custom-select-wrap--third-type">
+											<select class="basic-select basic-select--js">
+												<option>Все поверхности</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+											</select>
+										</div>
+									</div>
+									<div class="sMainInfo__col col-md col-xl-3">
+										<div class="custom-select-wrap custom-select-wrap--third-type">
+											<select class="basic-select basic-select--js">
+												<option>Все работы</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-auto ms-md-auto">
+										<a class="sMainInfo__reset" href="#">Сбросить
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="sMainInfo__chess-table-wrap">
+								<table>
+									<tbody>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№12</span>
+														</p>
+														<div class="sMainInfo__precent">15%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№127</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№128</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№129</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№130</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№131</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell accent">
+														<p>Квартира <span>№132</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№133</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№134</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№135</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№136</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№137</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№138</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№11</span>
+														</p>
+														<div class="sMainInfo__precent">13%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№115</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№116</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№117</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№118</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№119</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№120</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№121</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№122</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№123</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№124</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№125</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№126</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell focus">
+														<p>Этаж <span>№10</span>
+														</p>
+														<div class="sMainInfo__precent">25%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№103</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№104</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№105</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№106</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№107</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№108</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№109</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell done">
+														<p>Квартира <span>№110</span>
+														</p>
+														<div class="sMainInfo__precent">100%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№111</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№112</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№113</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№114</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№9</span>
+														</p>
+														<div class="sMainInfo__precent">28%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№91</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№92</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№93</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell danger">
+														<p>Квартира <span>№94</span>
+														</p>
+														<div class="sMainInfo__precent">13%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№95</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№96</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№97</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№98</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№99</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№100</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№101</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№102</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№8</span>
+														</p>
+														<div class="sMainInfo__precent">3%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№79</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№80</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№81</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№82</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№83</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№84</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№85</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell done">
+														<p>Квартира <span>№86</span>
+														</p>
+														<div class="sMainInfo__precent">100%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№87</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№88</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№89</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№90</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№7</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№67</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№68</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№69</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№70</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№71</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№72</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№73</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№74</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№75</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№76</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№77</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№78</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№6</span>
+														</p>
+														<div class="sMainInfo__precent">18%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№55</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№56</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№57</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№58</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№59</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№60</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№61</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№62</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№63</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell done">
+														<p>Квартира <span>№64</span>
+														</p>
+														<div class="sMainInfo__precent">100%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell done">
+														<p>Квартира <span>№65</span>
+														</p>
+														<div class="sMainInfo__precent">100%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№66</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№5</span>
+														</p>
+														<div class="sMainInfo__precent">0%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№43</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№44</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№45</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№46</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№47</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№48</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№49</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№50</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№51</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№52</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№53</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№54</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№4</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№31</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№32</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№33</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№34</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№35</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№36</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№37</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№38</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№39</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№40</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№41</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№42</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№3</span>
+														</p>
+														<div class="sMainInfo__precent">29%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№19</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№20</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№21</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№22</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№23</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№24</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№25</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№26</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№27</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№28</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№29</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№30</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№2</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№7</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№8</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№9</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№10</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№11</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№12</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№13</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№14</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№15</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№16</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№17</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№18</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+										<tr>
+												<td>
+													<div class="sMainInfo__cell">
+														<p>Этаж <span>№1</span>
+														</p>
+														<div class="sMainInfo__precent">15%
+														</div>
+													</div>
+												</td>
+												<td colspan="2">
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№1</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td colspan="2">
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№2</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td colspan="2">
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№3</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td colspan="2">
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№4</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td colspan="2">
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№5</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+												<td colspan="2">
+													<div class="sMainInfo__cell">
+														<p>Квартира <span>№6</span>
+														</p>
+														<div class="sMainInfo__precent">67%
+														</div>
+													</div>
+												</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- end sMainInfo-->
+				</main><img class="page-bg" src="img/svg/page-bg.svg" alt="" loading="lazy"/>
+			</div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/select2/js/select2.min.js"> </script>
+		<script src="libs/daterangepicker/moment.min.js"> </script>
+		<script src="libs/daterangepicker/daterangepicker.js"> </script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>
