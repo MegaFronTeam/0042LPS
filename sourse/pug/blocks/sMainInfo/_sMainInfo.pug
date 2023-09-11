@@ -22,31 +22,31 @@ mixin sMainInfo(selects, secondTable, tile, allObjects, object, toggleBlock=true
 				+e.selects-wrap
 					.row
 						if allObjects
-							+e.col.col-md.col-xl-3
+							+e.col.col-sm-6.col-lg
 								+b.custom-select-wrap--third-type
 									select(class="basic-select basic-select--js")
 										option Все объекты
 										-for(let i = 1; i <= 10; i++)
 											option!= i
-						+e.col.col-md.col-xl-3
+						+e.col.col-sm-6.col-lg
 							+b.custom-select-wrap--third-type
 								select(class="basic-select basic-select--js")
 									option Все бригады
 									-for(let i = 1; i <= 10; i++)
 										option!= i
-						+e.col.col-md.col-xl-3
+						+e.col.col-sm-6.col-lg
 							+b.custom-select-wrap--third-type
 								select(class="basic-select basic-select--js")
 									option Все поверхности
 									-for(let i = 1; i <= 10; i++)
 										option!= i
-						+e.col.col-md.col-xl-3
+						+e.col.col-sm-6.col-lg
 							+b.custom-select-wrap--third-type
 								select(class="basic-select basic-select--js")
 									option Все работы
 									-for(let i = 1; i <= 10; i++)
 										option!= i
-						.col.col-md-12.order-md-last.me-auto
+						.col.col-lg-12.order-lg-last.me-auto
 							+b.custom-select-wrap--second-type
 								+e.label.text-secondary Сортировать по
 								select(class="basic-select basic-select--js")
@@ -54,7 +54,7 @@ mixin sMainInfo(selects, secondTable, tile, allObjects, object, toggleBlock=true
 									option Планирование
 									option В работе
 									option Все статусы
-						.col-auto.ms-md-auto
+						.col-auto.ms-lg-auto
 							+e.reset(href='#') Сбросить
 			if secondTable
 				+mainTable2(object)

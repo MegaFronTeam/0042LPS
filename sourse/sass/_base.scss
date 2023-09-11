@@ -111,7 +111,7 @@ main {
 	justify-content: flex-start;
 	min-height: 100vh;
 	padding-bottom: calc(rem(24) + rem(48));
-	padding-top: rem(48);
+	padding-top: 46px;
 	@include media-breakpoint-up(md) {
 		padding-bottom: rem(86);
 		padding-top: 0;

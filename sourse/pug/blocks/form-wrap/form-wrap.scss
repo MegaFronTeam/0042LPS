@@ -44,6 +44,10 @@
 		border: 2px solid $gray-100;
 		// background-color: $gray-100;
 		border-radius: 4px;
+		font-size: rem(14);
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
 		&::placeholder {
 			opacity: 0 !important	;
 			color: transparent;
@@ -211,12 +215,22 @@
 				margin-right: rem(12);
 				margin-top: 0;
 				background-color: #fff;
+				&:checked {
+					background-color: $primary;
+				}
 			}
 		}
 	}
 	&__title-col {
 		@include media-breakpoint-up(md) {
 			width: rem(292);
+		}
+	}
+	&__title {
+		display: flex;
+		align-items: center;
+		.icon {
+			flex: 0 0 auto;
 		}
 	}
 	&__worker-wrap {

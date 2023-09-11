@@ -109,10 +109,11 @@
 	}
 	&__btn {
 		--bs-btn-padding-x: #{rem(34.5)};
-    --bs-btn-padding-y: #{rem(17)};
+    --bs-btn-padding-y: #{rem(16)};
 		// width: 100%;
 		@include media-breakpoint-up(md) {
 			width: auto;
+			--bs-btn-padding-y: #{rem(17)};
 		}
 		&.btn-light {
 			--bs-btn-color: #000;
