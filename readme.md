@@ -33,6 +33,7 @@
 
 #### Бригады
 1. <https://megafronteam.github.io/0042LPS/public/04-teams.html>
+2. <https://megafronteam.github.io/0042LPS/public/04-create-team.html>
 2. <https://megafronteam.github.io/0042LPS/public/04-edit-team.html>
 
 #### Пользователи

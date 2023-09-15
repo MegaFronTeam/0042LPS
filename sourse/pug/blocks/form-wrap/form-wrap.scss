@@ -35,7 +35,10 @@
 		width: 100%;
 		position: relative;
 		--sp-y: #{$input-padding-y};
-		--fz: #{rem(16)};
+		--fz: #{rem(14)};
+		@include media-breakpoint-up(md) {
+			--fz: #{rem(16)};
+		}
 	}
 	&__input {
 		padding-top: calc(var(--sp-y) * 1.5);

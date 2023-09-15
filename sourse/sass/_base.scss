@@ -658,7 +658,9 @@ h1 {
 
 .container-fluid {
 	max-width: rem(1512);
-	margin-left: 0;
+	// margin-left: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .daterangepicker {

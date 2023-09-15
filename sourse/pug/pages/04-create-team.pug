@@ -13,13 +13,13 @@ block variables
 	- let  createObject = true
 
 block title
-	- let  title= 'Редактирование бригады'
+	- let  title= 'Создание бригады'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 	main
 		+sCreateObject2()
-			h2 Редактирование бригады
+			h2 Создание бригады
 			+b.form-wrap
 				+e.edit-row.row
 					.col-12
@@ -62,20 +62,6 @@ block pagecontent
 										+e.input-wrap.form-group
 											label
 												+e.INPUT.input.form-control(name='Телефон' type='tel' placeholder='Телефон')
-												+e.SPAN.input-title Телефон
-							.row
-								+e.title-col.col-md-auto 
-									| Работник 2
-									+e.delete(href='#'): +icon('delete')
-								.col-md
-									+e.worker-wrap
-										+e.input-wrap.form-group
-											label
-												+e.INPUT.input.form-control(name='ФИО' type='text' placeholder='ФИО' value='Петров Петр Петрович')
-												+e.SPAN.input-title ФИО
-										+e.input-wrap.form-group
-											label
-												+e.INPUT.input.form-control(name='Телефон' type='tel' placeholder='Телефон' value='+7 (919) 811-28-44')
 												+e.SPAN.input-title Телефон
 									+e.add-new(href='#')
 										+icon('add')
