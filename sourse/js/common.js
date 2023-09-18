@@ -433,16 +433,8 @@ function eventHandler() {
 		watchOverflow: true,
 	});
 
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
+	const swiper4 = new Swiper('.default-slider-js', {
 		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-
 	});
 
 	// modal window
@@ -671,7 +663,30 @@ function eventHandler() {
 				}
 			})
 		}
+	};
+
+	let chessTable = document.querySelector('.sMainInfo__chess-table-wrap')
+	let setWidth = () => {
+		let index = 0;
+		let chessListArray = chessTable.querySelectorAll('ul');
+		let elemWidth = chessTable.querySelector('ul li').offsetWidth - 0.5;
+		console.log(elemWidth);
+		for (let i = 0; i < chessListArray.length; i++) {
+			if (chessListArray[i].querySelectorAll('li').length > index) {
+				index = chessListArray[i].querySelectorAll('li').length;
+			}
+		}
+		for (let i = 0; i < chessListArray.length; i++) {
+			chessListArray[i].style.width = index * elemWidth + 'px';
+		}
+	};
+	if (chessTable) {
+		setWidth()
+		window.addEventListener('resize', () => {
+			setWidth()
+		}, { passive: true });
 	}
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
