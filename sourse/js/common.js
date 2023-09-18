@@ -669,7 +669,7 @@ function eventHandler() {
 	let setWidth = () => {
 		let index = 0;
 		let chessListArray = chessTable.querySelectorAll('ul');
-		let elemWidth = chessTable.querySelector('ul li').offsetWidth - 0.5;
+		let elemWidth = chessTable.querySelector('ul li').offsetWidth;
 		console.log(elemWidth);
 		for (let i = 0; i < chessListArray.length; i++) {
 			if (chessListArray[i].querySelectorAll('li').length > index) {
